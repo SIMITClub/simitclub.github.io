@@ -51,6 +51,26 @@
       height: 300px;
       background-color: white;
     }
+
+    .bar {
+      position: absolute;
+    bottom: 360px;
+    right: 43px;
+    height: 30px;
+    background-color: #f05f40;
+    width: 284px;
+    box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-sizing: content-box;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 8px 0 8px;
+    z-index: 2;
+    }
+    #bar{
+      display: none;
+    }
+  </style>
   </style>
 </head>
 
@@ -280,16 +300,12 @@
     </div>
   </section>
 
-  <iframe id="msftbotframe" src='https://webchat.botframework.com/embed/SIMITClubBot?s=PeXNHwgp8ko.cwA.b7M.H0b2W4xzUt2Lu4_4LRfzkNp3OV5lDISt88CHaRRjCJg'></iframe>
+    <iframe class="msftbotframe" id="msftbotframe" src='https://webchat.botframework.com/embed/SIMITClubBot?s=PeXNHwgp8ko.cwA.b7M.H0b2W4xzUt2Lu4_4LRfzkNp3OV5lDISt88CHaRRjCJg'></iframe>
+    <div id="bar" class="bar">SIM IT Bot</div>
   <a class="float" onclick="showIFrame()">
     <img src="img/chat.png"/>
   </a>
-  <script type="text/javascript">
-    function showIFrame() {
-      var iframe = document.getElementById("msftbotframe");
-      iframe.style.display = iframe.style.display == "block" ? "none" : "block";
-    }
-  </script>
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/popper/popper.min.js"></script>
@@ -301,7 +317,15 @@
   <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+  <script src="js/creative.min.js"></script>>
+  <script type="text/javascript">
+    function showIFrame() {
+      var iframe = document.getElementById("msftbotframe");
+      iframe.style.display = iframe.style.display == "block" ? "none" : "block";
+      var iframebar = document.getElementById("bar");
+      iframebar.style.display = iframebar.style.display == "block" ? "none" : "block";
+    }
+  </script>
 </body>
 
 </html>
