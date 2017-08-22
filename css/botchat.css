@@ -375,11 +375,11 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
   text-align: right; }
 
 .wc-message-from-me .wc-message-content {
-  background-color: #3a96dd;
+  background-color: rgba(240, 95, 64, 0.80);
   color: #ffffff; }
 
 .wc-message-from-me svg.wc-message-callout path {
-  fill: #3a96dd; }
+  fill: rgba(240, 95, 64, 0.80); }
 
 .wc-message-from-me svg.wc-message-callout path.point-left {
   display: none; }
