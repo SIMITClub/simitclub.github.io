@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../css/botchat.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="bot"></div>
+    <script src="../js/botchat.js"></script>
+    <script>
+      BotChat.App({
+        directLine: { secret: 'PeXNHwgp8ko.cwA.b7M.H0b2W4xzUt2Lu4_4LRfzkNp3OV5lDISt88CHaRRjCJg' },
+        user: { id: 'userid' },
+        bot: { id: 'botid' },
+        resize: 'detect'
+      }, document.getElementById("bot"));
+    </script>
+</body>
+</html>
