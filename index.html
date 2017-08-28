@@ -25,23 +25,25 @@
 
   <!-- Custom styles for this template -->
   <link href="css/creative.min.css" rel="stylesheet">
- 
+
   <style>
     .float {
       position: fixed;
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       bottom: 40px;
       right: 40px;
-      background: rgba(255, 255, 255, 0.9);
-      color: #FFF;
+      background-color: rgba(255, 255, 255, .4);
+      color: #f05f40;
       border-radius: 50px;
       text-align: center;
       box-shadow: 2px 2px 3px #999;
       padding: 5px;
     }
-
-    #floatingButton{
+    .float:focus {
+  outline: none;
+}
+    #floatingButton {
       display: block;
     }
 
@@ -287,10 +289,14 @@
     </div>
   </section>
 
-    <iframe class="msftbotframe" id="msftbotframe" src='./pages/botchat.html'></iframe>
-    <a id="floatingButton" class="float" onclick="showIFrame()">
+  <iframe class="msftbotframe" id="msftbotframe" src='./pages/botchat.html'></iframe>
+  <!-- <a id="floatingButton" class="float" onclick="showIFrame()">
       <img src="img/humaniod.svg"/>
-    </a>
+    </a> -->
+  <button id="floatingButton" class="float" type="button" onclick="showIFrame(this)" >
+      <span class="fa fa-wechat fa-3x sr-contact"></span>
+  </button>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -305,14 +311,19 @@
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
   <script type="text/javascript">
-    function showIFrame() {
+    function showIFrame(button) {
+      $(button).find('span').toggleClass('fa-close fa-wechat');
       var iframe = document.getElementById("msftbotframe");
       iframe.style.display = iframe.style.display == "block" ? "none" : "block";
       var iframebar = document.getElementById("bar");
       iframebar.style.display = iframebar.style.display == "block" ? "none" : "block";
       var floatingButton = document.getElementById("floatingButton");
       console.log(floatingButton.style.display);
-      floatingButton.style.display = floatingButton.style.display == "block" ? "none" : "block"; 
+      floatingButton.style.display = floatingButton.style.display == "block" ? "none" : "block";
+    }
+
+    toggleChevron = function (button) {
+      $(button).find('span').toggleClass('fa-laptop fa-envelope-o');
     }
   </script>
 
