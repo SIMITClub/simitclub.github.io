@@ -297,7 +297,8 @@
       <img src="img/humaniod.svg"/>
     </a> -->
   <button id="floatingButton" class="float" type="button" onclick="showIFrame(this)">
-      <span class="fa fa-wechat fa-3x sr-contact"></span>
+      <span id="chaticon" class="fa fa-wechat fa-3x sr-contact"></span>
+      <span id="closeicon" class="fa fa-close fa-3x sr-contact"></span>
   </button>
 
 
@@ -318,11 +319,6 @@
       $(button).find('span').toggleClass('fa-close fa-wechat');
       var iframe = document.getElementById("msftbotframe");
       iframe.style.display = iframe.style.display == "block" ? "none" : "block";
-      // var iframebar = document.getElementById("bar");
-      // iframebar.style.display = iframebar.style.display == "block" ? "none" : "block";
-      // var floatingButton = document.getElementById("floatingButton");
-      // console.log(floatingButton.style.display);
-      // floatingButton.style.display = floatingButton.style.display == "block" ? "none" : "block";
     }
   </script>
 
