@@ -41,9 +41,11 @@
       padding: 5px;
       border: none;
     }
+
     .float:focus {
-  outline: none;
-}
+      outline: none;
+    }
+
     #floatingButton {
       display: block;
     }
@@ -291,11 +293,9 @@
   </section>
 
   <iframe class="msftbotframe" id="msftbotframe" src='./pages/botchat.html'></iframe>
-  <!-- <a id="floatingButton" class="float" onclick="showIFrame()">
-      <img src="img/humaniod.svg"/>
-    </a> -->
-  <button id="floatingButton" class="float" type="button" onclick="showIFrame(this)" >
-      <span class="fa fa-wechat fa-3x sr-contact"></span>
+  
+  <button id="floatingButton" class="float" type="button" onclick="showIFrame(this)">
+      <span class="fa fa-wechat fa-3x"></span>
   </button>
 
 
@@ -312,19 +312,12 @@
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
   <script type="text/javascript">
+
     function showIFrame(button) {
       $(button).find('span').toggleClass('fa-close fa-wechat');
+
       var iframe = document.getElementById("msftbotframe");
       iframe.style.display = iframe.style.display == "block" ? "none" : "block";
-      var iframebar = document.getElementById("bar");
-      iframebar.style.display = iframebar.style.display == "block" ? "none" : "block";
-      var floatingButton = document.getElementById("floatingButton");
-      console.log(floatingButton.style.display);
-      floatingButton.style.display = floatingButton.style.display == "block" ? "none" : "block";
-    }
-
-    toggleChevron = function (button) {
-      $(button).find('span').toggleClass('fa-laptop fa-envelope-o');
     }
   </script>
 
