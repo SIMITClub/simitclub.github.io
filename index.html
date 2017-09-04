@@ -27,16 +27,46 @@
   <link href="css/creative.min.css" rel="stylesheet">
 
   <style>
-    .fa{
+    /* Nav transitions*/
+
+    .blinky {
+      transition: all 1s ease-out;
+    }
+
+    .blinky__hidden-text {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+    }
+
+    .blinky__hidden-text:after {
+      content: '' attr(data-blinky-label) '';
+      width: 0;
+      overflow: hidden;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .blinky:hover .blinky__hidden-text:after,
+    .blinky:focus .blinky__hidden-text:after {
+      transition: width .2s ease-out;
+      width: 100%
+    }
+
+    .fa {
       -moz-transition: all 1s linear;
-    -webkit-transition: all 1s linear;
-    transition: all 1s linear;
+      -webkit-transition: all 1s linear;
+      transition: all 1s linear;
     }
-    .fa.fa-close{
-      -moz-transform:rotate(360deg);
-    -webkit-transform:rotate(360deg);
-    transform:rotate(360deg);
+
+    .fa.fa-close {
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
+
     .float {
       position: fixed;
       width: 70px;
@@ -89,16 +119,32 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger blinky" href="#about">
+                <span class="blinky__hidden-text" data-blinky-label="About Me">
+                  <span class="blinky__label">About Me</span>
+                </span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#events">Events</a>
+              <a class="nav-link js-scroll-trigger blinky" href="#events">
+                  <span class="blinky__hidden-text" data-blinky-label="Events">
+                    <span class="blinky__label">Events</span>
+                  </span>
+              </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
+              <a class="nav-link js-scroll-trigger blinky" href="#portfolio">
+                  <span class="blinky__hidden-text" data-blinky-label="Projects">
+                    <span class="blinky__label">Projects</span>
+                  </span>
+              </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          <a class="nav-link js-scroll-trigger blinky" href="#contact">
+              <span class="blinky__hidden-text" data-blinky-label="Contact">
+                <span class="blinky__label">Contact</span>
+              </span>
+          </a>
           </li>
         </ul>
       </div>
@@ -303,7 +349,7 @@
   </section>
 
   <iframe class="msftbotframe" id="msftbotframe" src='./pages/botchat.html'></iframe>
-  
+
   <button id="floatingButton" class="float" type="button" onclick="showIFrame(this)">
       <span class="fa fa-wechat fa-3x"></span>
   </button>
@@ -322,7 +368,6 @@
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
   <script type="text/javascript">
-
     function showIFrame(button) {
       $(button).find('span').toggleClass('fa-close fa-wechat');
 
