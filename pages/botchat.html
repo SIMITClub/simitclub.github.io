@@ -11,14 +11,27 @@
 
 <body>
     <div id="bot"></div>
-    <script src="../js/botchat.js"></script>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/CognitiveServices.js"></script>
     <script>
+        var speechOptions = {
+            speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: 'a0fc129873f441488defffa380d34d55' }),
+
+            speechSynthesizer: new CognitiveServices.SpeechSynthesizer(
+                {
+                    subscriptionKey: 'a0fc129873f441488defffa380d34d55',
+                    gender: CognitiveServices.SynthesisGender.Female,
+                    voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+                })
+        }
+
         var user = guid();
         BotChat.App({
             directLine: { secret: 'WaiaMm857ho.cwA.hYE.AixkjufX_BarSomPDTpW_s1we1ZMFFaTOfonlgxIVWQ' },
-            user: { id: user , name: 'You'},
+            user: { id: user, name: 'You' },
             bot: { id: 'website' },
-            resize: 'detect'
+            resize: 'detect',
+            speechOptions: speechOptions
         }, document.getElementById("bot"));
 
         function guid() {
