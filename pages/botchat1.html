@@ -62,11 +62,13 @@
         console.log(foundText);
         if(foundText == "hello smit")
         {
+            console.log("found text");
             recognition.stop();
         } 
         else 
         { 
-            recognition.abort(); 
+            console.log("text not found");
+            recognition.stop();
             startDictation(); 
         }
       };
