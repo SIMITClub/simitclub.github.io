@@ -58,8 +58,10 @@
       recognition.start();
 
       recognition.onresult = function(e) {
-        console.log(e.results[0][0].transcript);
-        //recognition.stop();
+        var foundText = e.results[0][0].transcript;
+        console.log(foundText);
+        if(foundText == "hello smit") recognition.stop();
+        else recognition.start();
       };
 
       recognition.onerror = function(e) {
