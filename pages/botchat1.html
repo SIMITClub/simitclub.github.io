@@ -60,8 +60,15 @@
       recognition.onresult = function(e) {
         var foundText = e.results[0][0].transcript;
         console.log(foundText);
-        if(foundText == "hello smit"){recognition.stop();} 
-        else { recognition.abort(); recognition.start(); }
+        if(foundText == "hello smit")
+        {
+            recognition.stop();
+        } 
+        else 
+        { 
+            recognition.abort(); 
+            startDictation(); 
+        }
       };
 
       recognition.onerror = function(e) {
