@@ -61,7 +61,7 @@
         var foundText = e.results[0][0].transcript;
         console.log(foundText);
         if(foundText == "hello smit"){recognition.stop();} 
-        else { recognition.stop(); recognition.start(); }
+        else { recognition.abort(); recognition.start(); }
       };
 
       recognition.onerror = function(e) {
