@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <input type="text" name="q" id="transcript" placeholder="Speak" />
     <div id="bot"></div>
     <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
     <script src="https://cdn.botframework.com/botframework-webchat/latest/CognitiveServices.js"></script>
@@ -59,8 +58,7 @@
       recognition.start();
 
       recognition.onresult = function(e) {
-        document.getElementById('transcript').value
-                                 = e.results[0][0].transcript;
+        console.log(e.results[0][0].transcript);
         recognition.stop();
       };
 
