@@ -57,6 +57,9 @@
         web.height = "300";
         web.createBox();
         startDictation();
+        httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { "question": "hi" }, function (data) {
+            console.log("http: ", data);
+        })
         function startDictation() {
 
             if (window.hasOwnProperty('webkitSpeechRecognition')) {
@@ -75,11 +78,13 @@
                     if (foundText == "hello") {
                         web.addMessage("hi", "", "", "");
                     }
-                    else if (foundText == "password") {
-                        web.addMessage("password is not setup yet", "", "", "");
+                    else if (foundText == "text not found") {
+
                     }
                     else {
-                        web.addMessage("text not found", "", "", "");
+                        httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { "question": "hi" }, function (data) {
+                            console.log("http: ", data);
+                        })
                     }
                     web.processMessages();
                     recognition.stop();
@@ -92,6 +97,21 @@
                 }
 
             }
+        }
+
+        function httpPostAsync(theUrl, obj, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", theUrl, true);
+
+            //Send the proper header information along with the request
+            xhr.setRequestHeader("Content-type", "application/json");
+
+            xhr.onreadystatechange = function () {//Call a function when the state changes.
+                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                    callback(xhr.responseText);
+                }
+            }
+            xhr.send(obj);
         }
 
     </script>
