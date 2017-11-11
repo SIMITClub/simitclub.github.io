@@ -57,7 +57,7 @@
         web.height = "300";
         web.createBox();
         startDictation();
-        httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { "question": "hi" }, function (data) {
+        httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer?Ocp-Apim-Subscription-Key=29a5c25c674c4b5592d5311bedf9b75b", { "question": "hi" }, function (data) {
             console.log("http: ", data);
         })
         function startDictation() {
@@ -105,6 +105,7 @@
 
             //Send the proper header information along with the request
             xhr.setRequestHeader("Content-type", "application/json");
+            xhr.setRequestHeader("Ocp-Apim-Subscription-Key", "29a5c25c674c4b5592d5311bedf9b75b");
 
             xhr.onreadystatechange = function () {//Call a function when the state changes.
                 if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
