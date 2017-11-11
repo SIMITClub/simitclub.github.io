@@ -13,13 +13,13 @@
         }
 
         #message {
-            width: 100%;
+            width: 60%;
             height: 100%;
             margin-left: 400px;
         }
 
         span{
-            width: 100%;
+            display: block;
         }
 
         #user{
@@ -34,7 +34,6 @@
 
 <body>
     <div id="message">
-
     </div>
     <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
     <script type='text/javascript'>
@@ -67,14 +66,14 @@
                 recognition.onresult = function (e) {
                     var foundText = e.results[0][0].transcript;
                     console.log(foundText);
-                    document.getElementById('message').innerHTML += `<br><span id="user">you: ${foundText}</span>`
+                    document.getElementById('message').innerHTML += `<span id="user"><b>You</b>: ${foundText}</span><br>`
                     if (foundText == "text not found") {
                         console.log("something");
                     }
                     else {
                         httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: foundText }, function (data) {
                             var res = findAnswer(data);
-                            document.getElementById('message').innerHTML += `<br><span id="bot">Eva: ${res}</span>`
+                            document.getElementById('message').innerHTML += `<span id="bot">${res} :<b>Eva</b></span><br>`
                             web.addMessage(res, "", "", "")
                             web.processMessages();
                             recognition.stop();
@@ -122,3 +121,38 @@
 </body>
 
 </html>
+
+<!-- <div id="bot"></div>
+<script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+<script src="https://cdn.botframework.com/botframework-webchat/latest/CognitiveServices.js"></script>
+<script>
+    var speechOptions = {
+        speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: 'a0fc129873f441488defffa380d34d55' }),
+
+        speechSynthesizer: new CognitiveServices.SpeechSynthesizer(
+            {
+                subscriptionKey: 'a0fc129873f441488defffa380d34d55',
+                gender: CognitiveServices.SynthesisGender.Female,
+                voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+            })
+    }
+
+    var user = guid();
+    BotChat.App({
+        directLine: { secret: '3h8VQ2panyw.cwA.7p4.QV97cGLXWebGc0cNtZzCM8X1_6u5AypYukmX7myAw_I' },
+        user: { id: user, name: 'You' },
+        bot: { id: 'website' },
+        resize: 'detect',
+        speechOptions: speechOptions
+    }, document.getElementById("bot"));
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    }
+</script> -->
