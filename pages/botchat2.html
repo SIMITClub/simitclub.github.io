@@ -48,6 +48,7 @@
         web.height = "500";
         web.createBox();
         web.addMessage("Hello I am Eva", "", "", "");
+        document.getElementById('message').innerHTML += `<span id="bot"><b>Eva</b>: Hello! I am Eva</span><br>`
         web.processMessages();
         startDictation();
 
