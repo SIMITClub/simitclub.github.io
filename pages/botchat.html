@@ -103,7 +103,8 @@
 
         function findAnswer(data) {
             console.log(data);
-            return data.answers[0].answer;
+            var obj = JSON.parse(data);
+            return obj.answers[0].answer;
         }
 
         function httpPostAsync(theUrl, obj, callback) {
