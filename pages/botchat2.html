@@ -47,8 +47,6 @@
         web.width = "350";
         web.height = "500";
         web.createBox();
-        web.addMessage("", "", "", "")
-        web.processMessages();
         startDictation();
 
         function startDictation() {
@@ -66,14 +64,14 @@
                 recognition.onresult = function (e) {
                     var foundText = e.results[0][0].transcript;
                     console.log(foundText);
-                    document.getElementById('message').innerHTML += `<span id="user"><b>You</b>: ${foundText}</span><br>`
+                    document.getElementById('message').innerHTML += `<span id="user">${foundText} :<b>You</b></span><br>`
                     if (foundText == "text not found") {
                         console.log("something");
                     }
                     else {
                         httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: foundText }, function (data) {
                             var res = findAnswer(data);
-                            document.getElementById('message').innerHTML += `<span id="bot">${res} :<b>Eva</b></span><br>`
+                            document.getElementById('message').innerHTML += `<span id="bot"><b>Eva</b>: ${res}</span><br>`
                             web.addMessage(res, "", "", "")
                             web.processMessages();
                             // recognition.stop();
