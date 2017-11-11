@@ -75,20 +75,19 @@
                 recognition.onresult = function (e) {
                     var foundText = e.results[0][0].transcript;
                     console.log(foundText);
-                    if (foundText == "hello") {
-                        web.addMessage("hi", "", "", "");
-                    }
-                    else if (foundText == "text not found") {
-
+                    if (foundText == "text not found") {
+                        console.log("something");
                     }
                     else {
                         httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: "hi" }, function (data) {
-                            console.log("http: ", data);
+                            var res = findAnswer(data);
                         })
                     }
                     web.processMessages();
                     recognition.stop();
-                    startDictation();
+                    setTimeout(() => {
+                        startDictation(); 
+                    }, 1000);
                 };
 
                 recognition.onerror = function (e) {
@@ -99,6 +98,10 @@
             }
         }
 
+        function findAnswer(data){
+            return answers[0].answer;
+        }
+
         function httpPostAsync(theUrl, obj, callback) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", theUrl, true);
@@ -107,7 +110,7 @@
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.setRequestHeader("Ocp-Apim-Subscription-Key", "29a5c25c674c4b5592d5311bedf9b75b");
             xhr.setRequestHeader("cache-control",'no-cache');
-            
+
             xhr.onreadystatechange = function () {//Call a function when the state changes.
                 if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                     callback(xhr.responseText);
