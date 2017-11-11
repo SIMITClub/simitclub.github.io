@@ -8,21 +8,33 @@
     <title>Document</title>
     <link href="../css/botchat.css" rel="stylesheet" />
     <style>
-        .avatar-avatarbox{
+        .avatar-avatarbox {
             margin-bottom: 100px !important;
         }
-        #message{
-            background-color: brown;
+
+        #message {
             width: 100%;
             height: 100%;
             margin-left: 400px;
+        }
+
+        span{
+            width: 100%;
+        }
+
+        #user{
+            text-align: right;
+        }
+
+        #bot{
+            text-align: left;
         }
     </style>
 </head>
 
 <body>
     <div id="message">
-        
+
     </div>
     <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
     <script type='text/javascript'>
@@ -55,14 +67,14 @@
                 recognition.onresult = function (e) {
                     var foundText = e.results[0][0].transcript;
                     console.log(foundText);
-                    document.getElementById('message').innerHTML += `<br><li>you: ${foundText}</li>`
+                    document.getElementById('message').innerHTML += `<br><span id="user">you: ${foundText}</span>`
                     if (foundText == "text not found") {
                         console.log("something");
                     }
                     else {
                         httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: foundText }, function (data) {
                             var res = findAnswer(data);
-                            document.getElementById('message').innerHTML += `<br><li>Eva: ${res}</li>`
+                            document.getElementById('message').innerHTML += `<br><span id="bot">Eva: ${res}</span>`
                             web.addMessage(res, "", "", "")
                             web.processMessages();
                             recognition.stop();
@@ -76,6 +88,9 @@
                 recognition.onerror = function (e) {
                     console.log("found error", e);
                     recognition.stop();
+                    setTimeout(() => {
+                        startDictation();
+                    }, 1000);
                 }
             }
         }
