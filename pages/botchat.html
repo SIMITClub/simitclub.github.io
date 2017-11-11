@@ -106,7 +106,8 @@
             //Send the proper header information along with the request
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.setRequestHeader("Ocp-Apim-Subscription-Key", "29a5c25c674c4b5592d5311bedf9b75b");
-
+            xhr.setRequestHeader("cache-control",'no-cache');
+            
             xhr.onreadystatechange = function () {//Call a function when the state changes.
                 if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                     callback(xhr.responseText);
