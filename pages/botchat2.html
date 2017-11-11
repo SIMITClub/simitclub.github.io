@@ -55,7 +55,7 @@
 
                 var recognition = new webkitSpeechRecognition();
 
-                recognition.continuous = true;
+                recognition.continuous = false;
                 recognition.interimResults = false;
 
                 recognition.lang = "en-US";
@@ -74,10 +74,10 @@
                             document.getElementById('message').innerHTML += `<span id="bot"><b>Eva</b>: ${res}</span><br>`
                             web.addMessage(res, "", "", "")
                             web.processMessages();
-                            // recognition.stop();
-                            // setTimeout(() => {
-                            //     startDictation();
-                            // }, res.length * 1000);
+                            recognition.stop();
+                            setTimeout(() => {
+                                startDictation();
+                            }, res.length * 1000);
                         })
                     }
                 };
@@ -85,9 +85,9 @@
                 recognition.onerror = function (e) {
                     console.log("found error", e);
                     recognition.stop();
-                    // setTimeout(() => {
-                    //     startDictation();
-                    // }, 1000);
+                    setTimeout(() => {
+                        startDictation();
+                    }, 1000);
                 }
             }
         }
