@@ -7,23 +7,103 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="../css/botchat.css" rel="stylesheet" />
+    <style>
+        .avatar-avatarbox{
+            margin-bottom: 100px !important;
+        }
+        #message{
+            background-color: brown;
+            width: 100%;
+            height: 100%;
+            margin-left: 400px;
+        }
+    </style>
 </head>
 
 <body>
-<script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
-<script type='text/javascript>
-SDK.applicationId = "8084411693033336948";
-var sdk = new SDKConnection();
-var web = new WebAvatar();
-web.connection = sdk;
-web.avatar = "14071666";
-web.voice = "";
-web.voiceMod = "";
-web.width = "250";
-web.height = "300";
-web.createBox();
-web.addMessage("Welcome to my website", "", "", "");
-web.processMessages();
-</script>
+    <div id="message">
+        
+    </div>
+    <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
+    <script type='text/javascript'>
+        SDK.applicationId = "8084411693033336948";
+        var sdk = new SDKConnection();
+        var web = new WebAvatar();
+        web.connection = sdk;
+        web.avatar = "12717910";
+        web.voice = "";
+        web.voiceMod = "";
+        web.width = "350";
+        web.height = "500";
+        web.createBox();
+        web.addMessage("", "", "", "")
+        web.processMessages();
+        startDictation();
+
+        function startDictation() {
+
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+                var recognition = new webkitSpeechRecognition();
+
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.lang = "en-US";
+                recognition.start();
+
+                recognition.onresult = function (e) {
+                    var foundText = e.results[0][0].transcript;
+                    console.log(foundText);
+                    document.getElementById('message').innerHTML += `<br><li>you: ${foundText}</li>`
+                    if (foundText == "text not found") {
+                        console.log("something");
+                    }
+                    else {
+                        httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: foundText }, function (data) {
+                            var res = findAnswer(data);
+                            document.getElementById('message').innerHTML += `<br><li>Eva: ${res}</li>`
+                            web.addMessage(res, "", "", "")
+                            web.processMessages();
+                            recognition.stop();
+                            setTimeout(() => {
+                                startDictation();
+                            }, res.length * 1000);
+                        })
+                    }
+                };
+
+                recognition.onerror = function (e) {
+                    console.log("found error", e);
+                    recognition.stop();
+                }
+            }
+        }
+
+        function findAnswer(data) {
+            console.log(data);
+            var obj = JSON.parse(data);
+            return obj.answers[0].answer;
+        }
+
+        function httpPostAsync(theUrl, obj, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", theUrl, true);
+
+            //Send the proper header information along with the request
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.setRequestHeader("Ocp-Apim-Subscription-Key", "29a5c25c674c4b5592d5311bedf9b75b");
+            xhr.setRequestHeader("cache-control", 'no-cache');
+
+            xhr.onreadystatechange = function () {//Call a function when the state changes.
+                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                    callback(xhr.responseText);
+                }
+            }
+            xhr.send(JSON.stringify(obj));
+        }
+
+    </script>
 </body>
+
 </html>
