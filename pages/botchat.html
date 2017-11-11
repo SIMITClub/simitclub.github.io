@@ -45,22 +45,60 @@
         }
     </script>
     <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
-<script type='text/javascript'>
-SDK.applicationId = "8084411693033336948";
-var sdk = new SDKConnection();
-var web = new WebAvatar();
-web.connection = sdk;
-web.avatar = "14071666";
-web.voice = "";
-web.voiceMod = "";
-web.width = "250";
-web.height = "300";
-web.createBox();
-web.addMessage("Welcome to my website", "", "", "");
-    web.addMessage("Hi Smith", "", "", "");
-    web.addMessage("Welcome", "", "", "");
-web.processMessages();
-</script>
+    <script type='text/javascript'>
+        SDK.applicationId = "8084411693033336948";
+        var sdk = new SDKConnection();
+        var web = new WebAvatar();
+        web.connection = sdk;
+        web.avatar = "14071666";
+        web.voice = "";
+        web.voiceMod = "";
+        web.width = "250";
+        web.height = "300";
+        web.createBox();
+        web.addMessage("Welcome to my website", "", "", "");
+        web.addMessage("Hi Smith", "", "", "");
+        web.addMessage("Welcome", "", "", "");
+        web.processMessages();
+        startDictation();
+        function startDictation() {
+
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+                var recognition = new webkitSpeechRecognition();
+
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.lang = "en-US";
+                recognition.start();
+
+                recognition.onresult = function (e) {
+                    var foundText = e.results[0][0].transcript;
+                    console.log(foundText);
+                    if (foundText == "hello") {
+                        web.addMessage("hi", "", "", "");
+                    }
+                    else if (foundText == "password") {
+                        web.addMessage("password is not setup yet", "", "", "");
+                    }
+                    else {
+                        console.log("text not found");
+                    }
+                    web.processMessages();
+                    recognition.stop();
+                    startDictation();
+                };
+
+                recognition.onerror = function (e) {
+                    console.log("found error", e);
+                    recognition.stop();
+                }
+
+            }
+        }
+
+    </script>
 </body>
 
 </html>

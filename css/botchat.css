@@ -467,24 +467,31 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {
 
 /* animation */
 .wc-typing {
-  border: 5px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 5px solid #f05f40;
-
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  width: 20px;
   height: 20px;
-  width: 20px; }
+  background-color: #f05f40;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
 
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
   }
+}
 
 .wc-animate-scroll {
   left: 0;
