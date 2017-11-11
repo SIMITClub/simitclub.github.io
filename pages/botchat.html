@@ -81,7 +81,7 @@
                     else {
                         httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: "hi" }, function (data) {
                             var res = findAnswer(data);
-                            web.addmessage(res, "", "", "")
+                            web.addMessage(res, "", "", "")
                             web.processMessages();
                             recognition.stop();
                             setTimeout(() => {
