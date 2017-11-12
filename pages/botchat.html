@@ -7,59 +7,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="../css/botchat.css" rel="stylesheet" />
+    <style>
+        .avatar-avatarbox {
+            margin-bottom: 100px !important;
+        }
+
+        #message {
+            width: 60%;
+            height: 100%;
+            margin-left: 400px;
+        }
+
+        span{
+            display: block;
+        }
+
+        #user{
+            text-align: right;
+        }
+
+        #bot{
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="bot"></div>
-    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
-    <script src="https://cdn.botframework.com/botframework-webchat/latest/CognitiveServices.js"></script>
-    <script>
-        var speechOptions = {
-            speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: 'a0fc129873f441488defffa380d34d55' }),
-
-            speechSynthesizer: new CognitiveServices.SpeechSynthesizer(
-                {
-                    subscriptionKey: 'a0fc129873f441488defffa380d34d55',
-                    gender: CognitiveServices.SynthesisGender.Female,
-                    voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
-                })
-        }
-
-        var user = guid();
-        BotChat.App({
-            directLine: { secret: '3h8VQ2panyw.cwA.7p4.QV97cGLXWebGc0cNtZzCM8X1_6u5AypYukmX7myAw_I' },
-            user: { id: user, name: 'You' },
-            bot: { id: 'website' },
-            resize: 'detect',
-            speechOptions: speechOptions
-        }, document.getElementById("bot"));
-
-        function guid() {
-            function s4() {
-                return Math.floor((1 + Math.random()) * 0x10000)
-                    .toString(16)
-                    .substring(1);
-            }
-            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-                s4() + '-' + s4() + s4() + s4();
-        }
-    </script>
+    <div id="message">
+    </div>
     <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
     <script type='text/javascript'>
         SDK.applicationId = "8084411693033336948";
         var sdk = new SDKConnection();
         var web = new WebAvatar();
         web.connection = sdk;
-        web.avatar = "14071666";
+        web.avatar = "12717910";
         web.voice = "";
         web.voiceMod = "";
-        web.width = "250";
-        web.height = "300";
+        web.width = "350";
+        web.height = "500";
         web.createBox();
         startDictation();
-        httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: "hi" }, function (data) {
-            console.log("http: ", data);
-        })
+
         function startDictation() {
 
             if (window.hasOwnProperty('webkitSpeechRecognition')) {
@@ -75,29 +64,31 @@
                 recognition.onresult = function (e) {
                     var foundText = e.results[0][0].transcript;
                     console.log(foundText);
+                    document.getElementById('message').innerHTML += `<span id="user">${foundText} :<b>You</b></span><br>`
                     if (foundText == "text not found") {
                         console.log("something");
                     }
                     else {
                         httpPostAsync("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/5eae027e-ea34-47dd-a3fc-d06bb6f97e77/generateAnswer", { question: foundText }, function (data) {
                             var res = findAnswer(data);
+                            document.getElementById('message').innerHTML += `<span id="bot"><b>Eva</b>: ${res}</span><br>`
                             web.addMessage(res, "", "", "")
                             web.processMessages();
                             recognition.stop();
                             setTimeout(() => {
                                 startDictation();
-                            }, res.length*1000);
+                            }, res.length * 1000);
                         })
                     }
-
-
                 };
 
                 recognition.onerror = function (e) {
                     console.log("found error", e);
                     recognition.stop();
+                    setTimeout(() => {
+                        startDictation();
+                    }, 1000);
                 }
-
             }
         }
 
@@ -128,3 +119,38 @@
 </body>
 
 </html>
+
+<!-- <div id="bot"></div>
+<script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+<script src="https://cdn.botframework.com/botframework-webchat/latest/CognitiveServices.js"></script>
+<script>
+    var speechOptions = {
+        speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: 'a0fc129873f441488defffa380d34d55' }),
+
+        speechSynthesizer: new CognitiveServices.SpeechSynthesizer(
+            {
+                subscriptionKey: 'a0fc129873f441488defffa380d34d55',
+                gender: CognitiveServices.SynthesisGender.Female,
+                voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+            })
+    }
+
+    var user = guid();
+    BotChat.App({
+        directLine: { secret: '3h8VQ2panyw.cwA.7p4.QV97cGLXWebGc0cNtZzCM8X1_6u5AypYukmX7myAw_I' },
+        user: { id: user, name: 'You' },
+        bot: { id: 'website' },
+        resize: 'detect',
+        speechOptions: speechOptions
+    }, document.getElementById("bot"));
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    }
+</script> -->
