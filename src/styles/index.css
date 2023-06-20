@@ -1,0 +1,99 @@
+/*
+Description: PostCSS stylesheet for the site, using OpenProps.
+Author: SIM IT Club.
+*/
+
+/* ================================================================= */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* ================================================================= */
+/* Generic Style Declarations */
+
+:root {
+    --color-fg: black;
+    --color-bg: white;
+    --color-fg-nav: var(--color-bg); /* <header> and <footer> */
+    --color-bg-nav: var(--color-fg); /* <header> and <footer> */
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-1);
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: auto;
+    min-height: 100vh;
+}
+
+header, footer, main {
+    width: 100vw;
+    margin: 0 auto;
+
+    > :not(#HeaderWrapper, #FooterWrapper, #MainWrapper) {
+        /* Signal illegal element */
+        background-color: red;
+
+        &::before {
+            content: "Illegal Element";
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#HeaderWrapper, #FooterWrapper, #MainWrapper {
+    max-width: 85%;
+    margin: auto;
+    /* developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries */
+    container-type: inline-size;
+}
+
+/* ================================================================= */
+/* Style <header> and <footer> (color, border, etc.) */
+
+footer {
+    color: var(--color-fg-nav);
+    background-color: var(--color-bg-nav);
+}
+
+header {
+    box-shadow: var(--shadow-1);
+}
+
+footer {
+    border-top: 2px solid var(--gray-8);
+}
+
+/* EOF */

@@ -1,15 +1,39 @@
 ---
+import { Image } from "astro:assets";
+import '@styles/index.css'
+import card from '@images/placeholder.jpg'
+import Meta from '@components/Meta.astro';
+import logo from '@images/logo.jpg';
+import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
+const _t = SITE_TITLE;
+const _d = SITE_DESCRIPTION;
+const _c = card;
 ---
-
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+	<Meta title={ _t } description={ _d } image={ _c } format='webp'/>
+</head>
+<body>
+
+<header role="banner">
+	<div id="HeaderWrapper">
+		<h1>Header</h1>
+		<nav role="navigation">
+		</nav>
+	</div>
+</header>
+
+<main>
+	<div id="MainWrapper">
+		Main
+	</div>
+</main>
+
+<footer>
+	<div id="FooterWrapper">
+		Footer
+	</div>
+</footer>
+</body>
 </html>
