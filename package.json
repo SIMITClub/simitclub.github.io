@@ -10,6 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.6.5"
+    "astro": "^2.6.5",
+    "astro-icon": "^0.8.1",
+    "sharp": "^0.32.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "open-props": "^1.5.9",
+    "postcss-jit-props": "^1.0.13",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^8.5.0"
   }
 }
