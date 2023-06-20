@@ -1,8 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import '@styles/index.css'
-import card from '@images/placeholder.jpg'
 import Meta from '@components/Meta.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import card from '@images/placeholder.jpg'
 import logo from '@images/logo.jpg';
 import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
 const _t = SITE_TITLE;
@@ -15,25 +17,12 @@ const _c = card;
 	<Meta title={ _t } description={ _d } image={ _c } format='webp'/>
 </head>
 <body>
-
-<header role="banner">
-	<div id="HeaderWrapper">
-		<h1>Header</h1>
-		<nav role="navigation">
-		</nav>
-	</div>
-</header>
-
+<Header/>
 <main>
 	<div id="MainWrapper">
 		Main
 	</div>
 </main>
-
-<footer>
-	<div id="FooterWrapper">
-		Footer
-	</div>
-</footer>
+<Footer/>
 </body>
 </html>
