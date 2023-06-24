@@ -40,6 +40,14 @@ p, h1, h2, h3, h4, h5, h6 {
     --color-bg: white;
     --color-fg-nav: var(--color-bg); /* <header> and <footer> */
     --color-bg-nav: var(--color-fg); /* <header> and <footer> */
+    --color-fg-link: color-mix(in oklab,
+        var(--color-bg-nav),
+        var(--color-fg-nav) 90%
+    );
+    --color-fg-line: color-mix(in oklab,
+        var(--color-bg-nav),
+        var(--color-fg-nav) 25%
+    );
 }
 
 body {
@@ -93,7 +101,114 @@ header {
 }
 
 footer {
-    border-top: 2px solid var(--gray-8);
+    border-top: 2px solid var(--color-fg-line);
+}
+
+/* ================================================================= */
+/* Header */
+
+#HeaderWrapper {
+}
+
+/* ================================================================= */
+/* Main */
+
+/* ================================================================= */
+/* Footer */
+
+#FooterWrapper {
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.1em; margin-bottom: .25em; }
+    font-size: .8em;
+    /* Use margin: instead.*/
+    margin-top: 2.5em;
+
+    ul {
+        list-style: none;
+        padding: unset;
+    }
+
+    a {
+        color: var(--color-fg-link);
+        text-decoration-color: transparent;
+    }
+
+    a:hover {
+        text-decoration-color: inherit;
+    }
+
+    /* Columns of links */
+    > nav {
+        /*background-color: var(--teal-6);*/
+        display: grid;
+        /* Four Columns */
+        grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+        > *:first-child {
+            align-self: center;
+            margin-left: 2em;
+        }
+        @media (width <= 768px) {
+            > *:first-child {
+                padding-bottom: .5em;
+                justify-self: flex-start;
+                margin-left: 0;
+            }
+            /*background-color: var(--stone-6);*/
+            grid-template-columns: 1fr;
+            h2 {
+                margin-bottom: .25em;
+            }
+            > ul + ul {
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: .1em;
+                    background-color: var(--color-fg-line);
+                    margin-top: .5em;
+                    margin-bottom: .5em;
+                }
+            }
+        }
+    }
+
+    /* Horizontal Rule */
+    hr {
+        margin: 2em 0 1em;
+        border: none;
+        padding-top: 1px;
+        background-color: var(--color-fg-line);
+    }
+
+    /* Copyright */
+    > div {
+        color: var(--color-fg-link);
+        font-size: clamp(.95em, 1vw, 1em);
+        /*background-color: gray;*/
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        gap: .5em;
+        > nav > ul {
+            margin-right: 1em;
+            /*background-color: white;*/
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5em;
+            li:not(:last-child)::after {
+                content: "";
+                display: inline-block;
+                width: .25em;
+                height: .5em;
+                margin-left: .5em;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23444'/%3E%3C/svg%3E");
+            }
+        }
+    }
 }
 
 /* EOF */

@@ -1,0 +1,47 @@
+---
+import Icon from 'astro-icon';
+import {HTMLAttributes} from "astro/types";
+interface Props extends HTMLAttributes<'a'> {
+  // e.g. "GitHub"
+  text?: string;
+  // "mdi:github"
+  icon?: string;
+  li?: boolean;
+}
+const {
+  href,
+  target = '_blank',
+  text,
+  icon,
+  li = false,
+  ...props
+} = Astro.props;
+---
+{
+  li ?
+  <li>
+    <a href={href} target={target} {...props}>
+      {icon && <Icon name={icon}/>}
+      {text && icon ? <span>{text}</span> : text}
+    </a>
+  </li>
+    :
+  <a href={href} target={target} {...props}>{icon &&
+    <Icon name={icon}/>}
+    {text && icon ? <span>{text}</span> : text}
+  </a>
+}
+<style lang="postcss">
+a:has(svg):has(span) {
+  display: flex;
+  align-items: center;
+}
+[astro-icon] {
+  width: 1em;
+  height: 1em;
+  color: inherit;
+}
+a:has(svg):has(span) [astro-icon] {
+  margin-right: .25em;
+}
+</style>

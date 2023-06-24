@@ -1,7 +1,53 @@
 ---
+import {SITE_TITLE} from 'src/consts';
+import Link from '@components/Link.astro';
 ---
-<footer>
-    <div id="FooterWrapper">
-        Footer
+<footer role="contentinfo">
+  <div id="FooterWrapper">
+    <nav role="navigation" aria-labelledby="Footer Menu">
+      <h2>{SITE_TITLE}</h2>
+      <ul>
+        <li><h3>Blog</h3></li>
+        <li><a href="/blog/author">Authors</a></li>
+        <li><a href="/blog/category">Categories</a></li>
+        <li><a href="/blog/posts">Posts</a></li>
+      </ul>
+      <ul>
+        <li><h3>About</h3></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="mailto:it@mymail.sim.edu.sg">Email</a></li>
+        <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u">Sign up for SIM IT Club</a></li>
+        <li><a href="https://project1095.simge.edu.sg/student-life/special-interest-clubs/sim-it-club/">
+          Student Development Page
+        </a></li>
+      </ul>
+      <ul>
+        <li><h3>Connect</h3></li>
+        <Link li href="https://www.facebook.com/simitclub/" text="Facebook" icon="mdi:facebook" />
+        <Link li href="https://github.com/simitclub" text="GitHub" icon="mdi:github" />
+        <Link li href="https://www.instagram.com/simitclub/" text="Instagram" icon="mdi:instagram" />
+        <Link li href="https://www.linkedin.com/company/simitc/" text="LinkedIn" icon="mdi:linkedin" />
+        <Link li href="https://twitter.com/simitclub" text="Twitter" icon="mdi:twitter" />
+      </ul>
+    </nav>
+    <hr/>
+    <div>
+      <nav>
+        <ul>
+          <!-- TODO
+          https://docs.astro.build/en/guides/rss/
+          <li><a href="/feed">RSS</a></li>
+          https://docs.astro.build/en/guides/integrations-guide/sitemap/#overview
+          <li><a href="/site-map">Site Map</a></li>
+          -->
+          <li><a href="/privacy-statement">Privacy Statement</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/accessiblity-statement">Accessibility Statement</a></li>
+        </ul>
+      </nav>
+      <p>
+        &copy; {new Date().getFullYear()} {SITE_TITLE}
+      </p>
     </div>
+  </div>
 </footer>
