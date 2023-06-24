@@ -1,47 +1,47 @@
-import { defineCollection, reference, z } from 'astro:content';
+import {defineCollection, reference, z} from 'astro:content';
 
 const memberCollection = defineCollection({
-    type: 'data',
-    schema: z
-        .object({
+  type: 'data',
+  schema: z
+    .object({
 
-            name: z.object({
-                first: z.string(),
-                last: z.string().optional(),
-            }),
+      name: z.object({
+        first: z.string(),
+        last: z.string().optional(),
+      }),
 
-        }).strict()
+    }).strict()
 });
 
 const categoryCollection = defineCollection({
-    type: 'data',
-    schema: z
-        .object({
+  type: 'data',
+  schema: z
+    .object({
 
-            title: z.string(),
-            description: z.string(),
+      title: z.string(),
+      description: z.string(),
 
-        }).strict()
+    }).strict()
 });
 
 const postCollection = defineCollection({
-    type: "content",
-    schema: z
-        .object({
+  type: "content",
+  schema: z
+    .object({
 
-            authors: z
-                .array(reference('members'))
-                .default(['_default']),
-            categories: z
-                .array(reference('category'))
-                .default([]),
-            title: z.string(),
+      authors: z
+        .array(reference('members'))
+        .default(['_default']),
+      categories: z
+        .array(reference('category'))
+        .default([]),
+      title: z.string(),
 
-        }).strict()
+    }).strict()
 });
 
 export const collections = {
-    'members': memberCollection,
-    'category': categoryCollection,
-    'posts': postCollection,
+  'members': memberCollection,
+  'category': categoryCollection,
+  'posts': postCollection,
 };
