@@ -33,6 +33,18 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================================================= */
+/* Variables */
+
+:root {
+    --color-sim-black: #231F20;
+    --color-sim-blue: oklch(72% .135 225);
+    --color-sim-blue-l1: oklch(82% .12 225);
+    --color-sim-blue-d1: oklch(62% .105 225);
+    --color-sim-blue-d2: oklch(52% .09 225);
+    --color-sim-red: #E4002B;
+}
+
+/* ================================================================= */
 /* Generic Style Declarations */
 
 :root {
@@ -54,14 +66,14 @@ body {
     font-family: var(--font-sans);
     font-size: var(--font-size-1);
     color: var(--color-fg);
-    background-color: var(--color-bg);
+    background-color: var(--pink-2);
     display: grid;
     grid-template-rows: auto 1fr auto;
     margin: auto;
     min-height: 100vh;
 }
 
-header, footer, main {
+body > :is(header, footer, main) {
     width: 100vw;
     margin: 0 auto;
 
@@ -82,26 +94,30 @@ header, footer, main {
 }
 
 #HeaderWrapper, #FooterWrapper, #MainWrapper {
-    max-width: 85%;
+    max-width: 1024px;
     margin: auto;
     /* developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries */
-    container-type: inline-size;
+    width: 85%;
+    @media (width <= 425px) {
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
 }
 
 /* ================================================================= */
 /* Style <header> and <footer> (color, border, etc.) */
 
-footer {
+body > footer {
     color: var(--color-fg-nav);
     background-color: var(--color-bg-nav);
-}
-
-header {
-    box-shadow: var(--shadow-1);
-}
-
-footer {
     border-top: 2px solid var(--color-fg-line);
+
+}
+
+body > header {
+    box-shadow: var(--shadow-1);
+    background-color: var(--color-fg-nav);
 }
 
 /* ================================================================= */
@@ -112,6 +128,11 @@ footer {
 
 /* ================================================================= */
 /* Main */
+
+body > main {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
 
 /* ================================================================= */
 /* Footer */
