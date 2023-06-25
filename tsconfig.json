@@ -3,6 +3,7 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "baseUrl": ".",
+    "allowJs": true,
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
