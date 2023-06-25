@@ -1,8 +1,13 @@
 ---
+const { pathname } = Astro.url;
 ---
 <header role="banner">
-    <div id="HeaderWrapper">
-        <h1>Header</h1>
+    <div id="HeaderWrapper" class="content-container">
+        {
+            pathname === '/'
+            ? <h1>SIM IT Club</h1> // Root page, i.e. simitclub.github.io/index.html
+            : <h2>SIM IT Club</h2> // Other pages.
+        }
         <nav role="navigation">
         </nav>
     </div>
