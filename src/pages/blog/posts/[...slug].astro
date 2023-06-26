@@ -1,10 +1,12 @@
 ---
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import Meta from "@components/Meta.astro";
-import {CollectionEntry, getCollection, getEntry, getEntries} from 'astro:content';
 import {Image} from "astro:assets";
+import {getCollection, getEntries} from 'astro:content';
+import {Members, Posts, Categories} from "@content/config";
+import Footer from '@components/Footer.astro';
 import DateLocale from "@components/DateLocale.astro";
+import Layout from "@layouts/Default.astro";
+import {SITE_DESCRIPTION, SITE_TITLE} from "../../../consts";
+import {getEntry} from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -14,98 +16,74 @@ export async function getStaticPaths() {
   }));
 }
 
-type Props = CollectionEntry<'posts'>;
 const post = Astro.props;
 const {Content} = await post.render();
 
-const postAuthors = await getEntries(post.data.authors);
-// const postRelated = await getEntries(post.data.related);
-// const postCategories = await getEntries(post.data.category);
+const { datePublished, title } = post.data;
 
-const authorName = (author): string => author.data.name.last
+const postAuthors = await getEntries(post.data.authors);
+const postRelated = await getEntries(post.data.related);
+const postCategories = await getEntries(post.data.categories);
+
+const authorName = (author: Members): string => author.data.name.last
   ? `${author.data.name.first} ${author.data.name.last}`
   : author.data.name.first;
 
-const authorImg = (author) => author.data.img
-  ? `<Image src={author.data.img.src} alt={author.data.img.alt} format="webp" />`.trim()
-  : null
-;
+const authorLink = (author: Members) => `
+  <a href="/posts/members/${author.slug}"
+     target="_blank"
+     rel="noopener noreferrer">${authorName(author)}</a>
+  `.trim();
 ---
-<html lang="en">
-<head>
-  <Meta title={post.title} description={post.description} image={post.img} format='webp'/>
-</head>
-<Header/>
-<main>
-  <div id="MainWrapper">
-
-    <h1>{post.data.title}</h1>
-    {
-      <article>
-        <aside>
-          <DateLocale date={post.data.datePublished}/>
-          <ul role="group">
-            {
-              postAuthors.map((author) => (
-                <li>
-                  <ul>
-                    {
-                      <li>
-                        <a href={`/posts/members/${author.slug}`} target="_blank" rel="noopener noreferrer">
-                          {authorName(author)}
-                        </a>
-                      </li>
-                    }
-                    {
-                      author.data.img &&
-                      <li>
-                        <Image src={author.data.img.src} alt={author.data.img.alt} format="webp"/>
-                      </li>
-                    }
-                  </ul>
-                </li>
-              ))
-            }
-          </ul>
-        </aside>
-        <Content/>
-      </article>
-    }
+<Layout title={SITE_TITLE} description={ SITE_DESCRIPTION } classList={['post']}>
+    <h1>{title}</h1>
+    <article>
+      <DateLocale date={datePublished}/>
+      <aside class="coauthor" role="note">
+        <ol role="group" aria-label="Authors">
+          {
+            postAuthors.map((author: Members) => (
+              <li class="coauthor" set:html={authorLink(author)} />
+            ))
+          }
+        </ol>
+      </aside>
+      <Content/>
+    </article>
     <hr/>
     <footer>
-      a
-      <hr />
-      a
+      {
+        postAuthors.map((author: Members) => (
+          <div class="coauthor">
+            <Image src={author.data.img.src} alt={author.data.img.alt} format="webp"/>
+            <div>
+              {<h3>{author.data.name.first}</h3>}
+              {<p>{author.data.bio}</p>}
+              {
+                /* TODO: Render author markdown
+                */
+              }
+            </div>
+          </div>
+        ))
+      }
+      <hr/>
+      {
+        postRelated.map((related: Posts) => (
+          <div class="related">
+            <h3>Related</h3>
+            <a href={`/blog/posts/${related.slug}`}>{related.data.title}</a>
+          </div>
+        ))
+      }
+      <hr/>
+      {
+        postCategories.map((category: Categories) => (
+          <div class="category">
+            <h3>Category</h3>
+            <a href={`/blog/category/${category.id}`}>{category.data.title}</a>
+          </div>
+        ))
+      }
     </footer>
-  </div>
-</main>
-<Footer/>
-<style lang="postcss" is:global>
-  p {
-    margin: 1em 0;
-  }
-  article > aside:first-of-type :is(ul, ol, li) {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  article > aside:first-of-type > :is(ul, ol) > li > ul {
-    background: green;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    img {
-      /* set this to be the first item of the flexbox */
-      order: 1;
-      border-radius: 50%;
-      width: 2em;
-      height: 2em;
-    }
-  }
-  article > aside:first-of-type > :is(ul, ol) {
-    display: flex;
-  }
-  article > aside:first-of-type > :is(ul, ol) > li:not(:first-of-type)::before {
-    content: ", ";
-  }
-</style>
+</Layout>
