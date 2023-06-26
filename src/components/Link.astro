@@ -17,22 +17,25 @@ const {
   ...props
 } = Astro.props;
 ---
+
 {
-  li ?
-  <li>
-    <a href={href} target={target} {...props}>
-      {icon && <Icon name={icon}/>}
-      {text && icon ? <span>{text}</span> : text}
-    </a>
-  </li>
-    :
-  <a href={href} target={target} {...props}>{icon &&
-    <Icon name={icon}/>}
-    {text && icon ? <span>{text}</span> : text}
-  </a>
+li ?
+<li>
+<a href={href} target={target} class={text && icon && "link-icon"} {...props}>
+{icon && <Icon name={icon}/>}
+{text && icon ? <span>{text}</span> : text}
+</a>
+</li>
+   :
+<a href={href} target={target} class={text && icon && "link-icon"} {...props}>
+{icon && <Icon name={icon}/>}
+{text && icon ? <span>{text}</span> : text}
+</a>
 }
 <style lang="postcss">
-a:has(svg):has(span) {
+  li > .link-icon {
+  }
+.link-icon {
   display: flex;
   align-items: center;
 }
@@ -41,7 +44,7 @@ a:has(svg):has(span) {
   height: 1em;
   color: inherit;
 }
-a:has(svg):has(span) [astro-icon] {
+.link-icon [astro-icon] {
   margin-right: .25em;
 }
 </style>

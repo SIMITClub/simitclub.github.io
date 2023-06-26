@@ -1,14 +1,15 @@
 ---
-const { pathname } = Astro.url;
+const {pathname} = Astro.url;
+import {SITE_TITLE} from 'src/consts';
 ---
-<header role="banner">
-    <div id="HeaderWrapper" class="content-container">
-        {
-            pathname === '/'
-            ? <h1>SIM IT Club</h1> // Root page, i.e. simitclub.github.io/index.html
-            : <h2>SIM IT Club</h2> // Other pages.
-        }
-        <nav role="navigation">
-        </nav>
-    </div>
+<header role="banner" id="site-header">
+<div class="content-container">
+{
+  pathname === '/'
+    ? <h1 class="site-title">{SITE_TITLE}</h1>
+    : <h2 class="site-title"><a href="/">{SITE_TITLE}</a></h2>
+}
+<nav role="navigation">
+</nav>
+</div>
 </header>
