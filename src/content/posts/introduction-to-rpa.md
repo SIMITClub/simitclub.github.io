@@ -1,10 +1,18 @@
 ---
-title: "Traditional Automation v. RPA"
-description: "A comparison of traditional automation and RPA"
-datePublished: "2022-08-03"
+title: "Introduction to RPA"
+description: "A primer to RPA, and its differences from traditional automation and software robotics."
+datePublished: 2022-08-03
 authors:
-  - "0-default"
   - "baraq-kamsani"
+  - "benedict-ong"
+categories:
+  - "rpa"
+img:
+  src: "@images/posts/traditional-automation-vs-rpa.jpg"
+  alt: "Isometric illustration of Robotic Process Automation."
+  origin: "https://www.freepik.com/free-vector/data-extraction-concept-illustration_12325511.htm"
+related:
+  - "rpa-for-data-migration"
 ---
 
 Automation has been with us for a very long time and has always been the 
