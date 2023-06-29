@@ -147,8 +147,6 @@ body > main {
 /* Footer */
 
 footer[role="contentinfo"] > div.content-container {
-    h2 { font-size: 1.5em; }
-
     h3 { font-size: 1.1em; margin-bottom: .25em; }
 
     font-size: clamp(.85em, 1vw, .95em);
@@ -176,13 +174,14 @@ footer[role="contentinfo"] > div.content-container {
         /* Four Columns */
         grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
 
-        > h2 {
-            align-self: center;
+        > img {
             margin-left: 2em;
+            max-height: 255px;
+            max-width: 255px;
         }
 
         @media (width <= 768px) {
-            > h2 {
+            > img {
                 padding-bottom: .5em;
                 justify-self: flex-start;
                 margin-left: 0;

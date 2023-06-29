@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import logo from '@images/logo-dark.png';
 import {SITE_TITLE} from 'src/consts';
 import Link from '@components/Link.astro';
 const register = "https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u";
@@ -6,7 +8,7 @@ const register = "https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60
 <footer role="contentinfo" id="site-footer">
 <div class="content-container">
 <nav role="navigation" aria-labelledby="Footer Menu">
-<h2>{SITE_TITLE}</h2>
+<Image src={logo} alt="SIM IT Club Logo" />
 <ul>
 <li><h3>Blog</h3></li>
 <Link li={true} href="/blog/author" text="Authors" />
