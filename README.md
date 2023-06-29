@@ -35,3 +35,13 @@ All commands are run from the root of the project, from a terminal:
 [PostCSS Documentation]: https://postcss.org/docs/
 
 [Open Props]: https://open-props.style/
+
+## License
+
+| Resource    | License                         |
+|-------------|---------------------------------|
+| [Syncopate] | [Apache 2.0][Syncopate-License] |
+
+[Syncopate]: https://fonts.google.com/specimen/Syncopate/about
+
+[Syncopate-License]: https://www.apache.org/licenses/LICENSE-2.0.txt

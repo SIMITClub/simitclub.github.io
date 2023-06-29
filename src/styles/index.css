@@ -7,6 +7,7 @@ Author URI: https://simitclub.github.io/
 
 @import "reset.css";
 @import "variables.css";
+@import "fonts.css";
 
 /* ================================================================= */
 /* Generic Style Declarations */
@@ -90,12 +91,47 @@ header[role="banner"] {
 /* ================================================================= */
 /* Header */
 
+#site-header > .content-container {
+    margin: .25em auto;
+}
+
 .site-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-family: Syncopate, var(--font-sans);
     font-weight: var(--font-weight-7);
+    text-transform: uppercase;
+    --color-hyphen: #d4070e;
+    --margin-hypen: .35em;
+
     a {
         color: inherit;
         text-decoration: none;
+    }
+
+    &::before, &::after {
+        content: "—";
+        font-size: .85em;
+        font-weight: var(--font-weight-7);
+        display: inline-block;
+        color: var(--color-hyphen);
+    }
+
+    &::before {
+        margin-right: var(--margin-hypen);
+    }
+
+    &::after {
+        margin-left: var(--margin-hypen);
+    }
+
+    &:has(a:hover) {
+        &::before, &::after {
+            color: inherit;
+        }
+    }
+
+    &:has(a):active {
+        color: var(--color-hyphen);
     }
 }
 
