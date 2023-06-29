@@ -57,10 +57,10 @@ EOF
 "$oci" cp "$(find "$(pwd)" -name "woff2.py" -type f -exec realpath {} \;)" fonttools:/home/nonroot
 
 # Generate .woff2 files.
-podman exec -u root -w "$dir" fonttools python3 woff2.py
+"$oci" exec -u root -w "$dir" fonttools python3 woff2.py
 
 # Set read and write permissions for all users.
-podman exec -u root -w "$dir" fonttools chmod 644 ./*.woff2
+"$oci" exec -u root -w "$dir" fonttools chmod 644 ./*.woff2
 
 # Remove build files.
 rm -f ./woff2.py
