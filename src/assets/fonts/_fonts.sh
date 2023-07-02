@@ -1,8 +1,8 @@
 #!/bin/sh
 
 #
-# Download and convert .ttf files to .woff2 files, using an OCI runtime with
-# python3 and fonttools installed.
+# Download and convert .ttf files to .woff and .woff2 files,
+# using an OCI runtime with python3 and fonttools installed.
 #
 
 # Exit if script is not run from the source directory.
@@ -14,56 +14,47 @@ test "$(command -v podman  && podman  -v | grep podman)"  && oci=podman
 test "$(command -v docker  && docker  -v | grep docker)"  && oci=docker
 test -z "$oci" && printf %s\\n "No OCI runtime found." && exit 1
 
-# Remove existing font files.
-rm -f ./*.ttf ./*.woff2
-
-# Kill and remove the container (to reset) if it's running.
-sleep 1 && "$oci" container list -a | grep fonttools && "$oci" rm -f fonttools
-
+# Set variables.
+container_name="fonttools"
 dir="/home/nonroot"
-url="https://github.com/google/fonts/raw/main/"
+url="https://github.com/google/fonts/raw/main"
+exec_arg="-u root -w $dir $container_name"
 
-# Run the container in the background.
-"$oci" run --rm -d            \
---security-opt label=disable  \
---entrypoint=/usr/bin/top     \
---name=fonttools              \
--v "$(pwd)/":"$dir":rw        \
-cgr.dev/chainguard/python:latest-dev
+# Remove existing font files.
+rm -f ./*.ttf ./*.woff ./*.woff2
+
+# Reset container.
+if "$oci" ps -a --format "{{.Names}}" | grep "$container_name"; then
+"$oci" kill "$container_name"
+"$oci" rm -f "$container_name"
+fi
+
+# Run container.
+"$oci" run --rm                                 \
+           --detach                             \
+           --security-opt label=disable         \
+           --entrypoint "/usr/bin/top"          \
+           --name "$container_name"             \
+           --volume "$(pwd)/":"$dir":rw         \
+           cgr.dev/chainguard/python:latest-dev
 
 # Install fonttools[woff] for python3.
-"$oci" exec -u root fonttools /bin/sh -c 'pip install fonttools[woff]'
+"$oci" exec -u root fonttools pip install "fonttools[woff]"
 
-# Download .ttf files.
-printf "/apache/syncopate/Syncopate-Bold.ttf
-/apache/syncopate/Syncopate-Regular.ttf
+# Download and convert .ttf files.
+printf "apache/syncopate/Syncopate-Bold.ttf
+apache/syncopate/Syncopate-Regular.ttf
 " | while read -r line; do
-"$oci" exec -u root -w "$dir" fonttools /bin/sh -c "wget \"${url}${line}\""
+filename="$(basename "$line")"
+"$oci" exec $exec_arg wget "${url}/${line}"
+"$oci" exec $exec_arg fonttools ttLib.woff2 compress -o "${filename%.*}.woff"  "${filename}"
+"$oci" exec $exec_arg fonttools ttLib.woff2 compress -o "${filename%.*}.woff2" "${filename}"
 done
 
-# Create a Python script to convert .ttf files to .woff2 files.
-tee ./woff2.py <<EOF
-import glob
-import os
-from fontTools.ttLib import TTFont
-for path in glob.iglob('./*.ttf'):
-    f = TTFont(path)
-    f.flavor = 'woff2'
-    f.save(os.path.splitext(path)[0] + '.woff2')
-quit()
-EOF
-
-# Copy the Python script to the container.
-"$oci" cp "$(find "$(pwd)" -name "woff2.py" -type f -exec realpath {} \;)" fonttools:/home/nonroot
-
-# Generate .woff2 files.
-"$oci" exec -u root -w "$dir" fonttools python3 woff2.py
-
 # Set read and write permissions for all users.
-"$oci" exec -u root -w "$dir" fonttools chmod 644 ./*.woff2
+"$oci" exec $exec_arg chmod 644 ./*.woff2 ./*.woff
 
 # Remove build files.
-rm -f ./woff2.py
 rm -f ./*.ttf
 
-unset oci dir url
+unset oci dir url exec_arg container_name

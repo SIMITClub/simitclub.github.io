@@ -3,8 +3,28 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/src/assets/fonts/Syncopate-Bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url('/src/assets/fonts/Syncopate-Bold.woff2') format('woff2'),
+       url('/src/assets/fonts/Syncopate-Bold.woff')  format('woff');
+  unicode-range: U+0000-00FF, /* Latin-1 Supplement */
+                 U+0131,      /* Turkish I dotless */
+                 U+0152-0153, /* BCP 47 */
+                 U+02BB-02BC, /* Spacing Modifier Letters */
+                 U+02C6,      /* Modifier Letter Circumflex Accent */
+                 U+02DA,      /* Ring Above */
+                 U+02DC,      /* Small Tilde */
+                 U+0304,      /* Combining Macron */
+                 U+0308,      /* Combining Diaeresis */
+                 U+0329,      /* Combining Vertical Line Below */
+                 U+2000-206F, /* General Punctuation */
+                 U+2074,      /* Superscripts and Subscripts */
+                 U+20AC,      /* Euro sign */
+                 U+2122,      /* Trade mark sign */
+                 U+2191,      /* Arrows */
+                 U+2193,      /* Arrows */
+                 U+2212,      /* Mathematical Operators */
+                 U+2215,      /* Mathematical Operators */
+                 U+FEFF,      /* Zero width non-breaking space */
+                 U+FFFD;      /* Replacement character */
 }
 
 @font-face {
@@ -12,6 +32,26 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/src/assets/fonts/Syncopate-Regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url('/src/assets/fonts/Syncopate-Regular.woff2') format('woff2'),
+       url('/src/assets/fonts/Syncopate-Regular.woff')  format('woff');
+  unicode-range: U+0000-00FF, /* Latin-1 Supplement */
+                 U+0131,      /* Turkish I dotless */
+                 U+0152-0153, /* BCP 47 */
+                 U+02BB-02BC, /* Spacing Modifier Letters */
+                 U+02C6,      /* Modifier Letter Circumflex Accent */
+                 U+02DA,      /* Ring Above */
+                 U+02DC,      /* Small Tilde */
+                 U+0304,      /* Combining Macron */
+                 U+0308,      /* Combining Diaeresis */
+                 U+0329,      /* Combining Vertical Line Below */
+                 U+2000-206F, /* General Punctuation */
+                 U+2074,      /* Superscripts and Subscripts */
+                 U+20AC,      /* Euro sign */
+                 U+2122,      /* Trade mark sign */
+                 U+2191,      /* Arrows */
+                 U+2193,      /* Arrows */
+                 U+2212,      /* Mathematical Operators */
+                 U+2215,      /* Mathematical Operators */
+                 U+FEFF,      /* Zero width non-breaking space */
+                 U+FFFD;      /* Replacement character */
 }
