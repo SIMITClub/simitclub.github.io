@@ -102,7 +102,6 @@ a[href="#Skip"] {
 
 a[href="#Skip"]:link,
 a[href="#Skip"]:visited {
-    color: oklab();
     text-decoration: none;
 }
 
