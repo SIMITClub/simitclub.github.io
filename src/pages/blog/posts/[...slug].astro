@@ -42,9 +42,9 @@ const authorLink = (author: Members) => `
       <aside class="coauthor" role="note">
         <ol role="group" aria-label="Authors">
           {
-            postAuthors.map((author: Members) => (
+            postAuthors.map((author: Members) =>
               <li class="coauthor" set:html={authorLink(author)} />
-            ))
+            )
           }
         </ol>
       </aside>
@@ -53,37 +53,27 @@ const authorLink = (author: Members) => `
     <hr/>
     <footer>
       {
-        postAuthors.map((author: Members) => (
-          <div class="coauthor">
-            <Image src={author.data.img.src} alt={author.data.img.alt} format="webp"/>
-            <div>
-              {<h3>{author.data.name.first}</h3>}
-              {<p>{author.data.bio}</p>}
-              {
-                /* TODO: Render author markdown
-                */
-              }
-            </div>
-          </div>
-        ))
+        postRelated.length > 0 &&
+        <div class="related">
+          {
+            postRelated.map((related: Posts) => (
+              <h3>Related</h3>
+              <a href={`/blog/posts/${related.slug}`}>{related.data.title}</a>
+            ))
+          }
+        </div>
       }
       <hr/>
       {
-        postRelated.map((related: Posts) => (
-          <div class="related">
-            <h3>Related</h3>
-            <a href={`/blog/posts/${related.slug}`}>{related.data.title}</a>
-          </div>
-        ))
-      }
-      <hr/>
-      {
-        postCategories.map((category: Categories) => (
-          <div class="category">
-            <h3>Category</h3>
-            <a href={`/blog/category/${category.id}`}>{category.data.title}</a>
-          </div>
-        ))
+        postCategories.length > 0 &&
+        <div class="category">
+          {
+            postCategories.map((category: Categories) => (
+              <h3>Category</h3>
+              <a href={`/blog/category/${category.id}`}>{category.data.title}</a>
+            ))
+          }
+        </div>
       }
     </footer>
 </Layout>

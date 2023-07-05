@@ -3,7 +3,9 @@ import { Image } from "astro:assets";
 import logo from '@images/logo-dark.png';
 import {SITE_TITLE} from 'src/consts';
 import Link from '@components/Link.astro';
-const register = "https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u";
+const registerMember = "https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u";
+const registerSubcommittee = "https://forms.office.com/Pages/ResponsePage.aspx?id=eF0ERJXMGE2FJ2YvtdVEB5U1GPMULWxBsRS9u5MtoPJUREJYSE9OMDI2OTQ3UVNQQVY5QVMxVFJBQi4u";
+
 ---
 <footer role="contentinfo" id="site-footer">
 <div class="content-container">
@@ -19,9 +21,9 @@ const register = "https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60
 <li><h3>About</h3></li>
 <Link li={true} href="/about" text="About" />
 <Link li={true} href="mailto:it@mymail.sim.edu.sg" text="Email" />
-<Link li={true} href={register} text="Sign up for SIM IT Club" />
-<Link li={true} href="https://project1095.simge.edu.sg/student-life/special-interest-clubs/sim-it-club/"
-      text="Student Development Page" />
+<Link li={true} href={registerMember} text="Sign up for SIM IT Club (Member)" />
+<Link li={true} href={registerSubcommittee} text="Sign up for SIM IT Club (Subcommittee)" />
+<Link li={true} href="https://project1095.simge.edu.sg/student-life/special-interest-clubs/sim-it-club/" text="Student Development Page" />
 </ul>
 <ul>
 <li><h3>Connect</h3></li>
