@@ -1,4 +1,13 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "eamodio.gitlens",
+    "bierner.markdown-preview-github-styles",
+    "voldemortensen.rainbow-tags",
+    "dbaeumer.vscode-eslint",
+    "MS-vsliveshare.vsliveshare",
+    "formulahendry.auto-rename-tag",
+    "kamikillerto.vscode-colorize"
+  ],
   "unwantedRecommendations": []
 }
