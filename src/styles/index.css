@@ -42,8 +42,8 @@ body {
         }
 
         /* Signal illegal elements */
-        > :not(.content-container) {
-            background-color: red;
+        > :not(.content-container, a[href="#Skip"]) {
+            background-color: yellow;
 
             &::before {
                 content: "Illegal Element";
@@ -127,16 +127,17 @@ a[href="#Skip"]:hover {
 /* ================================================================= */
 /* Header */
 
+
 #site-header > .content-container {
-    margin: .25em auto;
+    margin: .5em auto;
 }
 
 .site-title {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-family: Syncopate, var(--font-sans);
     font-weight: var(--font-weight-7);
     text-transform: uppercase;
-    --color-hyphen: #d4070e;
+    --color-hyphen: var(--color-itc-red);
     --margin-hypen: .35em;
 
     a {
@@ -144,6 +145,7 @@ a[href="#Skip"]:hover {
         text-decoration: none;
     }
 
+    /* Style "SIM IT Club" as "— SIM IT Club —" */
     &::before, &::after {
         content: "—";
         font-size: .85em;
@@ -160,6 +162,7 @@ a[href="#Skip"]:hover {
         margin-left: var(--margin-hypen);
     }
 
+    /* Turn logo to homepage link for pages other than /index.html */
     &:has(a:hover) {
         &::before, &::after {
             color: inherit;
@@ -196,10 +199,13 @@ footer[role="contentinfo"] > div.content-container {
     a {
         color: var(--color-fg-link);
         text-decoration-color: transparent;
-    }
-
-    a:hover {
-        text-decoration-color: inherit;
+        &:hover {
+            text-decoration-color: inherit;
+        }
+        &:active,
+        &:focus {
+            color: color-mix(in oklab, white 25%, red);
+        }
     }
 
     /* Columns of links */
@@ -286,6 +292,10 @@ footer[role="contentinfo"] > div.content-container {
 
 /* ================================================================= */
 /* /src/pages/index.astro */
+
+#site-description {
+    font-size: 1.5em;
+}
 
 .index-list-posts {
     display: grid;
