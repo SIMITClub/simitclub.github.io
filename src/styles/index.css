@@ -89,6 +89,42 @@ header[role="banner"] {
 }
 
 /* ================================================================= */
+/* Hidden link to <main> for screen readers. */
+
+a[href="#Skip"] {
+    display: block;
+    color: #fff;
+    background: #000;
+    margin: 0;
+    padding: .5em;
+    font-weight: bold;
+}
+
+a[href="#Skip"]:link,
+a[href="#Skip"]:visited {
+    color: oklab();
+    text-decoration: none;
+}
+
+a[href="#Skip"] {
+    position: absolute;
+    left: -1000px;
+    z-index: 2;
+}
+
+a[href="#Skip"]:active,
+a[href="#Skip"]:focus,
+a[href="#Skip"]:hover {
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+@media print {
+    a[href="#Skip"] { display: none; }
+}
+
+/* ================================================================= */
 /* Header */
 
 #site-header > .content-container {
