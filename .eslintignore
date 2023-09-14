@@ -1,0 +1,4 @@
+.github
+.changeset
+**/*.d.ts
+node_modules/

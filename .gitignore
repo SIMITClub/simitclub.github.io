@@ -1,5 +1,4 @@
-### Astro ###
-# Source: https://github.com/withastro/astro/blob/main/examples/minimal/.gitignore
+# https://github.com/withastro/astro/blob/main/examples/minimal/.gitignore
 dist/
 .astro/
 node_modules/
@@ -9,11 +8,23 @@ yarn-error.log*
 pnpm-debug.log*
 .env
 .env.production
-
-### Environment ###
-# macOS files.
 .DS_Store
-# Text editor files.
-.vscode/
-.idea/
 
+# IDE
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+!.idea/codeStyles/codeStyleConfig.xml
+!.idea/codeStyles/Project.xml
+!.idea/inspectionProfiles/Project_Default.xml
+!.idea/jsLinters/eslint.xml
+!.idea/jsLibraryMappings.xml
+!.idea/prettier.xml
+
+# Build
+src/assets/fonts/*.eot
+src/assets/fonts/*.otf
+src/assets/fonts/*.ttf
+src/assets/fonts/*.woff
+src/assets/fonts/*.woff2
