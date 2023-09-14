@@ -13,411 +13,406 @@ Author URI: https://simitclub.github.io/
 /* Generic Style Declarations */
 
 body {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-1);
-    color: var(--color-fg);
-    background-color: var(--gray-0);
-    margin: auto;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-1);
+  color: var(--color-fg);
+  background-color: var(--gray-0);
+  margin: auto;
 
-    /* Footer goes to bottom of page */
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
+  /* Footer goes to bottom of page */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 
-    /* Occupy full width of viewport */
-    > :is(header, footer, main) {
+  /* Occupy full width of viewport */
+  > :is(header, footer, main) {
+    width: 100%;
+    margin: 0 auto;
+
+    > .content-container {
+      max-width: 1440px;
+      margin: auto;
+      width: 85%;
+      @media (width <= 425px) {
         width: 100%;
-        margin: 0 auto;
-
-
-        > .content-container {
-            max-width: 1440px;
-            margin: auto;
-            width: 85%;
-            @media (width <= 425px) {
-                width: 100%;
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-        }
-
-        /* Signal illegal elements */
-        > :not(.content-container, a[href="#Skip"]) {
-            background-color: yellow;
-
-            &::before {
-                content: "Illegal Element";
-                background-color: black;
-                color: white;
-            }
-        }
+        padding-left: 1em;
+        padding-right: 1em;
+      }
     }
 
     /* Signal illegal elements */
-    > :not(header[role="banner"], footer[role="contentinfo"], main) {
-        background-color: red;
+    > :not(.content-container, a[href="#Skip"]) {
+      background-color: yellow;
 
-        &::before {
-            content: "Illegal Element";
-            background-color: black;
-            color: white;
-        }
+      &::before {
+        content: "Illegal Element";
+        background-color: black;
+        color: white;
+      }
     }
+  }
+
+  /* Signal illegal elements */
+  > :not(header[role="banner"], footer[role="contentinfo"], main) {
+    background-color: red;
+
+    &::before {
+      content: "Illegal Element";
+      background-color: black;
+      color: white;
+    }
+  }
 }
 
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* ================================================================= */
 /* Style <header> and <footer> (color, border, etc.) */
 
 footer[role="contentinfo"] {
-    color: var(--color-fg-nav);
-    background-color: var(--color-bg-nav);
-    border-top: 2px solid var(--color-fg-line);
+  color: var(--color-fg-nav);
+  background-color: var(--color-bg-nav);
+  border-top: 2px solid var(--color-fg-line);
 }
 
 header[role="banner"] {
-    box-shadow: var(--shadow-1);
-    background-color: var(--color-fg-nav);
+  box-shadow: var(--shadow-1);
+  background-color: var(--color-fg-nav);
 }
 
 /* ================================================================= */
 /* Hidden link to <main> for screen readers. */
 
 a[href="#Skip"] {
-    display: block;
-    color: #fff;
-    background: #000;
-    margin: 0;
-    padding: .5em;
-    font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #000;
+  margin: 0;
+  padding: 0.5em;
+  font-weight: bold;
 }
 
 a[href="#Skip"]:link,
 a[href="#Skip"]:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a[href="#Skip"] {
-    position: absolute;
-    left: -1000px;
-    z-index: 2;
+  position: absolute;
+  left: -1000px;
+  z-index: 2;
 }
 
 a[href="#Skip"]:active,
 a[href="#Skip"]:focus,
 a[href="#Skip"]:hover {
-    display: block;
-    top: 0;
-    left: 0;
+  display: block;
+  top: 0;
+  left: 0;
 }
 
 @media print {
-    a[href="#Skip"] { display: none; }
+  a[href="#Skip"] {
+    display: none;
+  }
 }
 
 /* ================================================================= */
 /* Header */
 
-
 #site-header > .content-container {
-    margin: .5em auto;
+  margin: 0.5em auto;
 }
 
 .site-title {
-    font-size: 1.75rem;
-    font-family: Syncopate, var(--font-sans);
+  font-size: 1.75rem;
+  font-family: Syncopate, var(--font-sans);
+  font-weight: var(--font-weight-7);
+  text-transform: uppercase;
+  --color-hyphen: var(--color-itc-red);
+  --margin-hypen: 0.35em;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Style "SIM IT Club" as "— SIM IT Club —" */
+  &::before,
+  &::after {
+    content: "—";
+    font-size: 0.85em;
     font-weight: var(--font-weight-7);
-    text-transform: uppercase;
-    --color-hyphen: var(--color-itc-red);
-    --margin-hypen: .35em;
+    display: inline-block;
+    color: var(--color-hyphen);
+  }
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+  &::before {
+    margin-right: var(--margin-hypen);
+  }
 
-    /* Style "SIM IT Club" as "— SIM IT Club —" */
-    &::before, &::after {
-        content: "—";
-        font-size: .85em;
-        font-weight: var(--font-weight-7);
-        display: inline-block;
-        color: var(--color-hyphen);
-    }
+  &::after {
+    margin-left: var(--margin-hypen);
+  }
 
-    &::before {
-        margin-right: var(--margin-hypen);
-    }
-
+  /* Turn logo to homepage link for pages other than /index.html */
+  &:has(a:hover) {
+    &::before,
     &::after {
-        margin-left: var(--margin-hypen);
+      color: inherit;
     }
+  }
 
-    /* Turn logo to homepage link for pages other than /index.html */
-    &:has(a:hover) {
-        &::before, &::after {
-            color: inherit;
-        }
-    }
-
-    &:has(a):active {
-        color: var(--color-hyphen);
-    }
+  &:has(a):active {
+    color: var(--color-hyphen);
+  }
 }
 
 /* ================================================================= */
 /* Main */
 
 body > main {
-    margin-bottom: 2em;
-    margin-top: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 /* ================================================================= */
 /* Footer */
 
 footer[role="contentinfo"] > div.content-container {
-    h3 { font-size: 1.1em; margin-bottom: .25em; }
+  h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.25em;
+  }
 
-    font-size: clamp(.85em, 1vw, .95em);
-    margin-top: 2.5em;
+  font-size: clamp(0.85em, 1vw, 0.95em);
+  margin-top: 2.5em;
 
-    ul {
-        list-style: none;
-        padding: unset;
+  ul {
+    list-style: none;
+    padding: unset;
+  }
+
+  a {
+    color: var(--color-fg-link);
+    text-decoration-color: transparent;
+    &:hover {
+      text-decoration-color: inherit;
+    }
+    &:active,
+    &:focus {
+      color: color-mix(in oklab, white 25%, red);
+    }
+  }
+
+  /* Columns of links */
+
+  > nav {
+    /*background-color: var(--teal-6);*/
+    display: grid;
+    /* Four Columns */
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+
+    > img {
+      margin-left: 2em;
+      max-height: 255px;
+      max-width: 255px;
     }
 
-    a {
-        color: var(--color-fg-link);
-        text-decoration-color: transparent;
-        &:hover {
-            text-decoration-color: inherit;
+    @media (width <= 768px) {
+      > img {
+        padding-bottom: 0.5em;
+        justify-self: flex-start;
+        margin-left: 0;
+      }
+
+      /*background-color: var(--stone-6);*/
+      grid-template-columns: 1fr;
+      h2 {
+        margin-bottom: 0.25em;
+      }
+
+      /* Add a line between each column */
+      > ul + ul {
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 0.1em;
+          background-color: var(--color-fg-line);
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
         }
-        &:active,
-        &:focus {
-            color: color-mix(in oklab, white 25%, red);
-        }
+      }
     }
+  }
 
-    /* Columns of links */
+  /* Use background instead of border color */
 
-    > nav {
-        /*background-color: var(--teal-6);*/
-        display: grid;
-        /* Four Columns */
-        grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+  hr {
+    margin: 2em 0 1em;
+    border: none;
+    padding-top: 1px;
+    background-color: var(--color-fg-line);
+  }
 
-        > img {
-            margin-left: 2em;
-            max-height: 255px;
-            max-width: 255px;
-        }
+  /* Copyright */
 
-        @media (width <= 768px) {
-            > img {
-                padding-bottom: .5em;
-                justify-self: flex-start;
-                margin-left: 0;
-            }
+  > div {
+    color: var(--color-fg-link);
+    font-size: clamp(0.95em, 1vw, 1em);
+    /*background-color: gray;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    gap: 0.5em;
 
-            /*background-color: var(--stone-6);*/
-            grid-template-columns: 1fr;
-            h2 {
-                margin-bottom: .25em;
-            }
+    > nav > ul {
+      margin-right: 1em;
+      /*background-color: white;*/
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
 
-            /* Add a line between each column */
-            > ul + ul {
-                &::before {
-                    content: "";
-                    display: block;
-                    width: 100%;
-                    height: .1em;
-                    background-color: var(--color-fg-line);
-                    margin-top: .5em;
-                    margin-bottom: .5em;
-                }
-            }
-        }
+      li:not(:last-child)::after {
+        content: "";
+        display: inline-block;
+        width: 0.25em;
+        height: 0.5em;
+        margin-left: 0.5em;
+        background: var(--color-fg-bullet);
+      }
     }
-
-    /* Use background instead of border color */
-
-    hr {
-        margin: 2em 0 1em;
-        border: none;
-        padding-top: 1px;
-        background-color: var(--color-fg-line);
-    }
-
-    /* Copyright */
-
-    > div {
-        color: var(--color-fg-link);
-        font-size: clamp(.95em, 1vw, 1em);
-        /*background-color: gray;*/
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 1em;
-        gap: .5em;
-
-        > nav > ul {
-            margin-right: 1em;
-            /*background-color: white;*/
-            display: flex;
-            flex-wrap: wrap;
-            gap: .5em;
-
-            li:not(:last-child)::after {
-                content: "";
-                display: inline-block;
-                width: .25em;
-                height: .5em;
-                margin-left: .5em;
-                background: var(--color-fg-bullet);
-            }
-        }
-    }
+  }
 }
 
 /* ================================================================= */
 /* /src/pages/index.astro */
 
 #site-description {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .index-list-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1em;
-    counter-reset: grid;
-    gap: 1em;
-    margin-bottom: 2em;
-    /*> div:first-of-type {
-        grid-column: 1 / span 3;
-        grid-row: 1;
-    }*/
-    > div {
-        margin: 1rem;
-        padding: 1em;
-        max-width: 200px;
-        background-color: var(--stone-1);
-        border: var(--border-size-1) solid var(--stone-4);
-        box-shadow: var(--shadow-2);
-        border-radius: var(--radius-4);
-        container: card / inline-size;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+  counter-reset: grid;
+  gap: 1em;
+  margin-bottom: 2em;
 }
 @container card (min-width: 1px) {
-    img {
-        border-radius: var(--radius-3);
-        margin-bottom: 3cqi;
-    }
+  img {
+    border-radius: var(--radius-3);
+    margin-bottom: 3cqi;
+  }
 }
 
 /* ================================================================= */
 /* /src/pages/blog/post/[...slug].astro */
 
 .post {
-    max-width: 768px;
-    margin: auto;
+  max-width: 768px;
+  margin: auto;
 
-    p { margin: 1em 0; }
+  p {
+    margin: 1em 0;
+  }
 
-    aside.coauthor:first-of-type :is(ul, ol, li) {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+  aside.coauthor:first-of-type :is(ul, ol, li) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    aside.coauthor:first-of-type > :is(ul, ol[role="group"]) {
-        margin-top: .25em;
-        display: flex;
-    }
+  aside.coauthor:first-of-type > :is(ul, ol[role="group"]) {
+    margin-top: 0.25em;
+    display: flex;
+  }
 
-    hr {
-        margin: 2em 0;
-    }
+  hr {
+    margin: 2em 0;
+  }
 }
 
 li.coauthor {
-    white-space: nowrap;
+  white-space: nowrap;
 
-    a {
-        color: inherit;
-    }
+  a {
+    color: inherit;
+  }
 
-    &:not(:last-child)::after {
-        content: "";
-        display: inline-block;
-        width: .25em;
-        height: .5em;
-        margin: 0 .5em;
-        background: var(--color-fg-bullet);
-    }
+  &:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 0.25em;
+    height: 0.5em;
+    margin: 0 0.5em;
+    background: var(--color-fg-bullet);
+  }
 }
 
 div.coauthor {
-    border: .5svw solid gray;
-    display: flex;
-    padding: 1em;
-    font-size: .95em;
-    container: coauthor-footer / inline-size;
-    background: white;
+  border: 0.5svw solid gray;
+  display: flex;
+  padding: 1em;
+  font-size: 0.95em;
+  container: coauthor-footer / inline-size;
+  background: white;
 
-    &:not(:first-child) {margin-top: 1em;}
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
 
-    > * {align-self: center;}
+  > * {
+    align-self: center;
+  }
 }
 
 @container coauthor-footer (min-width: 1px) {
-    img {
-        width: clamp(3em, 5vw, 5em);
-        height: clamp(3em, 5vw, 5em);
-        margin-right: 1em;
+  img {
+    width: clamp(3em, 5vw, 5em);
+    height: clamp(3em, 5vw, 5em);
+    margin-right: 1em;
+  }
 
-    }
+  h3 {
+    /* align left */
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1em, 1cqi + 1rem, 1rem);
+    font-weight: 500;
+  }
 
-    h3 {
-        /* align left */
-        margin: 0;
-        text-align: left;
-        font-size: clamp(1em, 1cqi + 1rem, 1rem);
-        font-weight: 500;
-    }
-
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 }
 
 @container coauthor-footer (max-width: 400px) {
-    img {
-        display: none;
-    }
+  img {
+    display: none;
+  }
 
-    h3 {
-        /* align left */
-        margin: 0;
-        text-align: left;
-        font-size: clamp(1em, 1cqi + 1rem, 1rem);
-        font-weight: 500;
-    }
+  h3 {
+    /* align left */
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1em, 1cqi + 1rem, 1rem);
+    font-weight: 500;
+  }
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 }
-
 
 /* EOF */
