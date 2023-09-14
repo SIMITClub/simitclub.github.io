@@ -5,9 +5,7 @@
     "bierner.markdown-preview-github-styles",
     "voldemortensen.rainbow-tags",
     "dbaeumer.vscode-eslint",
-    "MS-vsliveshare.vsliveshare",
-    "formulahendry.auto-rename-tag",
-    "kamikillerto.vscode-colorize"
+    "editorconfig.editorconfig"
   ],
   "unwantedRecommendations": []
 }
