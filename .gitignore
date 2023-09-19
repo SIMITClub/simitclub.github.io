@@ -13,6 +13,7 @@ pnpm-debug.log*
 # IDE
 .vscode/
 !.vscode/extensions.json
+!.vscode/launch.json
 !.vscode/settings.json
 .idea/
 .idea/shelf/
