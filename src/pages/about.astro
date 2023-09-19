@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import "@styles/index.css";
+import logo from "@images/logo.jpg";
+import { SITE_TITLE, SITE_DESCRIPTION } from "src/consts";
+import { Members, Posts, Categories } from "@content/config";
+import Layout from "@layouts/Default.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+import DateLocale from "@components/DateLocale.astro";
+import BlogCard from "@components/BlogCard.astro";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+
+</Layout>
