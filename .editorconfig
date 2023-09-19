@@ -3,20 +3,24 @@ root = true
 
 [*]
 charset = utf-8
-end_of_line = lf
-indent_size = 2
-indent_style = tab # https://github.com/withastro/astro/pull/2253
 insert_final_newline = true
-max_line_length = 80
 trim_trailing_whitespace = true
 
-[*.md]
-max_line_length = 0
-trim_trailing_whitespace = false
+# Used by Prettier
+max_line_length = 80
+indent_size = 2
+indent_style = tab
+end_of_line = lf
 
+# Overrides
 [{.*,*.md,*.mdx,*.json,*.toml,*.yml,*.yaml}]
-indent_size = 4
+max_line_length = 65535
 indent_style = space
 
+# Overrides
+[*.{md,mdx}]
+trim_trailing_whitespace = false
+
+# Overrides
 [COMMIT_EDITMSG]
-max_line_length = 0
+max_line_length = 72
