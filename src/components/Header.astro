@@ -11,6 +11,21 @@ import {SITE_TITLE} from 'src/consts';
     : <h2 class="site-title"><a href="/">{SITE_TITLE}</a></h2>
 }
 <nav role="navigation">
+		<ul>
+			<li><a href="a">Home</a></li>
+			<li><a href="a">About</a></li>
+			<li><a href="a">Join us</a></li>
+		</ul>
+		<button type:"button" onclick="toggleBtn()" id="btn"><span></span></button>
 </nav>
 </div>
+<script is: inline>
+	var btn = document.getElementById("btn");
+
+	function toggleBtn(){
+		btn.classList.toggle("active");
+	}
+
+</script>
 </header>
+
