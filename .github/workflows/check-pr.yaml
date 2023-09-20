@@ -26,20 +26,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test --if-present
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Project
         run: npm run build
 
-      # - name: Install, build, and upload your site output
-      #   uses: withastro/action@v0
-      #   with:
-      #     path: .
-      #     node-version: 18
-      #     package-manager: npm
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v0
+        with:
+          path: .
+          node-version: '18.x'
+          package-manager: npm
 
