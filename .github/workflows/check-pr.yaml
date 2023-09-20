@@ -1,0 +1,42 @@
+name: Build on pull request
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read # check if needed
+  pages: write # check if needed
+  id-token: write # check if needed
+  pull-requests: write
+  checks: write
+  statuses: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # - name: Build Project
+      #   run: npm run build
+
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v0
+        with:
+          path: .
+          node-version: '18.x'
+          package-manager: npm
+

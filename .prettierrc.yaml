@@ -1,0 +1,30 @@
+# Some options are configured by the .editorconfig file, hence omitted here.
+# See https://prettier.io/docs/en/options.html
+
+useTabs: true # Default is false.
+semi: true
+singleQuote: true
+quoteProps: as-needed
+trailingComma: all
+bracketSpacing: true
+bracketSameLine: false
+arrowParens: always
+
+plugins:
+  - prettier-plugin-astro
+overrides:
+  - files:
+      - '.*'
+      - '*.md'
+      - '*.mdx'
+      - '*.json'
+      - '*.toml'
+      - '*.yml'
+      - '*.yaml'
+    options:
+      printWidth: 65535
+      useTabs: false
+  - files:
+      - '**/*.astro'
+    options:
+      parser: astro

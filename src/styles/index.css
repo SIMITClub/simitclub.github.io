@@ -237,6 +237,67 @@ a[href="#Skip"]:hover {
   }
 }
 
+	nav{
+		display: flex;
+		align-items: center;
+		padding: 20px 8%
+	}
+
+	nav ul{
+		flex: 1;
+		text-align: right;
+	}
+
+	nav ul li{
+		display: inline-block;
+		list-style: none;
+		padding: 0 5px
+	}
+
+	nav ul li a{
+		text-decoration: none;
+		color: #000;
+		font-weight: bold;
+		padding: 15px 20px;
+		transition: 0.3s;
+	}
+
+	nav ul li a:hover{
+		color: #0ba8eb;
+		transition: 0.5s;
+	}
+
+	/* Used for night mode switch */
+	button{
+		background: #efefef;
+		height: 30px;
+		width: 60px;
+		border-radius: 20px;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+		margin-left: 25px;
+		transition: background 0.5s;
+	}
+
+	button span{
+		display: block;
+		background: #999;
+		height: 26px;
+		width: 26px;
+		border-radius: 50%;
+		margin-left: 2px;
+		transition: background 0.5s, margin-left 0.5s;
+	}
+
+	.active{
+		background: #003ab9;
+	}
+
+	.active span{
+		background: #eeeeee;
+		margin-left: 22px;
+	}
 /* ================================================================= */
 /* Main */
 
