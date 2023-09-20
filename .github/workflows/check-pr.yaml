@@ -25,12 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: checkout
     steps:
-      - name: Check for current directory
-        run: ls -al
-
       - name: Install, build, and upload your site output
         uses: withastro/action@v0
         with:
           path: .
+          run: ls -al
           node-version: 18
           package-manager: npm
