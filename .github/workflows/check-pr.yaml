@@ -30,8 +30,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build Project
-        run: npm run build
+      # - name: Build Project
+      #   run: npm run build
 
       - name: Install, build, and upload your site output
         uses: withastro/action@v0
