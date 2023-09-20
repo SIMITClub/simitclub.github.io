@@ -29,6 +29,10 @@ jobs:
         uses: withastro/action@v0
         with:
           path: .
-          run: ls -al
           node-version: 18
           package-manager: npm
+      - name: Debug
+        run: |
+          pwd
+          ls -al
+          find . -name "package.json"
