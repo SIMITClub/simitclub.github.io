@@ -20,7 +20,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-        run: echo Checkout complete!
 
   build:
     runs-on: ubuntu-latest
@@ -30,6 +29,5 @@ jobs:
         uses: withastro/action@v0
         with:
           path: .
-          node-version: 18.4.1
+          node-version: 18
           package-manager: npm
-          run: echo Build complete!
