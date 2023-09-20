@@ -27,3 +27,7 @@ jobs:
     steps:
       - name: Install, build, and upload your site output
         uses: withastro/action@v0
+        with:
+          path: .
+          #node-version: 18
+          package-manager: npm
