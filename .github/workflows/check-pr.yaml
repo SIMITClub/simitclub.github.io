@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: checkout
     steps:
+      - name: Change directory to project
+        run: cd /home/runner/work/simitclub.github.io/simitclub.github.io
+
       - name: Install, build, and upload your site output
         uses: withastro/action@v0
         with:
