@@ -1,0 +1,12 @@
+
+
+<button type:"button" onclick="toggleBtn()" id="btn"><span></span></button>
+
+<script is: inline>
+	var btn = document.getElementById("btn");
+
+	function toggleBtn(){
+		/* Each time button is toggled, everything here happens */
+		btn.classList.toggle("active");
+	}
+</script>
