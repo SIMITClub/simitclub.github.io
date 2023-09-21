@@ -148,6 +148,21 @@ header[role="banner"] {
 		margin-left: 22px;
 	 }
 }
+/* ================================================================= */
+/* Theme Switch */
+
+:root {
+	/* TODO: Add implementation */
+	:has(.active) {
+		/* TODO: Add implementation */
+	}
+	@media (prefers-color-scheme: dark) {
+		/* TODO: Add implementation */
+		:has(.active) {
+			/* TODO: Add implementation */
+		}
+	}
+}
 
 /* ================================================================= */
 /* Hidden link to <main> for screen readers. */
