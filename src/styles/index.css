@@ -115,38 +115,6 @@ header[role="banner"] {
 		color: #0ba8eb;
 		transition: 0.5s;
 	 }
-
-	 /* Used for night mode switch */
-	 button{
-		background: #efefef;
-		height: 30px;
-		width: 60px;
-		border-radius: 20px;
-		border: 0;
-		outline: 0;
-		cursor: pointer;
-		margin-left: 25px;
-		transition: background 0.5s;
-	 }
-
-	 button span{
-		display: block;
-		background: #999;
-		height: 26px;
-		width: 26px;
-		border-radius: 50%;
-		margin-left: 2px;
-		transition: background 0.5s, margin-left 0.5s;
-	 }
-
-	 .active{
-		background: #003ab9;
-	 }
-
-	 .active span{
-		background: #eeeeee;
-		margin-left: 22px;
-	 }
 }
 /* ================================================================= */
 /* Theme Switch */
