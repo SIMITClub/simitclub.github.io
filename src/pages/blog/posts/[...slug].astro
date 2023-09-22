@@ -33,25 +33,25 @@ const authorLink = (author: Members) => `
   <a href="/posts/members/${author.slug}"
      target="_blank"
      rel="noopener noreferrer">${authorName(author)}</a>
-  `.trim();
+`.trim();
 ---
 <Layout title={SITE_TITLE} description={ SITE_DESCRIPTION } classList={['post']}>
-    <h1>{title}</h1>
-    <article>
-      <DateLocale date={datePublished}/>
-      <aside class="coauthor" role="note">
-        <ol role="group" aria-label="Authors">
-          {
-            postAuthors.map((author: Members) =>
-              <li class="coauthor" set:html={authorLink(author)} />
-            )
-          }
-        </ol>
-      </aside>
-      <Content/>
-    </article>
-    <hr/>
-    <footer>
+	<h1>{title}</h1>
+	<article>
+		<DateLocale date={datePublished}/>
+		<aside class="coauthor" role="note">
+			<ol role="group" aria-label="Authors">
+				{
+					postAuthors.map((author: Members) =>
+						<li class="coauthor" set:html={authorLink(author)} />
+					)
+				}
+			</ol>
+		</aside>
+		<Content/>
+	</article>
+	<hr/>
+	<footer>
       {
         postRelated.length > 0 &&
         <div class="related">

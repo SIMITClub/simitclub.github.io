@@ -12,6 +12,7 @@ arrowParens: always
 
 plugins:
   - prettier-plugin-astro
+
 overrides:
   - files:
       - '.*'

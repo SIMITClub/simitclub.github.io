@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  date: Date;
+	date: Date;
 }
 
 const { date, utc = false, omitYear = false } = Astro.props;
@@ -11,20 +11,18 @@ const dateSingapore = new Date(`${yyyy}-${mm}-${dd}T00:00:00+08:00`);
 ---
 
 <time datetime={dateSingapore.toISOString()}>
-  {
-    !omitYear
-    &&
-    dateSingapore.toLocaleDateString('en-us', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      timeZone: 'Asia/Singapore',
-    })
-    ||
-    dateSingapore.toLocaleDateString('en-us', {
-      month: 'long',
-      day: 'numeric',
-      timeZone: 'Asia/Singapore',
-    })
-  }
+	{
+		(!omitYear &&
+			dateSingapore.toLocaleDateString('en-us', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+				timeZone: 'Asia/Singapore',
+			})) ||
+			dateSingapore.toLocaleDateString('en-us', {
+				month: 'long',
+				day: 'numeric',
+				timeZone: 'Asia/Singapore',
+			})
+	}
 </time>
