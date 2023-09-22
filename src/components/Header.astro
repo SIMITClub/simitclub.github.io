@@ -7,19 +7,19 @@ import ToggleBtn from '@components/ToggleBtn.astro';
 <header role="banner" id="site-header">
 <a href="#Skip" accesskey="s">Skip to content.</a>
 <div class="content-container">
+	<nav role="navigation">
 {
   pathname === '/'
     ? <h1 class="site-title">{SITE_TITLE}</h1>
     : <h2 class="site-title"><a href="/">{SITE_TITLE}</a></h2>
 }
-	<nav role="navigation">
 		<ul>
 			<Link li={true} href="placeholder" text="Home"/>
 			<Link li={true} href="placeholder" text="About"/>
 			<Link li={true} href="placeholder" text="Join us"/>
 		</ul>
 		<ToggleBtn/>
+
 	</nav>
 </div>
 </header>
-
