@@ -13,7 +13,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format-astro": "npx prettier --write src/**/*.astro",
+    "format-other": "prettier --write .",
+    "format": "npm run format-astro && npm run format-other"
   },
   "dependencies": {
     "astro": "^3.1.0",
