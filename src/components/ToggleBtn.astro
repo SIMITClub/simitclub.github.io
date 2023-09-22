@@ -1,13 +1,79 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'button'> {
+	id: string;
+}
+
+const { id, ...props } = Astro.props;
 ---
 
-<button type="button" id="btn"><span></span></button>
+<toggle-btn data-id={id}
+	><button id={id} type="button" class="btn" {...props}>
+		<span></span></button
+	></toggle-btn
+>
 
-<script is:inline>
-	let btn = document.getElementById("btn");
+<script>
+	// Define the behaviour for our new type of HTML element.
+	class ToggleBtn extends HTMLElement {
+		constructor() {
+			super();
+			const id = this.dataset.id;
 
-	btn.addEventListener("click", function(){
-		/* Each time button is toggled, everything here happens */
-		btn.classList.toggle("active");
-	});
+			if (id === undefined) {
+				console.error('id was not provided');
+				return;
+			}
+
+			const btn = document.getElementById(id);
+			if (btn === null) {
+				console.log('error');
+				return;
+			}
+
+			// Each time the button is clicked, toggle class.
+			btn.addEventListener('click', () => {
+				btn.classList.toggle('active');
+				// TODO: Add functionality
+			});
+		}
+	}
+
+	// Tell the browser to use our ToggleBtn class for <toggle-btn> elements.
+	customElements.define('toggle-btn', ToggleBtn);
 </script>
+<style>
+	.btn {
+		background: #efefef;
+		height: 30px;
+		width: 60px;
+		border-radius: 20px;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+		margin-left: 25px;
+		transition: background 0.5s;
+	}
+
+	.btn span {
+		display: block;
+		background: #999;
+		height: 26px;
+		width: 26px;
+		border-radius: 50%;
+		margin-left: 2px;
+		transition:
+			background 0.5s,
+			margin-left 0.5s;
+	}
+
+	.active {
+		background: #003ab9;
+	}
+
+	.active span {
+		background: #eeeeee;
+		margin-left: 22px;
+	}
+</style>
