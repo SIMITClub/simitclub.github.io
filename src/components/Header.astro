@@ -1,31 +1,24 @@
 ---
 const {pathname} = Astro.url;
 import {SITE_TITLE} from 'src/consts';
+import Link from '@components/Link.astro';
+import ToggleBtn from '@components/ToggleBtn.astro';
 ---
 <header role="banner" id="site-header">
 <a href="#Skip" accesskey="s">Skip to content.</a>
 <div class="content-container">
+	<nav role="navigation">
 {
   pathname === '/'
     ? <h1 class="site-title">{SITE_TITLE}</h1>
     : <h2 class="site-title"><a href="/">{SITE_TITLE}</a></h2>
 }
-<nav role="navigation">
 		<ul>
-			<li><a href="a">Home</a></li>
-			<li><a href="a">About</a></li>
-			<li><a href="a">Join us</a></li>
+			<Link li={true} href="#" text="About"/>
+			<Link li={true} href="https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u" text="Join us"/>
 		</ul>
-		<button type:"button" onclick="toggleBtn()" id="btn"><span></span></button>
-</nav>
+		<ToggleBtn/>
+
+	</nav>
 </div>
-<script is: inline>
-	var btn = document.getElementById("btn");
-
-	function toggleBtn(){
-		btn.classList.toggle("active");
-	}
-
-</script>
 </header>
-

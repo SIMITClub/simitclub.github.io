@@ -1,0 +1,13 @@
+---
+---
+
+<button type="button" id="btn"><span></span></button>
+
+<script is:inline>
+	let btn = document.getElementById("btn");
+
+	btn.addEventListener("click", function(){
+		/* Each time button is toggled, everything here happens */
+		btn.classList.toggle("active");
+	});
+</script>
