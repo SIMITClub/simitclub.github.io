@@ -12,13 +12,24 @@ export interface Props {
 	classList?: string;
 }
 
-const { title, description, image, format = 'webp', classList = '' } = Astro.props;
+const {
+	title,
+	description,
+	image,
+	format = 'webp',
+	classList = '',
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<Meta title={title} description={description} image={image} format={format} />
+		<Meta
+			title={title}
+			description={description}
+			image={image}
+			format={format}
+		/>
 	</head>
 	<body>
 		<!-- HEADER -->
