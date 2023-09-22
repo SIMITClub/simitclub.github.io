@@ -14,9 +14,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format-astro": "npx prettier --write src/**/*.astro",
-    "format-other": "prettier --write .",
-    "format": "npm run format-astro && npm run format-other"
+    "format": "prettier -w \"**/*\" --ignore-unknown --cache"
   },
   "dependencies": {
     "astro": "^3.1.0",
