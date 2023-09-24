@@ -1,20 +1,32 @@
 ---
 const { pathname } = Astro.url;
 import { SITE_TITLE } from 'src/consts';
+import Link from '@components/Link.astro';
+import ToggleBtn from '@components/ToggleBtn.astro';
 ---
 
 <header role="banner" id="site-header">
 	<a href="#Skip" accesskey="s">Skip to content.</a>
 	<div class="content-container">
-		{
-			pathname === '/' ? (
-				<h1 class="site-title">{SITE_TITLE}</h1>
-			) : (
-				<h2 class="site-title">
-					<a href="/">{SITE_TITLE}</a>
-				</h2>
-			)
-		}
-		<nav role="navigation"></nav>
+		<nav role="navigation">
+			{
+				pathname === '/' ? (
+					<h1 class="site-title">{SITE_TITLE}</h1>
+				) : (
+					<h2 class="site-title">
+						<a href="/">{SITE_TITLE}</a>
+					</h2>
+				)
+			}
+			<ul>
+				<Link li={true} href="#" text="About" />
+				<Link
+					li={true}
+					href="https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u"
+					text="Join us"
+				/>
+			</ul>
+			<ToggleBtn id="btn" />
+		</nav>
 	</div>
 </header>

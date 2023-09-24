@@ -85,6 +85,52 @@ footer[role='contentinfo'] {
 header[role='banner'] {
 	box-shadow: var(--shadow-1);
 	background-color: var(--color-fg-nav);
+
+	nav {
+		display: flex;
+		align-items: center;
+		/* padding: 20px 8%; */
+	}
+
+	nav ul {
+		flex: 1;
+		text-align: right;
+	}
+
+	nav ul li {
+		display: inline-block;
+		list-style: none;
+		padding: 0 5px;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: #000;
+		font-weight: bold;
+		padding: 15px 20px;
+		transition: 0.3s;
+	}
+
+	nav ul li a:hover {
+		color: #0ba8eb;
+		transition: 0.5s;
+	}
+}
+/* ================================================================= */
+/* Theme Switch */
+
+:root {
+	/* TODO: Add implementation */
+	:has(.active) {
+		/* TODO: Add implementation */
+	}
+	@media (prefers-color-scheme: dark) {
+		/* TODO: Add implementation */
+		:has(.active) {
+			/* TODO: Add implementation */
+		}
+	}
+
 }
 
 /* ================================================================= */
