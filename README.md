@@ -19,7 +19,7 @@ All commands are run from the root of the project, from a terminal:
 ## Resources
 
 | Resource                | Description                   |
-|-------------------------| ----------------------------- |
+| ----------------------- | ----------------------------- |
 | [Project Wiki]          | Environment setup and docs.   |
 | [Original README]       | From Astro's minimal example. |
 | [Astro Documentation]   | Astro Docs                    |

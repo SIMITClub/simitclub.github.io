@@ -15,8 +15,8 @@ const hasImageAttribution = (post: Posts) => {
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<p id="site-description">
-		Equipping SIM students with Informational Technology skills which are vital in the working
-		world.
+		Equipping SIM students with Informational Technology skills which are vital
+		in the working world.
 	</p>
 	<br />
 	<h2>Latest Posts</h2>
@@ -27,7 +27,8 @@ const hasImageAttribution = (post: Posts) => {
 				.filter((post: Posts) => post.data.draft !== true)
 				// Sort posts by date.
 				.sort(
-					(a: Posts, b: Posts) => b.data.datePublished.getTime() - a.data.datePublished.getTime()
+					(a: Posts, b: Posts) =>
+						b.data.datePublished.getTime() - a.data.datePublished.getTime(),
 				)
 				.map((post: Posts) => (
 					<BlogCard
