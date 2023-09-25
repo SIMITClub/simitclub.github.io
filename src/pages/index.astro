@@ -1,51 +1,54 @@
 ---
-import { Image } from 'astro:assets';
-import '@styles/about.css';
-import logo from '@images/logo.jpg';
-import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
-import { Members, Posts, Categories } from '@content/config';
-import Layout from '@layouts/Default.astro';
-import { getCollection, getEntryBySlug } from 'astro:content';
-import DateLocale from '@components/DateLocale.astro';
-import BlogCard from '@components/BlogCard.astro';
+import { Image } from "astro:assets";
+import "@styles/index.css";
+import logo from "@images/logo.jpg";
+import { SITE_TITLE, SITE_DESCRIPTION } from "src/consts";
+import { Members, Posts, Categories } from "@content/config";
+import Layout from "@layouts/Default.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+import DateLocale from "@components/DateLocale.astro";
+import BlogCard from "@components/BlogCard.astro";
+
+const posts = await getCollection("posts");
+
+const hasImageAttribution = (post: Posts) => {
+  return post.data.img.attribution !== undefined;
+};
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<div class = "vision-mission">
-		<h1>Providing in-Campus Platform for IT Enthusiasts</h1>
-		<p>
-			We, as members of the SIM IT club, believe that the journey to understanding and exploring the
-			landscape of modern informational technology, is best taken amongst a community of like-minded
-			individuals. Whether you are a beginner looking for an introduction workshop to core
-			programming concepts. Or an intermediate hoping to apply your course knowledge on a team-based
-			technical project. Or even an advance player preparing to hone your leadership skills for the
-			industry. The IT Club welcomes you with a meriad of activities tailored to help you grow as an
-			individual in the fields of IT.
-		</p>
-	</div>
-
-	<h1>Join Us on Various Networking Events</h1>
-	<p>
-		We, as members of the SIM IT club, believe that the journey to understanding and exploring the
-		landscape of modern informational technology, is best taken amongst a community of like-minded
-		individuals. Whether you are a beginner looking for an introduction workshop to core programming
-		concepts. Or an intermediate hoping to apply your course knowledge on a team-based technical
-		project. Or even an advance player preparing to hone your leadership skills for the industry.
-		The IT Club welcomes you with a meriad of activities tailored to help you grow as an individual
-		in the fields of IT.
-	</p>
-
-	<h1>Become a Member of The Subcommitte</h1>
-	<p>
-		We, as members of the SIM IT club, believe that the journey to understanding and exploring the
-		landscape of modern informational technology, is best taken amongst a community of like-minded
-		individuals. Whether you are a beginner looking for an introduction workshop to core programming
-		concepts. Or an intermediate hoping to apply your course knowledge on a team-based technical
-		project. Or even an advance player preparing to hone your leadership skills for the industry.
-		The IT Club welcomes you with a meriad of activities tailored to help you grow as an individual
-		in the fields of IT.
-	</p>
-
-	<h1>Meet Our Excos</h1>
-	<p></p>
+  <p id="site-description">
+    Equipping SIM students with Informational Technology skills which are vital
+    in the working world.
+  </p>
+  <br />
+  <h2>Latest Posts</h2>
+  <div class="index-list-posts">
+    {
+      posts
+      // Exclude drafts.
+        .filter((post: Posts) => post.data.draft !== true)
+        // Sort posts by date.
+        .sort(
+          (a: Posts, b: Posts) => b.data.datePublished - a.data.datePublished
+        )
+        .map((post: Posts) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.datePublished}
+            image={post.data.img}
+            slug={post.slug}
+          />
+        ))
+    }
+    {
+      /*
+      posts.filter((post: Posts) => post.data.draft !== true).sort((a: Posts, b: Posts) => b.data.datePublished - a.data.datePublished).map((post: Posts) => (
+      <div>{
+        <Image src={post.data.img.src} alt={post.data.img.alt}/><h3>{post.data.title}</h3><p>{post.data.description}</p>
+        <DateLocale date={post.data.datePublished} omitYear={true}/>}</div>))
+  */
+    }
+  </div>
 </Layout>
