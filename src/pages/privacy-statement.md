@@ -7,5 +7,5 @@ layout: '@layouts/Default.astro'
 layout: '@layouts/Default.astro'
 ---
 
-[//]: # (Content)
+[//]: # 'Content'
 ```

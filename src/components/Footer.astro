@@ -1,56 +1,93 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 import logo from '@images/logo-dark.png';
-import {SITE_TITLE} from 'src/consts';
+import { SITE_TITLE } from 'src/consts';
 import Link from '@components/Link.astro';
-const registerMember = "https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u";
+const registerMember =
+	'https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u';
 ---
+
 <footer role="contentinfo" id="site-footer">
-<div class="content-container">
-<nav role="navigation" aria-labelledby="Footer Menu">
-<!--<Image src={logo} alt="SIM IT Club Logo" />-->
-<ul>
-<li><h3>Blog</h3></li>
-<Link li={true} href="/blog/author" text="Authors" />
-<Link li={true} href="/blog/category" text="Categories" />
-<Link li={true} href="/blog/posts" text="Posts" />
-</ul>
-<ul>
-<li><h3>About</h3></li>
-<Link li={true} href="/about" text="About" />
-<Link li={true} href="mailto:it@mymail.sim.edu.sg" text="Email" />
-<Link li={true} href={registerMember} text="Sign up for SIM IT Club" />
-<Link li={true} href="https://project1095.simge.edu.sg/student-life/special-interest-clubs/sim-it-club/" text="Student Development Page" />
-</ul>
-<ul>
-<li><h3>Connect</h3></li>
-<Link li={true} href="https://www.facebook.com/simitclub/" text="Facebook" icon="tabler:brand-meta" />
-<Link li={true} href="https://github.com/simitclub" text="GitHub" icon="tabler:brand-github" />
-<Link li={true} href="https://www.instagram.com/simitclub/" text="Instagram" icon="tabler:brand-instagram" />
-<Link li={true} href="https://www.linkedin.com/in/sim-it-club/" text="LinkedIn" icon="tabler:brand-linkedin" />
-<Link li={true} href="https://www.tiktok.com/@simitclub" text="TikTok" icon="tabler:brand-tiktok" />
-<Link li={true} href="https://twitter.com/simitclub" text="Twitter" icon="tabler:brand-twitter" />
-</ul>
-</nav>
-<hr/>
-<div>
-<nav>
-<ul>
-<!--
+	<div class="content-container">
+		<nav role="navigation" aria-labelledby="Footer Menu">
+			<!--<Image src={logo} alt="SIM IT Club Logo" />-->
+			<ul>
+				<li><h3>Blog</h3></li>
+				<Link li={true} href="/blog/author" text="Authors" />
+				<Link li={true} href="/blog/category" text="Categories" />
+				<Link li={true} href="/blog/posts" text="Posts" />
+			</ul>
+			<ul>
+				<li><h3>About</h3></li>
+				<Link li={true} href="/about" text="About" />
+				<Link li={true} href="mailto:it@mymail.sim.edu.sg" text="Email" />
+				<Link li={true} href={registerMember} text="Sign up for SIM IT Club" />
+				<Link
+					li={true}
+					href="https://project1095.simge.edu.sg/student-life/special-interest-clubs/sim-it-club/"
+					text="Student Development Page"
+				/>
+			</ul>
+			<ul>
+				<li><h3>Connect</h3></li>
+				<Link
+					li={true}
+					href="https://www.facebook.com/simitclub/"
+					text="Facebook"
+					icon="tabler:brand-meta"
+				/>
+				<Link
+					li={true}
+					href="https://github.com/simitclub"
+					text="GitHub"
+					icon="tabler:brand-github"
+				/>
+				<Link
+					li={true}
+					href="https://www.instagram.com/simitclub/"
+					text="Instagram"
+					icon="tabler:brand-instagram"
+				/>
+				<Link
+					li={true}
+					href="https://www.linkedin.com/in/sim-it-club/"
+					text="LinkedIn"
+					icon="tabler:brand-linkedin"
+				/>
+				<Link
+					li={true}
+					href="https://www.tiktok.com/@simitclub"
+					text="TikTok"
+					icon="tabler:brand-tiktok"
+				/>
+				<Link
+					li={true}
+					href="https://twitter.com/simitclub"
+					text="Twitter"
+					icon="tabler:brand-twitter"
+				/>
+			</ul>
+		</nav>
+		<hr />
+		<div>
+			<nav>
+				<ul>
+					<!--
 TODO
   https://docs.astro.build/en/guides/rss/
   <li><a href="/feed">RSS</a></li>
   https://docs.astro.build/en/guides/integrations-guide/sitemap/#overview
   <li><a href="/site-map">Site Map</a></li>
 -->
-<li><a href="/privacy-statement">Privacy Statement</a></li>
-<li><a href="/terms-of-service">Terms of Service</a></li>
-<li><a href="/accessiblity-statement">Accessibility Statement</a></li>
-</ul>
-</nav>
-<p>
-&copy; {new Date().getFullYear()} {SITE_TITLE}
-</p>
-</div>
-</div>
+					<li><a href="/privacy-statement">Privacy Statement</a></li>
+					<li><a href="/terms-of-service">Terms of Service</a></li>
+					<li><a href="/accessiblity-statement">Accessibility Statement</a></li>
+				</ul>
+			</nav>
+			<p>
+				&copy; {new Date().getFullYear()}
+				{SITE_TITLE}
+			</p>
+		</div>
+	</div>
 </footer>

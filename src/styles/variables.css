@@ -6,60 +6,63 @@ Author URI: https://simitclub.github.io/
 */
 
 :root {
-  /* School Brand */
-  --color-sim-black: #231f20;
-  --color-sim-blue: #00b5e2;
-  --color-sim-red: #e4002b;
+	/* School Brand */
+	--color-sim-black: #231f20;
+	--color-sim-blue: #00b5e2;
+	--color-sim-red: #e4002b;
 
-  /* Club Brand */
-  --color-itc-red: #d4070e;
+	/* Club Brand */
+	--color-itc-red: #d4070e;
 }
 
 /* ================================================================= */
 /* Base Theme */
 
 :root {
-  /* Light Theme: Background */
-  --color-bg-light: #ffffff;
-  --color-bg-header-light: #000000;
-  --color-bg-footer-light: #000000;
-  /* Light Theme: Foreground */
-  --color-fg-light: #000000;
-  --color-fg-header-light: #ffffff;
-  --color-fg-footer-light: #ffffff;
-  /* Light Theme: Links */
-  --color-fg-link-base-light: #000000;
-  --color-fg-link-hover-light: #000000;
-  --color-fg-link-active-light: #000000;
+	/* Light Theme: Background */
+	--color-bg-light: #ffffff;
+	--color-bg-header-light: #000000;
+	--color-bg-footer-light: #000000;
+	/* Light Theme: Foreground */
+	--color-fg-light: #000000;
+	--color-fg-header-light: #ffffff;
+	--color-fg-footer-light: #ffffff;
+	/* Light Theme: Links */
+	--color-fg-link-base-light: #000000;
+	--color-fg-link-hover-light: #000000;
+	--color-fg-link-active-light: #000000;
 
-  /* Dark Theme: Background */
-  --color-bg-dark: #000000;
-  --color-bg-header-dark: #ffffff;
-  --color-bg-footer-dark: #ffffff;
-  /* Dark Theme: Foreground */
-  --color-fg-dark: #ffffff;
-  --color-fg-header-dark: #000000;
-  --color-fg-footer-dark: #000000;
-  /* Dark Theme: Links */
-  --color-fg-link-base-dark: #ffffff;
-  --color-fg-link-hover-dark: #ffffff;
-  --color-fg-link-active-dark: #ffffff;
+	/* Dark Theme: Background */
+	--color-bg-dark: #000000;
+	--color-bg-header-dark: #ffffff;
+	--color-bg-footer-dark: #ffffff;
+	/* Dark Theme: Foreground */
+	--color-fg-dark: #ffffff;
+	--color-fg-header-dark: #000000;
+	--color-fg-footer-dark: #000000;
+	/* Dark Theme: Links */
+	--color-fg-link-base-dark: #ffffff;
+	--color-fg-link-hover-dark: #ffffff;
+	--color-fg-link-active-dark: #ffffff;
 
-  /* Base Theme */
-  --color-fg: black;
-  --color-bg: white;
-  --color-fg-nav: var(--color-bg); /* <header> and <footer> */
-  --color-bg-nav: var(--color-fg); /* <header> and <footer> */
-  --color-fg-link: color-mix(in oklab,
-  var(--color-bg-nav),
-  var(--color-fg-nav) 90%
-  );
-  --color-fg-line: color-mix(in oklab,
-  var(--color-bg-nav),
-  var(--color-fg-nav) 25%
-  );
-  /* see fill='' */
-  --color-fg-bullet: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23444'/%3E%3C/svg%3E") no-repeat center / contain;
-  --color-fg-footer-bullet: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23444'/%3E%3C/svg%3E") no-repeat center / contain;
+	/* Base Theme */
+	--color-fg: black;
+	--color-bg: white;
+	--color-fg-nav: var(--color-bg); /* <header> and <footer> */
+	--color-bg-nav: var(--color-fg); /* <header> and <footer> */
+	--color-fg-link: color-mix(
+		in oklab,
+		var(--color-bg-nav),
+		var(--color-fg-nav) 90%
+	);
+	--color-fg-line: color-mix(
+		in oklab,
+		var(--color-bg-nav),
+		var(--color-fg-nav) 25%
+	);
+	/* see fill='' */
+	--color-fg-bullet: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23444'/%3E%3C/svg%3E")
+		no-repeat center / contain;
+	--color-fg-footer-bullet: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23444'/%3E%3C/svg%3E")
+		no-repeat center / contain;
 }
-
