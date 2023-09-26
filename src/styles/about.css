@@ -1,19 +1,39 @@
-@import "reset.css";
-@import "variables.css";
-@import "fonts.css";
+@import 'reset.css';
+@import 'variables.css';
+@import 'fonts.css';
 
 .vision-mission {
-
+	text-align: center;
 }
 
-.activities-headings {
-
+.image-text-container-left {
+	padding: 16px;
+	margin: 12px;
+	display: flex;
+	column-gap: 20px;
+	justify-content: left;
 }
 
-.activities-left {
-
+.image-text-container-right {
+	padding: 16px;
+	margin: 12px;
+	display: flex;
+	column-gap: 20px;
+	justify-content: right;
+	text-align: right;
 }
 
-.activities-right {
+.column-2-3 {
+	width: 30%;
+}
 
+.column-2-7 {
+	width: 70%;
+}
+
+.image-box {
+	width: 10%;
+}
+
+.headers {
 }
