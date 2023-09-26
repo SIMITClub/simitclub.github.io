@@ -5,9 +5,11 @@ import Layout from '@layouts/Default.astro';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<div class="vision-mission">
-		<h1>Providing in-Campus Platform for IT Enthusiasts</h1>
-		<p>
+	<div id="section-intro">
+		<h1 class="section-header">
+			Providing in-Campus Platform for IT Enthusiasts
+		</h1>
+		<p class="text-content">
 			We, as members of the SIM IT club, believe that the journey to
 			understanding and exploring the landscape of modern informational
 			technology, is best taken amongst a community of like-minded individuals.
@@ -20,96 +22,111 @@ import Layout from '@layouts/Default.astro';
 		</p>
 	</div>
 
-	<br />
+	<div id="section-activities">
+		<h1 class="section-header">Our Activities</h1>
 
-	<h1 style="text-align:center;">Our Activities</h1>
-
-	<div class="image-text-container-left">
-		<div class="column-2-7">
-			<h2>Acquire New Skills on Industry Relevant Workshops</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque
-				nisl, imperdiet non felis et, pulvinar vulputate dolor. Aenean quis
-				volutpat nisl. Vestibulum eu posuere augue. Pellentesque at consequat
-				odio, vitae pharetra sapien. Phasellus eget ligula eget nisi sodales
-				aliquet euismod at turpis. Donec tincidunt, augue eu rhoncus semper,
-				arcu libero efficitur ante, et ultricies nisl ipsum et metus. Mauris
-				malesuada eleifend maximus.
-			</p>
+		<div class="image-text-container-left">
+			<div class="column-2-7">
+				<h2 class="text-header">
+					Acquire New Skills on Industry Relevant Workshops
+				</h2>
+				<p class="text-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque
+					nisl, imperdiet non felis et, pulvinar vulputate dolor. Aenean quis
+					volutpat nisl. Vestibulum eu posuere augue. Pellentesque at consequat
+					odio, vitae pharetra sapien. Phasellus eget ligula eget nisi sodales
+					aliquet euismod at turpis. Donec tincidunt, augue eu rhoncus semper,
+					arcu libero efficitur ante, et ultricies nisl ipsum et metus. Mauris
+					malesuada eleifend maximus.
+				</p>
+			</div>
+			<div class="column-2-3">
+				<img
+					src="src/assets/images/members/!default.png"
+					alt="exco3"
+					class="image"
+				/>
+			</div>
 		</div>
-		<div class="column-2-3 image-box">
-			<img
-				src="src/assets/images/members/!default.png"
-				alt="exco3"
-				class="exco-image"
-			/>
-		</div>
-	</div>
 
-	<br />
-
-	<div class="image-text-container-right">
-		<div class="column-2-3 image-box">
-			<img
-				src="src/assets/images/members/!default.png"
-				alt="exco3"
-				class="exco-image"
-			/>
+		<div class="image-text-container-right">
+			<div class="column-2-3">
+				<img
+					src="src/assets/images/members/!default.png"
+					alt="exco3"
+					class="image"
+				/>
+			</div>
+			<div class="column-2-7">
+				<h2 class="text-header">Compete for Prizes on Our Hackathon</h2>
+				<p class="text-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque
+					nisl, imperdiet non felis et, pulvinar vulputate dolor. Aenean quis
+					volutpat nisl. Vestibulum eu posuere augue. Pellentesque at consequat
+					odio, vitae pharetra sapien. Phasellus eget ligula eget nisi sodales
+					aliquet euismod at turpis. Donec tincidunt, augue eu rhoncus semper,
+					arcu libero efficitur ante, et ultricies nisl ipsum et metus. Mauris
+					malesuada eleifend maximus.
+				</p>
+			</div>
 		</div>
-		<div class="column-2-7">
-			<h2>Compete for Prizes on Our Hackathon</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque
-				nisl, imperdiet non felis et, pulvinar vulputate dolor. Aenean quis
-				volutpat nisl. Vestibulum eu posuere augue. Pellentesque at consequat
-				odio, vitae pharetra sapien. Phasellus eget ligula eget nisi sodales
-				aliquet euismod at turpis. Donec tincidunt, augue eu rhoncus semper,
-				arcu libero efficitur ante, et ultricies nisl ipsum et metus. Mauris
-				malesuada eleifend maximus.
-			</p>
-		</div>
-	</div>
 
-	<br />
-
-	<div class="image-text-container-left">
-		<div class="column-2-7">
-			<h2>Become a Member of The Subcommitte</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque
-				nisl, imperdiet non felis et, pulvinar vulputate dolor. Aenean quis
-				volutpat nisl. Vestibulum eu posuere augue. Pellentesque at consequat
-				odio, vitae pharetra sapien. Phasellus eget ligula eget nisi sodales
-				aliquet euismod at turpis. Donec tincidunt, augue eu rhoncus semper,
-				arcu libero efficitur ante, et ultricies nisl ipsum et metus. Mauris
-				malesuada eleifend maximus.
-			</p>
-		</div>
-		<div class="column-2-3 image-box">
-			<img
-				src="src/assets/images/members/!default.png"
-				alt="exco3"
-				class="exco-image"
-			/>
+		<div class="image-text-container-left">
+			<div class="column-2-7">
+				<h2 class="text-header">Become a Member of The Subcommitte</h2>
+				<p class="text-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque
+					nisl, imperdiet non felis et, pulvinar vulputate dolor. Aenean quis
+					volutpat nisl. Vestibulum eu posuere augue. Pellentesque at consequat
+					odio, vitae pharetra sapien. Phasellus eget ligula eget nisi sodales
+					aliquet euismod at turpis. Donec tincidunt, augue eu rhoncus semper,
+					arcu libero efficitur ante, et ultricies nisl ipsum et metus. Mauris
+					malesuada eleifend maximus.
+				</p>
+			</div>
+			<div class="column-2-3">
+				<img
+					src="src/assets/images/members/!default.png"
+					alt="exco3"
+					class="image"
+				/>
+			</div>
 		</div>
 	</div>
 
-	<br />
+	<div id="section-excos">
+		<h1 class="section-header">Meet Our Excos</h1>
 
-	<h1 class="excos-gallery">Meet Our Excos</h1>
-	<img
-		src="src/assets/images/members/!default.png"
-		alt="exco1"
-		class="exco-image"
-	/>
-	<img
-		src="src/assets/images/members/!default.png"
-		alt="exco2"
-		class="exco-image"
-	/>
-	<img
-		src="src/assets/images/members/!default.png"
-		alt="exco3"
-		class="exco-image"
-	/>
+		<div class="exco-gallery">
+			<div class="exco-gallery-box">
+				<img
+					src="src/assets/images/members/!default.png"
+					alt="exco1"
+					class="exco-img"
+				/>
+				<h3 class="exco-name"></h3>
+				<h4 class="exco-title"></h4>
+			</div>
+
+			<div class="exco-gallery-box">
+				<img
+					src="src/assets/images/members/!default.png"
+					alt="exco2"
+					class="exco-img"
+				/>
+				<h3 class="exco-name">Ivonne</h3>
+				<h4 class="exco-title">President</h4>
+			</div>
+
+			<div class="exco-gallery-box">
+				<img
+					src="src/assets/images/members/!default.png"
+					alt="exco3"
+					class="exco-img"
+				/>
+				<h3 class="exco-name"></h3>
+				<h4 class="exco-title"></h4>
+			</div>
+		</div>
+	</div>
 </Layout>

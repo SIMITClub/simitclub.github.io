@@ -2,21 +2,34 @@
 @import 'variables.css';
 @import 'fonts.css';
 
-.vision-mission {
+#section-intro {
+	margin: 25px;
+	padding: 25px;
 	text-align: center;
 }
 
+#section-activities {
+	margin: 25px;
+	padding: 25px;
+}
+
+#section-excos {
+	margin: 25px;
+	padding: 25px;
+}
+
 .image-text-container-left {
-	padding: 16px;
-	margin: 12px;
+	margin: 15px;
+	padding: 15px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: left;
+	text-align: left;
 }
 
 .image-text-container-right {
-	padding: 16px;
-	margin: 12px;
+	margin: 15px;
+	padding: 15px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: right;
@@ -31,9 +44,41 @@
 	width: 70%;
 }
 
-.image-box {
-	width: 10%;
+.image {
+	width: 150px;
 }
 
-.headers {
+.section-header {
+	text-align: center;
+}
+
+.text-header {
+}
+
+.text-content {
+}
+
+.exco-gallery {
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.exco-gallery-box {
+	margin: 10px;
+	border: 1px solid #ccc;
+	width: 160px;
+}
+
+.exco-img {
+	width: 100%;
+	height: auto;
+}
+
+.exco-name {
+	text-align: center;
+}
+
+.exco-title {
+	text-align: center;
 }
