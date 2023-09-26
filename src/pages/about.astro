@@ -5,6 +5,18 @@ import Layout from '@layouts/Default.astro';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<div id="club-slogan">
+		<div id="club-slogan-content-container">
+			<img
+				src="src/assets/images/logo-black-red.png"
+				alt="SIM IT Club logo"
+				class="slogan-text"
+			/>
+			<p id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</p>
+			<p id="club-slogan-text-content">WE COLLABORATE, NETWORK, CONNECT.</p>
+		</div>
+		<hr />
+	</div>
 	<section id="section-intro">
 		<h1 class="section-header">
 			Providing in-Campus Platform for IT Enthusiasts
@@ -26,7 +38,7 @@ import Layout from '@layouts/Default.astro';
 	<section id="section-activities">
 		<h1 class="section-header">Our Activities</h1>
 
-		<div class="image-text-container-left">
+		<div id="section-activities-workshops" class="image-text-container-left">
 			<div class="column-2-7">
 				<h2 class="text-header">
 					Acquire New Skills on Industry Relevant Workshops
@@ -50,7 +62,7 @@ import Layout from '@layouts/Default.astro';
 			</div>
 		</div>
 
-		<div class="image-text-container-right">
+		<div id="section-activities hackathon" class="image-text-container-right">
 			<div class="column-2-3">
 				<img
 					src="src/assets/images/members/!default.png"
@@ -72,7 +84,7 @@ import Layout from '@layouts/Default.astro';
 			</div>
 		</div>
 
-		<div class="image-text-container-left">
+		<div id="section-activities-subcom" class="image-text-container-left">
 			<div class="column-2-7">
 				<h2 class="text-header">Become a Member of The Subcommitte</h2>
 				<p class="text-content">
@@ -93,6 +105,7 @@ import Layout from '@layouts/Default.astro';
 				/>
 			</div>
 		</div>
+		<hr />
 	</section>
 
 	<section id="section-excos">
@@ -129,5 +142,6 @@ import Layout from '@layouts/Default.astro';
 				<h4 class="exco-title"></h4>
 			</div>
 		</div>
+		<hr />
 	</section>
 </Layout>

@@ -6,6 +6,34 @@
 	box-sizing: border-box;
 }
 
+img {
+	margin: 0px;
+	padding: 0px;
+}
+
+#club-slogan {
+	display: inline-block;
+	width: 100%;
+}
+
+#club-slogan img {
+	width: 330px;
+}
+
+#club-slogan-text-header {
+	display: inline-block;
+	text-align: center;
+	font-size: 42px;
+	color: black;
+	font-weight: 700;
+}
+
+#club-slogan-text-content {
+	font-size: 24px;
+	font-weight: 500;
+	color: black;
+}
+
 #section-intro {
 	margin-top: 50px;
 	text-align: center;
@@ -13,12 +41,11 @@
 
 #section-intro p {
 	margin-top: 20px;
-	margin-bottom: 25px;
+	margin-bottom: 75px;
 }
 
 #section-activities {
-	margin: 25px;
-	padding: 25px;
+	margin-top: 75px;
 }
 
 #section-excos {
