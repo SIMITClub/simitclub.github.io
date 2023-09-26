@@ -2,10 +2,18 @@
 @import 'variables.css';
 @import 'fonts.css';
 
+* {
+	box-sizing: border-box;
+}
+
 #section-intro {
-	margin: 25px;
-	padding: 25px;
+	margin-top: 50px;
 	text-align: center;
+}
+
+#section-intro p {
+	margin-top: 20px;
+	margin-bottom: 25px;
 }
 
 #section-activities {
