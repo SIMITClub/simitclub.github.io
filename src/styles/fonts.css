@@ -59,3 +59,59 @@
 		/* Mathematical Operators */ U+FEFF,
 		/* Zero width non-breaking space */ U+FFFD; /* Replacement character */
 }
+
+@font-face {
+	font-family: 'HankenGrotesk';
+	font-weight: 500;
+	src:
+		url('/src/assets/fonts/HankenGrotesk-Regular.woff2') format('woff2'),
+		url('/src/assets/fonts/HankenGrotesk-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'HankenGroteskItalic';
+	font-weight: 500;
+	src:
+		url('/src/assets/fonts/HankenGrotesk-Italic.woff2') format('woff2'),
+		url('/src/assets/fonts/HankenGrotesk-Italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Cantarell';
+	font-weight: 500;
+	src:
+		url('/src/assets/fonts/Cantarell-Regular.woff2') format('woff2'),
+		url('/src/assets/fonts/Cantarell-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'CantarellBold';
+	font-weight: 500;
+	src:
+		url('/src/assets/fonts/Cantarell-Bold.woff2') format('woff2'),
+		url('/src/assets/fonts/Cantarell-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Monda';
+	font-weight: 500;
+	src:
+		url('/src/assets/fonts/Monda-Regular.woff2') format('woff2'),
+		url('/src/assets/fonts/Monda-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'MondaBold';
+	font-weight: 900;
+	src:
+		url('/src/assets/fonts/Monda-Bold.woff2') format('woff2'),
+		url('/src/assets/fonts/Monda-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Koulen';
+	font-weight: 500;
+	src:
+		url('/src/assets/fonts/Koulen-Regular.woff2') format('woff2'),
+		url('/src/assets/fonts/Koulen-Regular.woff') format('woff');
+}

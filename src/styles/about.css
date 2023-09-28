@@ -17,8 +17,7 @@ img {
 }
 
 #club-slogan {
-	display: inline-block;
-	width: 100%;
+	margin: 50px;
 }
 
 #club-slogan img {
@@ -34,8 +33,8 @@ img {
 	font-size: 42px;
 	color: black;
 	font-weight: 700;
-	text-align: center;
-	margin: 20px 0px;
+	font-family: CantarellBold;
+	font-weight: 1000;
 }
 
 #club-slogan-text-content {
@@ -43,30 +42,28 @@ img {
 	font-size: 24px;
 	font-weight: 500;
 	color: black;
-	margin-bottom: 75px;
+	font-family: Cantarell;
+	font-weight: 1000;
 }
 
 #section-intro {
-	margin-top: 50px;
-	text-align: center;
+	margin: 50px;
 }
 
 #section-intro p {
-	margin-top: 20px;
-	margin-bottom: 75px;
+	text-align: center;
+	margin-top: 10px;
 }
 
 #section-activities {
-	margin-top: 75px;
+	margin: 50px;
 }
 
 #section-excos {
-	margin: 25px;
-	padding: 25px;
+	margin: 50px;
 }
 
 .image-text-container-left {
-	margin: 15px;
 	padding: 15px;
 	display: flex;
 	column-gap: 20px;
@@ -75,7 +72,6 @@ img {
 }
 
 .image-text-container-right {
-	margin: 15px;
 	padding: 15px;
 	display: flex;
 	column-gap: 20px;
@@ -96,13 +92,22 @@ img {
 }
 
 .section-header {
+	font-size: 2rem;
 	text-align: center;
+	font-family: HankenGrotesk;
+	font-weight: 700;
+	margin-bottom: 25px;
 }
 
 .text-header {
+	font-size: 1.5rem;
+	font-family: Cantarell;
+	font-weight: 700;
 }
 
 .text-content {
+	font-size: 0.9rem;
+	font-family: Monda;
 }
 
 .exco-gallery {
@@ -124,8 +129,10 @@ img {
 
 .exco-name {
 	text-align: center;
+	font-family: MondaBold;
 }
 
 .exco-title {
 	text-align: center;
+	font-family: Monda;
 }
