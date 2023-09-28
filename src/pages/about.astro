@@ -6,41 +6,63 @@ import Layout from '@layouts/Default.astro';
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
+	<!-- CLUB LOGO, SLOGAN, VISION  -->
 	<div id="club-slogan">
 		<div id="club-slogan-content-container">
+			<span id="club-slogan-top">FOR THE NEW DIGITAL WORLD</span>
 			<img
 				src="src/assets/images/logo-black-red.png"
 				alt="SIM IT Club logo"
 				class="slogan-text"
 			/>
-			<p id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</p>
-			<p id="club-slogan-text-content">WE COLLABORATE, NETWORK, CONNECT.</p>
+			<h1 id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</h1>
+			<span id="club-slogan-text-content"
+				>WE COLLABORATE, NETWORK, CONNECT.</span
+			>
 		</div>
 	</div>
-
 	<hr />
 
+	<!-- INTRO -->
 	<section id="section-intro">
-		<p class="section-header">
+		<h1 id="intro-header" class="section-header">
 			Providing in-Campus Platform for IT Enthusiasts
-		</p>
-		<p class="text-content">
-			We, as members of the SIM IT club, believe that the journey to
-			understanding and exploring the landscape of modern informational
-			technology, is best taken amongst a community of like-minded individuals.
-			Whether you are a beginner looking for an introduction workshop to core
-			programming concepts. Or an intermediate hoping to apply your course
-			knowledge on a team-based technical project. Or even an advance player
-			preparing to hone your leadership skills for the industry. The IT Club
-			welcomes you with a meriad of activities tailored to help you grow as an
-			individual in the fields of IT.
-		</p>
+		</h1>
+		<div id="intro-content-container">
+			<div id="intro-text" class="text-content">
+				<p>
+					We, as members of the SIM IT club, believe that the journey to
+					understanding and exploring the landscape of modern informational
+					technology, is best taken amongst a community of like-minded
+					individuals.
+				</p>
+				<p>
+					Whether you are a beginner looking for an introduction workshop to
+					core programming concepts.
+				</p>
+				<p>
+					Or an intermediate hoping to apply your course knowledge on a
+					team-based technical project.
+				</p>
+				<p>
+					Or even an advance player preparing to hone your leadership skills for
+					the industry.
+				</p>
+				<p>
+					The IT Club welcomes you with a meriad of activities tailored to help
+					you grow as an individual in the fields of IT.
+				</p>
+			</div>
+			<img src="src/assets/images/dummy-image-square.jpg" alt="placeholder" />
+		</div>
+		<hr />
 	</section>
 
-	<hr />
-
+	<!-- ACTIVITIES -->
 	<section id="section-activities">
-		<p class="section-header">Our Activities</p>
+		<h1 class="section-header">Our Activities</h1>
+		<h2 id="activities-sub-header">LEARN, SHARE, EARN</h2>
 
 		<div id="section-activities-workshops" class="image-text-container-left">
 			<div class="column-2-7">
@@ -111,8 +133,7 @@ import Layout from '@layouts/Default.astro';
 		</div>
 	</section>
 
-	<hr />
-
+	<!-- EXCOS -->
 	<section id="section-excos">
 		<h1 class="section-header">Meet Our Excos</h1>
 
@@ -149,6 +170,7 @@ import Layout from '@layouts/Default.astro';
 		</div>
 	</section>
 
+	<!-- TypeIt LIBRARY SCRIPTS -->
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 			new TypeIt('#club-slogan-text-header', {
@@ -157,6 +179,25 @@ import Layout from '@layouts/Default.astro';
 				lifeLike: true,
 				keyboard: true,
 			}) //
+				.pause(1000)
+				.go();
+		});
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			new TypeIt('#activities-sub-header', {
+				speed: 200,
+				waitUntilVisible: true,
+				lifeLike: true,
+				keyboard: true,
+				loop: true,
+			})
+				.pause(1000)
+				.delete(4, { delay: 1000 })
+				.type('ACHIEVE🚀')
+				.pause(1000)
+				.delete(8, { delay: 1000 })
+				.type('GROW')
 				.pause(1000)
 				.go();
 		});

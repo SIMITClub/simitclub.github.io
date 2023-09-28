@@ -3,7 +3,7 @@
 @import 'fonts.css';
 
 :root {
-	--ti-cursor-margin-left: 0.1em;
+	--ti-cursor-margin-left: 0.2em;
 	--ti-cursor-color: rgb(238, 75, 43);
 }
 
@@ -17,13 +17,22 @@ img {
 }
 
 #club-slogan {
-	margin: 50px;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	margin: 100px 0px;
+}
+
+#club-slogan-top {
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 20px;
 }
 
 #club-slogan img {
 	display: block;
-	margin: auto;
-	/* text-align: center; */
+	margin: 0 auto;
+	padding: 60px 0px;
 	width: 200px;
 }
 
@@ -35,6 +44,7 @@ img {
 	font-weight: 700;
 	font-family: CantarellBold;
 	font-weight: 1000;
+	margin: 20px 0px;
 }
 
 #club-slogan-text-content {
@@ -50,13 +60,42 @@ img {
 	margin: 50px;
 }
 
-#section-intro p {
-	text-align: center;
-	margin-top: 10px;
+#section-intro img {
+	width: 300px;
+	display: inline-block;
+}
+
+#intro-content-container {
+	margin: 0px 150px;
+}
+
+#intro-header {
+	margin: 40px 0px;
+}
+
+#intro-text {
+	display: inline-block;
+	margin: 0px 80px 100px 0px;
+	max-width: 600px;
+}
+
+#intro-text p {
+	margin-bottom: 20px;
 }
 
 #section-activities {
 	margin: 50px;
+}
+
+#section-activities h1 {
+	margin-bottom: 75px;
+}
+
+#activities-sub-header {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 75px;
 }
 
 #section-excos {
@@ -64,7 +103,7 @@ img {
 }
 
 .image-text-container-left {
-	padding: 15px;
+	margin: 15px 0px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: left;
@@ -72,7 +111,7 @@ img {
 }
 
 .image-text-container-right {
-	padding: 15px;
+	padding: 15px 0px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: right;
@@ -97,6 +136,7 @@ img {
 	font-family: HankenGrotesk;
 	font-weight: 700;
 	margin-bottom: 25px;
+	font-size: 36px;
 }
 
 .text-header {
