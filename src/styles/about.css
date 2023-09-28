@@ -2,6 +2,11 @@
 @import 'variables.css';
 @import 'fonts.css';
 
+:root {
+	--ti-cursor-margin-left: 0.1em;
+	--ti-cursor-color: rgb(238, 75, 43);
+}
+
 * {
 	box-sizing: border-box;
 }

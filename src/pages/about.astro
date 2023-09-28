@@ -5,6 +5,7 @@ import Layout from '@layouts/Default.astro';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 	<div id="club-slogan">
 		<div id="club-slogan-content-container">
 			<img
@@ -12,11 +13,12 @@ import Layout from '@layouts/Default.astro';
 				alt="SIM IT Club logo"
 				class="slogan-text"
 			/>
-			<p id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</p>
+			<h1 id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</h1>
 			<p id="club-slogan-text-content">WE COLLABORATE, NETWORK, CONNECT.</p>
 		</div>
 		<hr />
 	</div>
+
 	<section id="section-intro">
 		<h1 class="section-header">
 			Providing in-Campus Platform for IT Enthusiasts
@@ -144,4 +146,16 @@ import Layout from '@layouts/Default.astro';
 		</div>
 		<hr />
 	</section>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			new TypeIt('#club-slogan-text-header', {
+				speed: 100,
+				waitUntilVisible: true,
+				lifeLike: true,
+				keyboard: true,
+			}) //
+				.pause(1000)
+				.go();
+		});
+	</script>
 </Layout>
