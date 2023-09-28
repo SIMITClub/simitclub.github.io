@@ -17,21 +17,28 @@ img {
 }
 
 #club-slogan img {
-	width: 330px;
+	display: block;
+	margin: auto;
+	/* text-align: center; */
+	width: 200px;
 }
 
 #club-slogan-text-header {
-	display: inline-block;
+	display: block;
 	text-align: center;
 	font-size: 42px;
 	color: black;
 	font-weight: 700;
+	text-align: center;
+	margin: 20px 0px;
 }
 
 #club-slogan-text-content {
+	text-align: center;
 	font-size: 24px;
 	font-weight: 500;
 	color: black;
+	margin-bottom: 75px;
 }
 
 #section-intro {
