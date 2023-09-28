@@ -32,5 +32,4 @@ pnpm-debug.log*
 src/assets/fonts/*.eot
 src/assets/fonts/*.otf
 src/assets/fonts/*.ttf
-src/assets/fonts/*.woff
-src/assets/fonts/*.woff2
+
