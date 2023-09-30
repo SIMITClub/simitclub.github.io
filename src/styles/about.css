@@ -206,20 +206,34 @@ hr {
 }
 
 .exco-gallery {
-	margin: 10px;
+	background-color: #f0f3f2;
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
 }
 
-.exco-gallery-box {
-	margin: 10px;
-	border: 1px solid #ccc;
-	width: 160px;
+.exco-box {
+	background-color: rgb(244, 246, 247);
+	display: flex;
+	width: 29%;
+	padding: 25px;
+	margin: 25px;
+	border-radius: 16px;
+}
+
+.exco-box-left {
+	width: 30%;
+}
+
+.exco-box-right {
+	width: 70%;
+	display: block;
+	padding: 30px;
 }
 
 .exco-img {
 	width: 100%;
 	height: auto;
+	border-radius: 100px;
 }
 
 .exco-name {
