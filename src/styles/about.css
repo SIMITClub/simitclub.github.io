@@ -11,9 +11,20 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 img {
 	margin: 0px;
 	padding: 0px;
+}
+
+#top-button {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: 40px;
 }
 
 #club-slogan {
