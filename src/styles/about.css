@@ -20,11 +20,19 @@ img {
 	padding: 0px;
 }
 
+hr {
+	max-width: 1440px;
+}
+
 #top-button {
 	position: fixed;
 	right: 30px;
 	bottom: 30px;
 	width: 40px;
+}
+
+#top-button:hover {
+	filter: brightness(50%);
 }
 
 #club-slogan {
@@ -68,7 +76,7 @@ img {
 }
 
 #section-intro {
-	margin: 50px;
+	margin: 50px 0px;
 }
 
 #section-intro img {
@@ -81,12 +89,12 @@ img {
 }
 
 #intro-header {
-	margin: 40px 0px;
+	margin: 100px 0px;
 }
 
 #intro-text {
 	display: inline-block;
-	margin: 0px 80px 100px 0px;
+	margin: 0px 50px 100px 0px;
 	max-width: 600px;
 }
 
@@ -95,11 +103,39 @@ img {
 }
 
 #section-activities {
-	margin: 50px;
+	margin: 100px 0px;
 }
 
 #section-activities h1 {
 	margin-bottom: 75px;
+}
+
+#section-activities-workshops .column-2-7 {
+	margin-right: 50px;
+}
+
+#section-activities-workshops .column-2-3 img {
+	width: 400px;
+}
+
+#section-activities-hackathon img {
+	width: 400px;
+}
+
+#github-workshop {
+	border-radius: 1%;
+	background-color: rgb(238, 238, 238);
+	width: 100%;
+	height: 1000px;
+}
+
+/* #github-workshop-header {
+} */
+
+#github-workshop-img img {
+	border-radius: 1%;
+	margin: 0 auto;
+	width: 800px;
 }
 
 #activities-sub-header {
@@ -113,8 +149,13 @@ img {
 	margin: 50px;
 }
 
+.box {
+	border-radius: 3%;
+	overflow: hidden;
+}
+
 .image-text-container-left {
-	margin: 40px 0px;
+	margin: 75px 0px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: left;
@@ -122,7 +163,7 @@ img {
 }
 
 .image-text-container-right {
-	margin: 40px 0px;
+	margin: 75px 0px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: right;
@@ -137,10 +178,10 @@ img {
 	width: 60%;
 }
 
-.image {
+/* .image {
 	width: 1000px;
 	height: 240px;
-}
+} */
 
 .section-header {
 	font-size: 2rem;
@@ -152,15 +193,16 @@ img {
 }
 
 .text-header {
-	font-size: 1.5rem;
+	font-size: 2.2rem;
 	font-family: Cantarell;
 	font-weight: 700;
+	margin-bottom: 30px;
 }
 
 .text-content {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	font-family: Monda;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .exco-gallery {

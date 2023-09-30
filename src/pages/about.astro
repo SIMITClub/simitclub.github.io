@@ -5,6 +5,7 @@ import Layout from '@layouts/Default.astro';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- TypeIt Library -->
 	<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 
 	<!-- TOP BUTTON -->
@@ -59,8 +60,8 @@ import Layout from '@layouts/Default.astro';
 			</div>
 			<img src="src/assets/images/dummy-image-square.jpg" alt="placeholder" />
 		</div>
-		<hr />
 	</section>
+	<hr />
 
 	<!-- ACTIVITIES -->
 	<section id="section-activities">
@@ -94,19 +95,27 @@ import Layout from '@layouts/Default.astro';
 			</div>
 			<div class="column-2-3">
 				<img
-					src="src/assets/images/dummy-image-square.jpg"
-					alt="placeholder"
-					class="image"
+					src="src/assets/images/workshop/github-workshop-baraq.jpg"
+					alt="baraq explaining about unix"
+					class="image box"
 				/>
 			</div>
 		</div>
+		<div id="github-workshop">
+			<div>
+				<h1 id="github-workshop-header">2023 Github Workshop</h1>
+			</div>
+			<div id="github-workshop-img">
+				<img src="src/assets/images/workshop/github-workshop.jpg" alt="" />
+			</div>
+		</div>
 
-		<div id="section-activities hackathon" class="image-text-container-right">
+		<div id="section-activities-hackathon" class="image-text-container-right">
 			<div class="column-2-3">
 				<img
-					src="src/assets/images/dummy-image-square.jpg"
-					alt="placeholder"
-					class="image"
+					src="src/assets/images/hackathon-infographic.avif"
+					alt="hackathon image"
+					class="image box"
 				/>
 			</div>
 			<div class="column-2-7">
@@ -158,7 +167,7 @@ import Layout from '@layouts/Default.astro';
 				<img
 					src="src/assets/images/dummy-image-square.jpg"
 					alt="placeholder"
-					class="image"
+					class="image box"
 				/>
 			</div>
 		</div>
