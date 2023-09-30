@@ -103,7 +103,7 @@ img {
 }
 
 .image-text-container-left {
-	margin: 15px 0px;
+	margin: 40px 0px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: left;
@@ -111,7 +111,7 @@ img {
 }
 
 .image-text-container-right {
-	padding: 15px 0px;
+	margin: 40px 0px;
 	display: flex;
 	column-gap: 20px;
 	justify-content: right;
@@ -119,15 +119,16 @@ img {
 }
 
 .column-2-3 {
-	width: 30%;
+	width: 40%;
 }
 
 .column-2-7 {
-	width: 70%;
+	width: 60%;
 }
 
 .image {
-	width: 150px;
+	width: 1000px;
+	height: 240px;
 }
 
 .section-header {
@@ -148,6 +149,7 @@ img {
 .text-content {
 	font-size: 0.9rem;
 	font-family: Monda;
+	margin-bottom: 10px;
 }
 
 .exco-gallery {
