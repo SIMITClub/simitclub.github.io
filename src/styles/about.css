@@ -130,6 +130,10 @@ hr {
 	margin: 50px;
 }
 
+#section-excos > h1 {
+	margin: 75px 0px;
+}
+
 .box {
 	border-radius: 3%;
 	overflow: hidden;
