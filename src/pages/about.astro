@@ -14,53 +14,57 @@ import Layout from '@layouts/Default.astro';
 	>
 
 	<!-- CLUB LOGO, SLOGAN, VISION  -->
-	<div id="club-slogan">
+	<section id="club-slogan">
 		<div id="club-slogan-content-container">
 			<span id="club-slogan-top">FOR THE NEW DIGITAL WORLD</span>
-			<img
-				src="src/assets/images/logo-black-red.png"
-				alt="SIM IT Club logo"
-				class="slogan-text"
-			/>
+			<img src="src/assets/images/logo-black-red.png" alt="SIM IT Club logo" />
 			<h1 id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</h1>
 			<span id="club-slogan-text-content">COLLABORATE, NETWORK, CONNECT</span>
 		</div>
-	</div>
+	</section>
+
 	<hr />
 
 	<!-- INTRO -->
 	<section id="section-intro">
-		<h1 id="intro-header" class="section-header">
+		<h1 class="section-header">
 			Providing in-Campus Platform for IT Enthusiasts
 		</h1>
-		<div id="intro-content-container">
-			<div id="intro-text" class="text-content">
-				<p>
+		<div id="intro-container">
+			<div class="intro-container-text column-2-5">
+				<p class="text-content">
 					We, as members of the SIM IT club, believe that the journey to
 					understanding and exploring the landscape of modern informational
 					technology, is best taken amongst a community of like-minded
 					individuals.
 				</p>
-				<p>
+				<p class="text-content">
 					Whether you are a beginner looking for an introduction workshop to
 					core programming concepts.
 				</p>
-				<p>
+				<p class="text-content">
 					Or an intermediate hoping to apply your course knowledge on a
 					team-based technical project.
 				</p>
-				<p>
+				<p class="text-content">
 					Or even an advance player preparing to hone your leadership skills for
 					the industry.
 				</p>
-				<p>
+				<p class="text-content">
 					The IT Club welcomes you with a meriad of activities tailored to help
 					you grow as an individual in the fields of IT.
 				</p>
 			</div>
-			<img src="src/assets/images/dummy-image-square.jpg" alt="placeholder" />
+			<div class="intro-container-image column-2-5">
+				<img
+					id="intro-image"
+					src="src/assets/images/members/community.jpg"
+					alt="communal picture of the it club during orientation"
+				/>
+			</div>
 		</div>
 	</section>
+
 	<hr />
 
 	<!-- ACTIVITIES -->
@@ -93,8 +97,9 @@ import Layout from '@layouts/Default.astro';
 					continue to provide learners with content-rich
 				</p>
 			</div>
-			<div class="column-2-3">
+			<div class="column-2-3 image-center">
 				<img
+					id="workshop-image"
 					src="src/assets/images/workshop/github-workshop-baraq.jpg"
 					alt="baraq explaining about unix"
 				/>
@@ -113,8 +118,9 @@ import Layout from '@layouts/Default.astro';
 		-->
 
 		<div id="section-activities-hackathon" class="image-text-container-right">
-			<div class="column-2-3">
+			<div class="column-2-3 image-center">
 				<img
+					style="width:500px;"
 					src="src/assets/images/hackathon-infographic.avif"
 					alt="hackathon image"
 				/>
@@ -164,8 +170,9 @@ import Layout from '@layouts/Default.astro';
 					the club and all its members.
 				</p>
 			</div>
-			<div class="column-2-3">
+			<div class="column-2-3 image-center">
 				<img
+					style="width:450px; height:auto;"
 					src="src/assets/images/subcoms/group.jpg"
 					alt="group picture of the subcommittee members"
 				/>
