@@ -11,11 +11,6 @@ html {
 	scroll-behavior: smooth;
 }
 
-img {
-	margin: 0px;
-	padding: 0px;
-}
-
 hr {
 	max-width: 1440px;
 }
@@ -35,13 +30,13 @@ hr {
 	text-align: center;
 	display: inline-block;
 	width: 100%;
-	margin: 60px 0px;
+	margin: 3.75em 0px;
 }
 
 #club-slogan-top {
 	font-size: 16px;
 	font-weight: 600;
-	margin-top: 20px;
+	margin-block-start: 20px;
 }
 
 #club-slogan img {
@@ -78,8 +73,8 @@ hr {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-inline-start: 50px;
+	padding-inline-end: 50px;
 }
 
 #section-activities {
@@ -87,11 +82,11 @@ hr {
 }
 
 #section-activities h1 {
-	margin-bottom: 75px;
+	margin-block-end: 75px;
 }
 
 #section-activities-workshops .column-2-7 {
-	margin-right: 50px;
+	margin-inline-end: 50px;
 }
 
 #github-workshop {
@@ -123,7 +118,7 @@ hr {
 	text-align: center;
 	font-size: 24px;
 	font-weight: 700;
-	margin-bottom: 75px;
+	margin-block-end: 75px;
 }
 
 #section-excos {
@@ -190,7 +185,7 @@ hr {
 	text-align: center;
 	font-family: HankenGrotesk;
 	font-weight: 700;
-	margin-bottom: 25px;
+	margin-block-end: 25px;
 	font-size: 36px;
 }
 
@@ -198,13 +193,13 @@ hr {
 	font-size: 2.2rem;
 	font-family: Cantarell;
 	font-weight: 700;
-	margin-bottom: 30px;
+	margin-block-end: 30px;
 }
 
 .text-content {
 	font-size: 1rem;
 	font-family: Monda;
-	margin-bottom: 20px;
+	margin-block-end: 20px;
 }
 
 .exco-gallery {
@@ -247,3 +242,25 @@ hr {
 	text-align: center;
 	font-family: Monda;
 }
+
+.github-logo {
+	display: inline-grid;
+}
+
+.github-logo-mark {
+	justify-self: center;
+}
+
+:where(.github-logo svg) {
+	width: 1em;
+	height: auto;
+	color: canvasText;
+}
+
+.github-logo-mark svg {
+	font-size: 6.5em;
+} /* Adjust if needed */
+
+.github-logo-text svg {
+	font-size: 10em;
+} /* Adjust if needed */
