@@ -1,0 +1,18 @@
+#scrollToTopBtn {
+	display: none;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	border: none;
+	outline: none;
+	background-color: var(--color-sim-black);
+	color: white;
+	cursor: pointer;
+	padding: 1rem;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+}
+
+#scrollToTopBtn:hover {
+	opacity: 0.7;
+}

@@ -4,6 +4,7 @@ import { getCollection, getEntries } from 'astro:content';
 import { Members, Posts, Categories } from '@content/config';
 import Footer from '@components/Footer.astro';
 import DateLocale from '@components/DateLocale.astro';
+import ScrollToTop from '@components/ScrollToTop.astro';
 import Layout from '@layouts/Default.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
 import { getEntry } from 'astro:content';
@@ -39,6 +40,7 @@ const authorLink = (author: Members) =>
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} classList={['post']}>
+	<ScrollToTop />
 	<h1>{title}</h1>
 	<article>
 		<DateLocale date={datePublished} />
