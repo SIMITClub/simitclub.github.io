@@ -2,6 +2,44 @@
 import '@styles/about.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
 import Layout from '@layouts/Default.astro';
+import ExcoBox from '@components/ExcoBox.astro';
+const EXCOS = [
+	{
+		name: 'Ivonne',
+		title: 'President',
+		image: 'src/assets/images/excos/Ivonne.jpg',
+	},
+	{
+		name: 'Chee Wei',
+		title: 'Vice-President',
+		image: 'src/assets/images/excos/Chee-Wei.jpg',
+	},
+	{
+		name: 'Srikar',
+		title: 'Secretary',
+		image: 'src/assets/images/excos/Srikar.jpg',
+	},
+	{
+		name: 'Baraq',
+		title: 'Technical Director',
+		image: 'src/assets/images/excos/Baraq.jpg',
+	},
+	{
+		name: 'Yi Chen',
+		title: 'Deputy Technical Director',
+		image: 'src/assets/images/excos/Yi-Chen.jpg',
+	},
+	{
+		name: 'Erine',
+		title: 'Marketing Director',
+		image: 'src/assets/images/excos/Erine.jpg',
+	},
+	{
+		name: 'Thar Lin',
+		title: 'Events Director',
+		image: 'src/assets/images/excos/Thar.jpg',
+	},
+];
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -189,82 +227,7 @@ import Layout from '@layouts/Default.astro';
 	<section id="section-excos">
 		<h1 class="section-header">Meet Our Excos</h1>
 		<div class="exco-gallery">
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Ivonne.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Ivonne</p>
-					<p class="exco-title">President</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
-
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Chee-Wei.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Chee Wei</p>
-					<p class="exco-title">Vice-President</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
-
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Srikar.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Srikar</p>
-					<p class="exco-title">Secretary</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
-
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Baraq.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Baraq</p>
-					<p class="exco-title">Technical Director</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
-
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Yi-Chen.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Yi Chen</p>
-					<p class="exco-title">Deputy Technical Director</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
-
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Erine.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Erine</p>
-					<p class="exco-title">Marketing Director</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
-
-			<div class="exco-box">
-				<div class="exco-box-left">
-					<img class="exco-img" src="src/assets/images/excos/Thar.jpg" />
-				</div>
-				<div class="exco-box-right">
-					<p class="exco-name">Thar Lin</p>
-					<p class="exco-title">Events Director</p>
-					<p class="exco-social"><href></href></p>
-				</div>
-			</div>
+			{EXCOS.map((exco) => <ExcoBox {...exco} />)}
 		</div>
 	</section>
 
