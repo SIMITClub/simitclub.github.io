@@ -3,6 +3,7 @@ import '@styles/about.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
 import Layout from '@layouts/Default.astro';
 import ExcoBox from '@components/ExcoBox.astro';
+
 const EXCOS = [
 	{
 		name: 'Ivonne',
@@ -44,12 +45,7 @@ const EXCOS = [
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<!-- TypeIt Library -->
-	<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-
-	<!-- TOP BUTTON -->
-	<a href="#site-header" id="top-button"
-		><img src="src/assets/images/TypcnMediaEjectOutline.svg" alt="" /></a
-	>
+	<!-- <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
 
 	<!-- CLUB LOGO, SLOGAN, VISION  -->
 	<section id="club-slogan">
@@ -121,7 +117,7 @@ const EXCOS = [
 				<p class="text-content">
 					<i>"An investment in knowledge pays the best interest."</i>, the late
 					Sir Benjamin Franklin once said. As members of the IT community that
-					continues to grow, the SIMIT club could not agree with this statement
+					continues to grow, the SIM IT club could not agree with this statement
 					any more than we already do.
 				</p>
 				<p class="text-content">
@@ -132,10 +128,10 @@ const EXCOS = [
 				</p>
 				<p class="text-content">
 					Our upcoming workshops and "mini-workshops" are freely available
-					resources of knowledge, for those seeking to enrich themselves of all
-					things IT. From a full hands-on tutorial session to a quick burst of 5
-					minutes introduction to relevant IT topics, the SIMIT Club will
-					continue to provide learners with content-rich
+					resources of knowledge, for those seeking to enrich themselves with
+					all things IT. From a full hands-on tutorial session to a quick burst
+					of 5 minutes introduction to relevant IT topics, the SIM IT Club will
+					continue to provide learners with rich contents.
 				</p>
 			</div>
 			<div class="column-2-3 image-center">
@@ -171,19 +167,18 @@ const EXCOS = [
 				<p class="text-content">
 					One of the best ways to garner confidence over your own abilities in
 					the tech industry is to compete against other like-minded individuals.
-					And we believe that as a university student, there is no better way to
-					do so than through hackathons.
+					And we believe that as students, there is no better way to do so than
+					through hackathons.
 				</p>
 				<p class="text-content">
-					The SIMIT club aims to create a hackathon environment that is backed
-					by support from professionals on the field. This is in order to ensure
-					that competitors can get useful training prior to the start of the
-					event, so that we can cater to not only experienced individuals.
+					The SIM IT club aims to create a hackathon environment that is backed
+					by experts on the field. This ensures that competitors can get useful
+					training prior to the start of the event.
 				</p>
 				<p class="text-content">
-					In addition to that, support from experts will ensure that the
-					standard of the submissions will be kept high, and that the
-					submissions themselves will be judged fairly.
+					In addition to that, experts will ensure that the standard of the
+					submissions will be kept high, and that the submissions themselves
+					will be judged fairly.
 				</p>
 			</div>
 		</div>
@@ -201,9 +196,16 @@ const EXCOS = [
 					By becoming a member of our subcommittee, you will be able to
 					contribute to making the aforementioned events available for the
 					campus community. This contribution includes (but is not limited to)
-					becoming a speaker for one of our workshops, promoting our club events
-					on various social media alongside the marketing team, as well as
-					making sure the event runs smoothly as part of our events crew.
+					<ul id="subcom-bullet-points">
+						<li>📢 Becoming a speaker for one of our workshops</li>
+						<li>
+							📱 Promoting our club events on various social media alongside the
+							marketing team
+						</li>
+						<li>
+							✔️ Making sure the event runs smoothly as part of our events crew.
+						</li>
+					</ul>
 				</p>
 				<p class="text-content">
 					As for those truly confident in their abilities, rest assured that the
@@ -233,6 +235,8 @@ const EXCOS = [
 
 	<!-- TypeIt LIBRARY SCRIPTS -->
 	<script>
+		import TypeIt from 'typeit';
+
 		document.addEventListener('DOMContentLoaded', () => {
 			new TypeIt('#club-slogan-text-header', {
 				speed: 100,
@@ -245,6 +249,8 @@ const EXCOS = [
 		});
 	</script>
 	<script>
+		import TypeIt from 'typeit';
+
 		document.addEventListener('DOMContentLoaded', () => {
 			new TypeIt('#activities-sub-header', {
 				speed: 100,

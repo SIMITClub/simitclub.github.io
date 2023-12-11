@@ -15,17 +15,6 @@ hr {
 	max-width: 1440px;
 }
 
-#top-button {
-	position: fixed;
-	right: 30px;
-	bottom: 30px;
-	width: 40px;
-}
-
-#top-button:hover {
-	filter: brightness(50%);
-}
-
 #club-slogan {
 	text-align: center;
 	display: inline-block;
@@ -89,6 +78,12 @@ hr {
 	margin-inline-end: 50px;
 }
 
+#subcom-bullet-points {
+	margin-bottom: 20px;
+	list-style: none;
+	padding-left: 25px;
+}
+
 #github-workshop {
 	border-radius: 1%;
 	background-color: rgb(238, 238, 238);
@@ -102,7 +97,7 @@ hr {
 
 .image-center {
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 }
 
 /* #github-workshop-header {
@@ -161,11 +156,6 @@ hr {
 .column-2-5 {
 	width: 50%;
 }
-
-/* .image {
-	width: 1000px;
-	height: 240px;
-} */
 
 #intro-image {
 	width: 80%;
@@ -259,8 +249,8 @@ hr {
 
 .github-logo-mark svg {
 	font-size: 6.5em;
-} /* Adjust if needed */
+}
 
 .github-logo-text svg {
 	font-size: 10em;
-} /* Adjust if needed */
+}
