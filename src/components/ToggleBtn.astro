@@ -9,10 +9,27 @@ const { id, ...props } = Astro.props;
 ---
 
 <toggle-btn data-id={id}
-	><button id={id} type="button" class="btn" {...props}>
+	><button id={id} type="button" class="btn" {...props} onclick="switchTheme()">
 		<span></span></button
 	></toggle-btn
 >
+
+<script is:inline>
+	function switchTheme() {
+		const element = document.body;
+		const isLightMode = element.classList.contains('dark');
+		console.log(isLightMode);
+
+		if (isLightMode) {
+			element.classList.add('light');
+			element.classList.remove('dark');
+		} else {
+			element.classList.add('dark');
+			element.classList.remove('light');
+		}
+		return false;
+	}
+</script>
 
 <script>
 	// Define the behaviour for our new type of HTML element.
