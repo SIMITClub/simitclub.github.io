@@ -1,23 +1,23 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection, getEntries } from 'astro:content';
-import { Members, Posts, Categories } from '@content/config';
+import {Image} from "astro:assets";
+import {getCollection, getEntries} from 'astro:content';
+import {Members, Posts, Categories} from "@content/config";
 import Footer from '@components/Footer.astro';
-import DateLocale from '@components/DateLocale.astro';
-import Layout from '@layouts/Default.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
-import { getEntry } from 'astro:content';
+import DateLocale from "@components/DateLocale.astro";
+import Layout from "@layouts/Default.astro";
+import {SITE_DESCRIPTION, SITE_TITLE} from "../../../consts";
+import {getEntry} from "astro:content";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: {slug: post.slug},
+    props: post,
+  }));
 }
 
 const post = Astro.props;
-const { Content } = await post.render();
+const {Content} = await post.render();
 
 const { datePublished, title } = post.data;
 
@@ -25,62 +25,55 @@ const postAuthors = await getEntries(post.data.authors);
 const postRelated = await getEntries(post.data.related);
 const postCategories = await getEntries(post.data.categories);
 
-const authorName = (author: Members): string =>
-	author.data.name.last
-		? `${author.data.name.first} ${author.data.name.last}`
-		: author.data.name.first;
+const authorName = (author: Members): string => author.data.name.last
+  ? `${author.data.name.first} ${author.data.name.last}`
+  : author.data.name.first;
 
-const authorLink = (author: Members) =>
-	`
+const authorLink = (author: Members) => `
   <a href="/posts/members/${author.slug}"
      target="_blank"
      rel="noopener noreferrer">${authorName(author)}</a>
-`.trim();
+  `.trim();
 ---
-
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION} classList={['post']}>
-	<h1>{title}</h1>
-	<article>
-		<DateLocale date={datePublished} />
-		<aside class="coauthor" role="note">
-			<ol role="group" aria-label="Authors">
-				{
-					postAuthors.map((author: Members) => (
-						<li class="coauthor" set:html={authorLink(author)} />
-					))
-				}
-			</ol>
-		</aside>
-		<Content />
-	</article>
-	<hr />
-	<footer>
-		{
-			postRelated.length > 0 && (
-				<div class="related">
-					{postRelated.map((related: Posts) => (
-						<div>
-							<h3>Related</h3>
-							<a href={`/blog/posts/${related.slug}`}>{related.data.title}</a>
-						</div>
-					))}
-				</div>
-			)
-		}
-		<hr />
-		{
-			postCategories.length > 0 && (
-				<div class="category">
-					{postCategories.map((category: Categories) => (
-						<div>
-							<h3>Category</h3>
-							<a href={`/blog/category/${category.id}`}>
-								{category.data.title}
-							</a>
-						</div>
-					))}
-				</div>
-			)
-		}
-	</footer>
+<Layout title={SITE_TITLE} description={ SITE_DESCRIPTION } classList={['post']}>
+    <h1>{title}</h1>
+    <article>
+      <DateLocale date={datePublished}/>
+      <aside class="coauthor" role="note">
+        <ol role="group" aria-label="Authors">
+          {
+            postAuthors.map((author: Members) =>
+              <li class="coauthor" set:html={authorLink(author)} />
+            )
+          }
+        </ol>
+      </aside>
+      <Content/>
+    </article>
+    <hr/>
+    <footer>
+      {
+        postRelated.length > 0 &&
+        <div class="related">
+          {
+            postRelated.map((related: Posts) => (
+              <h3>Related</h3>
+              <a href={`/blog/posts/${related.slug}`}>{related.data.title}</a>
+            ))
+          }
+        </div>
+      }
+      <hr/>
+      {
+        postCategories.length > 0 &&
+        <div class="category">
+          {
+            postCategories.map((category: Categories) => (
+              <h3>Category</h3>
+              <a href={`/blog/category/${category.id}`}>{category.data.title}</a>
+            ))
+          }
+        </div>
+      }
+    </footer>
 </Layout>

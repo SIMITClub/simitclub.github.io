@@ -15,20 +15,19 @@ const { id, ...props } = Astro.props;
 >
 
 <script is:inline>
-	function switchTheme() {
-		const element = document.body;
-		const isLightMode = element.classList.contains('dark');
-		console.log(isLightMode);
+	const switchTheme = () => {
+		const body = document.body;
+		const isLightMode = body.classList.contains('light');
 
 		if (isLightMode) {
-			element.classList.add('light');
-			element.classList.remove('dark');
+			body.classList.add('dark');
+			body.classList.remove('light');
 		} else {
-			element.classList.add('dark');
-			element.classList.remove('light');
+			body.classList.add('light');
+			body.classList.remove('dark');
 		}
 		return false;
-	}
+	};
 </script>
 
 <script>
@@ -69,7 +68,7 @@ const { id, ...props } = Astro.props;
 		border: 0;
 		outline: 0;
 		cursor: pointer;
-		margin-left: 25px;
+		margin-left: 7px;
 		transition: background 0.5s;
 	}
 

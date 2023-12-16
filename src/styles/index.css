@@ -15,8 +15,6 @@ Author URI: https://simitclub.github.io/
 body {
 	font-family: var(--font-sans);
 	font-size: var(--font-size-1);
-	color: var(--color-fg);
-	background-color: var(--gray-0);
 	margin: auto;
 
 	/* Footer goes to bottom of page */
@@ -64,6 +62,47 @@ body {
 	}
 }
 
+/* Dark & Light Mode */
+body.dark {
+	background-color: black;
+	color: white;
+}
+
+body.dark header {
+	background-color: var(--color-bg-dark-mode-header);
+}
+
+body.dark Header a {
+	color: white;
+}
+
+body.dark main div .card {
+	background: linear-gradient(to left, #181818 30%, black 100%);
+}
+
+body.dark main div .card__body {
+	background: linear-gradient(to left, #181818 30%, black 100%);
+}
+
+body.dark main div .card__footer {
+	background: linear-gradient(to left, #181818 30%, black 100%);
+}
+
+body.light {
+	background-color: var(--gray-0);
+	color: black;
+}
+
+body.light Header a {
+	color: black;
+}
+
+body.light main div .card,
+.card__body,
+.card__footer {
+	background: linear-gradient(to right, #ffffff, #ece9e6);
+}
+
 img {
 	width: 100%;
 	height: auto;
@@ -105,7 +144,6 @@ header[role='banner'] {
 
 	nav ul li a {
 		text-decoration: none;
-		color: #000;
 		font-weight: bold;
 		padding: 15px 20px;
 		transition: 0.3s;
@@ -130,7 +168,6 @@ header[role='banner'] {
 			/* TODO: Add implementation */
 		}
 	}
-
 }
 
 /* ================================================================= */
@@ -219,6 +256,12 @@ a[href='#Skip']:hover {
 	&:has(a):active {
 		color: var(--color-hyphen);
 	}
+}
+
+#moon-icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
 }
 
 /* ================================================================= */
