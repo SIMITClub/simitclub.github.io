@@ -112,6 +112,11 @@ img {
 	display: none;
 }
 
+/* Blog Card hover effect */
+.content-container > h2 {
+	margin-bottom: 20px;
+}
+
 /* ================================================================= */
 /* Style <header> and <footer> (color, border, etc.) */
 

@@ -9,6 +9,11 @@
 	color: inherit;
 }
 
+.card:hover {
+	transform: translateY(-20px);
+	transition: 0.75s;
+}
+
 .card__body {
 	padding: 1rem;
 	display: flex;
