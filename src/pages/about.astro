@@ -3,6 +3,7 @@ import '@styles/about.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
 import Layout from '@layouts/Default.astro';
 import ExcoBox from '@components/ExcoBox.astro';
+import TypeIt from 'typeit';
 
 const EXCOS = [
 	{
@@ -216,8 +217,6 @@ const EXCOS = [
 
 	<!-- TypeIt LIBRARY SCRIPTS -->
 	<script>
-		import TypeIt from 'typeit';
-
 		document.addEventListener('DOMContentLoaded', () => {
 			new TypeIt('#club-slogan-text-header', {
 				speed: 100,
@@ -230,8 +229,6 @@ const EXCOS = [
 		});
 	</script>
 	<script>
-		import TypeIt from 'typeit';
-
 		document.addEventListener('DOMContentLoaded', () => {
 			new TypeIt('#activities-sub-header', {
 				speed: 100,
