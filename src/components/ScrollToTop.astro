@@ -1,0 +1,36 @@
+---
+import '@styles/scrolltotop.css';
+import IconScrollToTop from '../assets/images/icons/icon-back-to-top.svg?raw';
+---
+
+<button id="scrollToTopBtn">
+	<Fragment set:html={IconScrollToTop} id="scrollToTopBtn" />
+</button>
+
+<script>
+	function scrollFunction() {
+		if (
+			document.body.scrollTop > headerHeight ||
+			document.documentElement.scrollTop > headerHeight
+		) {
+			scrollToTop.style.display = 'block';
+		} else {
+			scrollToTop.style.display = 'none';
+		}
+	}
+
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+
+	const scrollToTop = document.getElementById('scrollToTopBtn');
+	const header = document.getElementById('site-header');
+	const headerHeight = header.offsetHeight;
+
+	window.onscroll = function () {
+		scrollFunction();
+	};
+
+	scrollToTop.addEventListener('click', topFunction);
+</script>
