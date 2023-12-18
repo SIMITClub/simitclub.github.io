@@ -12,13 +12,7 @@ export interface Props extends ImageTransform {
 	description: string;
 }
 
-const {
-	title,
-	description,
-	image = defaultImage,
-	format = 'webp',
-	...props
-} = Astro.props;
+const { title, description, image = defaultImage, format = 'webp', ...props } = Astro.props;
 
 const optimizedImage = await getImage({
 	src: image,
@@ -46,8 +40,5 @@ const optimizedImage = await getImage({
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta
-	property="twitter:image"
-	content={new URL(optimizedImage.src, Astro.url)}
-/>
+<meta property="twitter:image" content={new URL(optimizedImage.src, Astro.url)} />
 <!-- Stylesheet -->

@@ -1,52 +1,54 @@
 ---
-import '@styles/index.css';
-import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
-import type { Posts } from '@content/config';
-import Layout from '@layouts/Default.astro';
-import { getCollection } from 'astro:content';
-import BlogCard from '@components/BlogCard.astro';
+import { Image } from "astro:assets";
+import "@styles/index.css";
+import logo from "@images/logo.jpg";
+import { SITE_TITLE, SITE_DESCRIPTION } from "src/consts";
+import { Members, Posts, Categories } from "@content/config";
+import Layout from "@layouts/Default.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+import DateLocale from "@components/DateLocale.astro";
+import BlogCard from "@components/BlogCard.astro";
 
-const posts = await getCollection('posts');
+const posts = await getCollection("posts");
 
 const hasImageAttribution = (post: Posts) => {
-	return post.data.img.attribution !== undefined;
+  return post.data.img.attribution !== undefined;
 };
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<p id="site-description">
-		Equipping SIM students with Informational Technology skills which are vital
-		in the working world.
-	</p>
-	<br />
-	<h2>Latest Posts</h2>
-	<div class="index-list-posts">
-		{
-			posts
-				// Exclude drafts.
-				.filter((post: Posts) => post.data.draft !== true)
-				// Sort posts by date.
-				.sort(
-					(a: Posts, b: Posts) =>
-						b.data.datePublished.getTime() - a.data.datePublished.getTime(),
-				)
-				.map((post: Posts) => (
-					<BlogCard
-						title={post.data.title}
-						description={post.data.description}
-						date={post.data.datePublished}
-						image={post.data.img}
-						slug={post.slug}
-					/>
-				))
-		}
-		{
-			/*
+  <p id="site-description">
+    Equipping SIM students with Informational Technology skills which are vital
+    in the working world.
+  </p>
+  <br />
+  <h2>Latest Posts</h2>
+  <div class="index-list-posts">
+    {
+      posts
+      // Exclude drafts.
+        .filter((post: Posts) => post.data.draft !== true)
+        // Sort posts by date.
+        .sort(
+          (a: Posts, b: Posts) => b.data.datePublished - a.data.datePublished
+        )
+        .map((post: Posts) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.datePublished}
+            image={post.data.img}
+            slug={post.slug}
+          />
+        ))
+    }
+    {
+      /*
       posts.filter((post: Posts) => post.data.draft !== true).sort((a: Posts, b: Posts) => b.data.datePublished - a.data.datePublished).map((post: Posts) => (
       <div>{
         <Image src={post.data.img.src} alt={post.data.img.alt}/><h3>{post.data.title}</h3><p>{post.data.description}</p>
         <DateLocale date={post.data.datePublished} omitYear={true}/>}</div>))
   */
-		}
-	</div>
+    }
+  </div>
 </Layout>

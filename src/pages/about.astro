@@ -1,0 +1,253 @@
+---
+import '@styles/about.css';
+import { SITE_TITLE, SITE_DESCRIPTION } from 'src/consts';
+import Layout from '@layouts/Default.astro';
+import ExcoBox from '@components/ExcoBox.astro';
+
+const EXCOS = [
+	{
+		name: 'Ivonne',
+		title: 'President',
+		image: 'src/assets/images/excos/Ivonne.jpg',
+	},
+	{
+		name: 'Chee Wei',
+		title: 'Vice-President',
+		image: 'src/assets/images/excos/Chee-Wei.jpg',
+	},
+	{
+		name: 'Srikar',
+		title: 'Secretary',
+		image: 'src/assets/images/excos/Srikar.jpg',
+	},
+	{
+		name: 'Baraq',
+		title: 'Technical Director',
+		image: 'src/assets/images/excos/Baraq.jpg',
+	},
+	{
+		name: 'Yi Chen',
+		title: 'Deputy Technical Director',
+		image: 'src/assets/images/excos/Yi-Chen.jpg',
+	},
+	{
+		name: 'Erine',
+		title: 'Marketing Director',
+		image: 'src/assets/images/excos/Erine.jpg',
+	},
+	{
+		name: 'Thar Lin',
+		title: 'Events Director',
+		image: 'src/assets/images/excos/Thar.jpg',
+	},
+];
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- TypeIt Library -->
+	<!-- <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
+
+	<!-- CLUB LOGO, SLOGAN, VISION  -->
+	<section id="club-slogan">
+		<div id="club-slogan-content-container">
+			<span id="club-slogan-top">FOR THE NEW DIGITAL WORLD</span>
+			<img src="src/assets/images/Copy-of-itc_new_logo.svg" alt="SIM IT Club logo" />
+			<h1 id="club-slogan-text-header">OUR VISION IS BIG AND BOLD.</h1>
+			<span id="club-slogan-text-content">COLLABORATE, NETWORK, CONNECT</span>
+		</div>
+	</section>
+
+	<hr />
+
+	<!-- INTRO -->
+	<section id="section-intro">
+		<h1 class="section-header">Providing in-Campus Platform for IT Enthusiasts</h1>
+		<div id="intro-container">
+			<div class="intro-container-text column-2-5">
+				<p class="text-content">
+					We, as members of the SIM IT club, believe that the journey to understanding and exploring
+					the landscape of modern informational technology, is best taken amongst a community of
+					like-minded individuals.
+				</p>
+				<p class="text-content">
+					Whether you are a beginner looking for an introduction workshop to core programming
+					concepts.
+				</p>
+				<p class="text-content">
+					Or an intermediate hoping to apply your course knowledge on a team-based technical
+					project.
+				</p>
+				<p class="text-content">
+					Or even an advance player preparing to hone your leadership skills for the industry.
+				</p>
+				<p class="text-content">
+					The IT Club welcomes you with a meriad of activities tailored to help you grow as an
+					individual in the fields of IT.
+				</p>
+			</div>
+			<div class="intro-container-image column-2-5">
+				<img
+					id="intro-image"
+					src="src/assets/images/members/community.jpg"
+					alt="communal picture of the it club during orientation"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<hr />
+
+	<!-- ACTIVITIES -->
+	<section id="section-activities">
+		<h1 class="section-header">Our Activities</h1>
+		<h2 id="activities-sub-header">LEARN, SHARE, EARN</h2>
+
+		<div id="section-activities-workshops" class="image-text-container-left">
+			<div class="column-2-7">
+				<p class="text-header">Acquire New Skills on Industry Relevant Workshops</p>
+				<p class="text-content">
+					<i>"An investment in knowledge pays the best interest."</i>, the late Sir Benjamin
+					Franklin once said. As members of the IT community that continues to grow, the SIM IT club
+					could not agree with this statement any more than we already do.
+				</p>
+				<p class="text-content">
+					We believe that it is most appropriate to not bound ourselves, merely to the standards
+					that our courses has set for us. To continue exploring the ever-growing landscape of IT,
+					we believe will be the essence for future innovation.
+				</p>
+				<p class="text-content">
+					Our upcoming workshops and "mini-workshops" are freely available resources of knowledge,
+					for those seeking to enrich themselves with all things IT. From a full hands-on tutorial
+					session to a quick burst of 5 minutes introduction to relevant IT topics, the SIM IT Club
+					will continue to provide learners with rich contents.
+				</p>
+			</div>
+			<div class="column-2-3 image-center">
+				<img
+					id="workshop-image"
+					src="src/assets/images/workshop/github-workshop-baraq.jpg"
+					alt="baraq explaining about unix"
+				/>
+			</div>
+		</div>
+
+		<!--
+		<div id="github-workshop">
+			<div>
+				<h1 id="github-workshop-header">2023 Github Workshop</h1>
+			</div>
+			<div id="github-workshop-img">
+				<img src="src/assets/images/workshop/github-workshop.jpg" alt="" />
+			</div>
+		</div>
+		-->
+
+		<div id="section-activities-hackathon" class="image-text-container-right">
+			<div class="column-2-3 image-center">
+				<img
+					style="width:500px;"
+					src="src/assets/images/hackathon-infographic.jpg"
+					alt="hackathon image"
+				/>
+			</div>
+			<div class="column-2-7">
+				<p class="text-header">Compete for Prizes on Our Hackathons</p>
+				<p class="text-content">
+					One of the best ways to garner confidence over your own abilities in the tech industry is
+					to compete against other like-minded individuals. And we believe that as students, there
+					is no better way to do so than through hackathons.
+				</p>
+				<p class="text-content">
+					The SIM IT club aims to create a hackathon environment that is backed by experts on the
+					field. This ensures that competitors can get useful training prior to the start of the
+					event.
+				</p>
+				<p class="text-content">
+					In addition to that, experts will ensure that the standard of the submissions will be kept
+					high, and that the submissions themselves will be judged fairly.
+				</p>
+			</div>
+		</div>
+
+		<div id="section-activities-subcom" class="image-text-container-left">
+			<div class="column-2-7">
+				<p class="text-header">Become a Member of The Subcommitte</p>
+				<p class="text-content">
+					For individuals looking to participate in a more service-centric manner, keep a lookout
+					for our recruitment drive initiative. In this annually held event, we selectively search
+					for students passionate about helping others connect and excel in the field.
+				</p>
+				<p class="text-content">
+					By becoming a member of our subcommittee, you will be able to contribute to making the
+					aforementioned events available for the campus community. This contribution includes (but
+					is not limited to)
+					<ul id="subcom-bullet-points">
+						<li>📢 Becoming a speaker for one of our workshops</li>
+						<li>
+							📱 Promoting our club events on various social media alongside the marketing team
+						</li>
+						<li>✔️ Making sure the event runs smoothly as part of our events crew.</li>
+					</ul>
+				</p>
+				<p class="text-content">
+					As for those truly confident in their abilities, rest assured that the recruitment drive
+					initiative also looks for excommittees who can lead the club and all its members.
+				</p>
+			</div>
+			<div class="column-2-3 image-center">
+				<img
+					style="width:450px; height:auto;"
+					src="src/assets/images/subcoms/group.jpg"
+					alt="group picture of the subcommittee members"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<hr />
+
+	<!-- EXCOS -->
+	<section id="section-excos">
+		<h1 class="section-header">Meet Our Excos</h1>
+		<div class="exco-gallery">
+			{EXCOS.map((exco) => <ExcoBox {...exco} />)}
+		</div>
+	</section>
+
+	<!-- TypeIt LIBRARY SCRIPTS -->
+	<script>
+		import TypeIt from 'typeit';
+
+		document.addEventListener('DOMContentLoaded', () => {
+			new TypeIt('#club-slogan-text-header', {
+				speed: 100,
+				waitUntilVisible: true,
+				lifeLike: true,
+				keyboard: true,
+			}) //
+				.pause(1000)
+				.go();
+		});
+	</script>
+	<script>
+		import TypeIt from 'typeit';
+
+		document.addEventListener('DOMContentLoaded', () => {
+			new TypeIt('#activities-sub-header', {
+				speed: 100,
+				waitUntilVisible: true,
+				lifeLike: true,
+				keyboard: true,
+				loop: true,
+			})
+				.pause(1000)
+				.delete(4, { delay: 1000 })
+				.type('ACHIEVE🚀')
+				.pause(1000)
+				.delete(8, { delay: 1000 })
+				.type('GROW')
+				.pause(1000)
+				.go();
+		});
+	</script>
+</Layout>

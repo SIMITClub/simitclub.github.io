@@ -13,8 +13,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier -w \"**/*\" --ignore-unknown --cache"
+    "astro": "astro"
   },
   "dependencies": {
     "astro": "^3.1.0",

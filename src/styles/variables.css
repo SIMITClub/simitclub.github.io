@@ -23,6 +23,7 @@ Author URI: https://simitclub.github.io/
 	--color-bg-light: #ffffff;
 	--color-bg-header-light: #000000;
 	--color-bg-footer-light: #000000;
+
 	/* Light Theme: Foreground */
 	--color-fg-light: #000000;
 	--color-fg-header-light: #ffffff;
@@ -36,6 +37,9 @@ Author URI: https://simitclub.github.io/
 	--color-bg-dark: #000000;
 	--color-bg-header-dark: #ffffff;
 	--color-bg-footer-dark: #ffffff;
+	--color-bg-dark-mode-header: #121212;
+	--color-bg-dark-mode-blog-card: #181818;
+
 	/* Dark Theme: Foreground */
 	--color-fg-dark: #ffffff;
 	--color-fg-header-dark: #000000;
@@ -50,16 +54,8 @@ Author URI: https://simitclub.github.io/
 	--color-bg: white;
 	--color-fg-nav: var(--color-bg); /* <header> and <footer> */
 	--color-bg-nav: var(--color-fg); /* <header> and <footer> */
-	--color-fg-link: color-mix(
-		in oklab,
-		var(--color-bg-nav),
-		var(--color-fg-nav) 90%
-	);
-	--color-fg-line: color-mix(
-		in oklab,
-		var(--color-bg-nav),
-		var(--color-fg-nav) 25%
-	);
+	--color-fg-link: color-mix(in oklab, var(--color-bg-nav), var(--color-fg-nav) 90%);
+	--color-fg-line: color-mix(in oklab, var(--color-bg-nav), var(--color-fg-nav) 25%);
 	/* see fill='' */
 	--color-fg-bullet: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23444'/%3E%3C/svg%3E")
 		no-repeat center / contain;
