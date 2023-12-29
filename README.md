@@ -19,14 +19,14 @@ All commands are run from the root of the project, from a terminal:
 ## Resources
 
 | Resource                | Description                   |
-| ----------------------- | ----------------------------- |
+|-------------------------| ----------------------------- |
 | [Project Wiki]          | Environment setup and docs.   |
 | [Original README]       | From Astro's minimal example. |
 | [Astro Documentation]   | Astro Docs                    |
 | [PostCSS Documentation] | PostCSS Docs                  |
 | [Open Props]            | Open Props Docs               |
-| [ESLint]                | ESLint                        |
-| [Prettier]              | Prettier                      |
+| [ESLint]                | https://ota-meshi.github.io/eslint-plugin-astro/user-guide/               |
+| [Prettier]              | https://docs.astro.build/en/editor-setup/#prettier               |
 
 [Project Wiki]: https://github.com/SIMITClub/simitclub.github.io/wiki
 [Original README]: https://github.com/withastro/astro/tree/main/examples/minimal#readme
@@ -34,7 +34,6 @@ All commands are run from the root of the project, from a terminal:
 [PostCSS Documentation]: https://postcss.org/docs/
 [Open Props]: https://open-props.style/
 [ESLint]: https://ota-meshi.github.io/eslint-plugin-astro/user-guide/
-[Prettier]: https://docs.astro.build/en/editor-setup/#prettier
 
 ## License
 

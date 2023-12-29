@@ -1,17 +1,17 @@
 ---
-title: 'RPA for Data Migration'
-description: 'A comparison of traditional automation and RPA.'
+title: "RPA for Data Migration"
+description: "A comparison of traditional automation and RPA."
 datePublished: 2022-07-27
 authors:
-  - 'karthik-dhatshayini'
+  - "karthik-dhatshayini"
 categories:
-  - 'rpa'
+  - "rpa"
 img:
-  src: '@images/posts/rpa-for-data-migration.jpg'
-  alt: 'Illustration of data extraction in technology.'
-  origin: 'https://www.freepik.com/free-vector/isometric-rpa-illustration_22379495.htm'
+  src: "@images/posts/rpa-for-data-migration.jpg"
+  alt: "Illustration of data extraction in technology."
+  origin: "https://www.freepik.com/free-vector/isometric-rpa-illustration_22379495.htm"
 related:
-  - 'introduction-to-rpa'
+  - "introduction-to-rpa"
 ---
 
 Simplifying tedious processes which often require manual work forms the crux

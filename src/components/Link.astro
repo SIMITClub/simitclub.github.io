@@ -8,36 +8,19 @@ interface Props extends HTMLAttributes<'a'> {
 	icon?: string;
 	li?: boolean;
 }
-const {
-	href,
-	target = '_blank',
-	text,
-	icon,
-	li = false,
-	...props
-} = Astro.props;
+const { href, target = '_blank', text, icon, li = false, ...props } = Astro.props;
 ---
 
 {
 	li ? (
 		<li>
-			<a
-				href={href}
-				target={target}
-				class={text && icon && 'link-icon'}
-				{...props}
-			>
+			<a href={href} target={target} class={text && icon && 'link-icon'} {...props}>
 				{icon && <Icon name={icon} />}
 				{text && icon ? <span>{text}</span> : text}
 			</a>
 		</li>
 	) : (
-		<a
-			href={href}
-			target={target}
-			class={text && icon && 'link-icon'}
-			{...props}
-		>
+		<a href={href} target={target} class={text && icon && 'link-icon'} {...props}>
 			{icon && <Icon name={icon} />}
 			{text && icon ? <span>{text}</span> : text}
 		</a>

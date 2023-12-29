@@ -13,12 +13,12 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier -w \"**/*\" --ignore-unknown --cache"
+    "astro": "astro"
   },
   "dependencies": {
     "astro": "^3.1.0",
-    "astro-icon": "^0.8.1"
+    "astro-icon": "^0.8.1",
+    "typeit": "^8.8.0"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.7.0",
