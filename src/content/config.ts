@@ -1,130 +1,127 @@
-import {
-	CollectionEntry,
-	defineCollection,
-	reference,
-	SchemaContext,
-	z,
-} from 'astro:content';
+import {CollectionEntry, defineCollection, reference, SchemaContext, z} from 'astro:content';
 
-export const memberSchema = ({ image }: SchemaContext) =>
-	z
-		.object({
-			// ------------------------------------------------------------------------
-			// Required
+export const memberSchema = ({ image }: SchemaContext) => z
+  .object({
 
-			name: z.object({
-				first: z.string(),
-				last: z.string().optional(),
-			}),
+    // ------------------------------------------------------------------------
+    // Required
 
-			// ------------------------------------------------------------------------
-			// Optional
+    name: z.object({
+      first: z.string(),
+      last: z.string().optional()
+    }),
 
-			bio: z.string().max(150).optional(),
+    // ------------------------------------------------------------------------
+    // Optional
 
-			/** Email, website, or social media profile. */
-			contact: z.union([z.string().url(), z.string().email()]).optional(),
+    bio: z.string().max(150).optional(),
 
-			position: z
-				.enum([
-					'President',
-					'Vice President',
-					'Events Director',
-					'Events Subcommittee',
-					'Marketing Director',
-					'Marketing Subcommittee',
-					'Technical Director',
-					'Technical Deputy Director',
-					'Technical Subcommittee',
-					'Member',
-				])
-				.default('Member'),
+    /** Email, website, or social media profile. */
+    contact: z
+      .union([z.string().url(), z.string().email()])
+      .optional(),
 
-			status: z.enum(['alumni', 'current']).default('current'),
+    position: z.enum([
+      'President',
+      'Vice President',
+      'Events Director',
+      'Events Subcommittee',
+      'Marketing Director',
+      'Marketing Subcommittee',
+      'Technical Director',
+      'Technical Deputy Director',
+      'Technical Subcommittee',
+      'Member',
+    ]).default('Member'),
 
-			// https://developers.facebook.com/docs/sharing/best-practices/#images
-			img: z.object({
-				alt: z.string(),
-				src: image().refine((img) => img.format !== 'jpg' || img.width >= 314, {
-					message: 'Image must be at least 314px wide!',
-				}),
-			}),
-		})
-		.strict();
+    status: z.enum(["alumni", "current"]).default("current"),
 
-export const postSchema = ({ image }: SchemaContext) =>
-	z
-		.object({
-			// ----------------------------------------------------------------------
-			// Required
+    // https://developers.facebook.com/docs/sharing/best-practices/#images
+    img: z.object({
+      alt: z.string(),
+      src: image().refine((img) => img.format !== 'jpg' || img.width >= 314, {
+        message: 'Image must be at least 314px wide!'
+      })
+    })
 
-			title: z.string(),
-			datePublished: z
-				.union([z.date(), z.string()])
-				.transform((val) => new Date(val)),
+  }).strict();
 
-			// Follow recommended limit for <meta name="description" content="">
-			// https://github.com/joshbuchea/HEAD/blob/master/README.md?plain=1#L133
-			description: z.string().max(150),
+export const postSchema = ({ image }: SchemaContext) => z
+  .object({
 
-			// ----------------------------------------------------------------------
-			// Optional
+    // ----------------------------------------------------------------------
+    // Required
 
-			authors: z.array(reference('members')).default(['default']),
+    title: z.string(),
+    datePublished: z
+      .union([z.date(), z.string()])
+      .transform((val) => new Date(val)),
 
-			categories: z.array(reference('category')).default([]),
+    // Follow recommended limit for <meta name="description" content="">
+    // https://github.com/joshbuchea/HEAD/blob/master/README.md?plain=1#L133
+    description: z.string().max(150),
 
-			draft: z.boolean().default(false),
+    // ----------------------------------------------------------------------
+    // Optional
 
-			// https://developers.facebook.com/docs/sharing/best-practices/#images
-			img: z
-				.object({
-					alt: z.string(),
-					// Link to "@assets/images/*".
-					src: image().refine(
-						(img) => img.format !== 'jpg' || img.width >= 600,
-						{
-							message: 'Image must be at least 600px wide!',
-						},
-					),
-					height: z.number().optional(),
-					width: z.number().optional(),
-					// Attribution link.
-					attribution: z.string().optional(),
-				})
-				.optional(),
+    authors: z
+      .array(reference('members'))
+      .default(['default']),
 
-			related: z.array(reference('posts')).default([]),
-		})
-		.strict();
+    categories: z
+      .array(reference('category'))
+      .default([]),
 
-export const categorySchema = () =>
-	z
-		.object({
-			/** Full name of the category. */
-			title: z.string(),
+    draft: z
+      .boolean()
+      .default(false),
 
-			/** Short description of the category. */
-			description: z.string().max(150),
+    // https://developers.facebook.com/docs/sharing/best-practices/#images
+    img: z.object({
+      alt: z.string(),
+      // Link to "@assets/images/*".
+      src: image().refine((img) => img.format !== 'jpg' || img.width >= 600, {
+        message: 'Image must be at least 600px wide!'
+      }),
+      height: z.number().optional(),
+      width: z.number().optional(),
+      // Attribution link.
+      attribution: z.string().optional()
+    }).optional(),
 
-			/** SVG icon for the category, e.g. "mdi:language-c" */
-			icon: z.string().optional(),
-		})
-		.strict();
+    related: z
+      .array(reference('posts'))
+      .default([]),
+
+  }).strict();
+
+export const categorySchema = () => z
+  .object({
+
+    /** Full name of the category. */
+    title: z.string(),
+
+    /** Short description of the category. */
+    description: z.string().max(150),
+
+    /** SVG icon for the category, e.g. "mdi:language-c" */
+    icon: z.string().optional(),
+
+  }).strict();
 
 const memberCollection = defineCollection({
-	type: 'content',
-	schema: memberSchema,
+  type: 'content',
+  schema: memberSchema
 });
 
 const categoryCollection = defineCollection({
-	type: 'data',
-	schema: categorySchema,
+  type: 'data',
+  schema: categorySchema
 });
 
 const postCollection = defineCollection({
-	type: 'content',
-	schema: postSchema,
+  type: "content",
+  schema: postSchema
 });
 
 export type Members = CollectionEntry<'members'>;
@@ -132,7 +129,7 @@ export type Posts = CollectionEntry<'posts'>;
 export type Categories = CollectionEntry<'category'>;
 
 export const collections = {
-	members: memberCollection,
-	category: categoryCollection,
-	posts: postCollection,
+  'members': memberCollection,
+  'category': categoryCollection,
+  'posts': postCollection,
 };
