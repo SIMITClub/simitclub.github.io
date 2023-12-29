@@ -14,6 +14,7 @@ pnpm-debug.log*
 .vscode/
 !.vscode/extensions.json
 !.vscode/settings.json
+!.vscode/launch.json
 .idea/
 !.idea/codeStyles/codeStyleConfig.xml
 !.idea/codeStyles/Project.xml

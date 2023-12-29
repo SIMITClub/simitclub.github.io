@@ -11,7 +11,7 @@ max_line_length = 80
 trim_trailing_whitespace = true
 
 [*.md]
-max_line_length = 0
+max_line_length = 65535
 trim_trailing_whitespace = false
 
 [{.*,*.md,*.mdx,*.json,*.toml,*.yml,*.yaml}]
@@ -19,4 +19,4 @@ indent_size = 4
 indent_style = space
 
 [COMMIT_EDITMSG]
-max_line_length = 0
+max_line_length = 72
