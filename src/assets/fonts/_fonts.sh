@@ -47,12 +47,11 @@ apache/syncopate/Syncopate-Regular.ttf
 " | while read -r line; do
 filename="$(basename "$line")"
 "$oci" exec $exec_arg wget "${url}/${line}"
-"$oci" exec $exec_arg fonttools ttLib.woff2 compress -o "${filename%.*}.woff"  "${filename}"
 "$oci" exec $exec_arg fonttools ttLib.woff2 compress -o "${filename%.*}.woff2" "${filename}"
 done
 
 # Set read and write permissions for all users.
-"$oci" exec $exec_arg chmod 644 ./*.woff2 ./*.woff
+"$oci" exec $exec_arg chmod 644 ./*.woff2
 
 # Remove build files.
 rm -f ./*.ttf
