@@ -11,6 +11,7 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		icon({
+			iconDir: "src/assets/svg",
 			svgoOptions: {
 				multipass: false, plugins: [{
 					name: "preset-default",
