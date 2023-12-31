@@ -1,62 +1,271 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+import ExcoBox from '../components/ExcoBox.astro';
+import TypeIt from 'typeit';
+const SITE_TITLE = 'SIM IT Club';
+const SITE_DESCRIPTION = 'Official website of SIM IT Club.';
+const EXCOS = [
+	{
+		name: 'Ivonne',
+		title: 'President',
+		image: 'src/assets/images/members/!default.png',
+	},
+	{
+		name: 'Chee Wei',
+		title: 'Vice-President',
+		image: 'src/assets/images/members/!default.png',
+	},
+	{
+		name: 'Srikar',
+		title: 'Secretary',
+		image: 'src/assets/images/members/!default.png',
+	},
+	{
+		name: 'Baraq',
+		title: 'Technical Director',
+		image: 'src/assets/images/members/!default.png',
+	},
+	{
+		name: 'Yi Chen',
+		title: 'Deputy Technical Director',
+		image: 'src/assets/images/members/!default.png',
+	},
+	{
+		name: 'Erine',
+		title: 'Marketing Director',
+		image: 'src/assets/images/members/!default.png',
+	},
+	{
+		name: 'Thar Lin',
+		title: 'Events Director',
+		image: 'src/assets/images/members/!default.png',
+	},
+];
+
+// Import the CSS file
+import 'src/styles/about.css';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION} pubDate={new Date()}>
+	<!-- TypeIt Library -->
+	<!-- <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+	<!-- CLUB LOGO, SLOGAN, VISION  -->
+	<section id='club-slogan'>
+		<div id='club-slogan-content-container'>
+			<span id='club-slogan-top'>FOR THE NEW DIGITAL WORLD</span>
+			<img
+				src='src/assets/images/simitc/simitclub.png'
+				alt='SIM IT Club logo'
+			/>
+			<h1 id='club-slogan-text-header'>OUR VISION IS BIG AND BOLD.</h1>
+			<span id='club-slogan-text-content'>COLLABORATE, NETWORK, CONNECT</span>
+		</div>
+	</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+	<hr />
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+	<!-- INTRO -->
+	<section id='section-intro'>
+		<h1 class='section-header'>
+			Providing in-Campus Platform for IT Enthusiasts
+		</h1>
+		<div id='intro-container'>
+			<div class='intro-container-text column-2-5'>
+				<p class='text-content'>
+					We, as members of the SIM IT club, believe that the journey to
+					understanding and exploring the landscape of modern informational
+					technology, is best taken amongst a community of like-minded
+					individuals.
+				</p>
+				<p class='text-content'>
+					Whether you are a beginner looking for an introduction workshop to
+					core programming concepts.
+				</p>
+				<p class='text-content'>
+					Or an intermediate hoping to apply your course knowledge on a
+					team-based technical project.
+				</p>
+				<p class='text-content'>
+					Or even an advance player preparing to hone your leadership skills for
+					the industry.
+				</p>
+				<p class='text-content'>
+					The IT Club welcomes you with a meriad of activities tailored to help
+					you grow as an individual in the fields of IT.
+				</p>
+			</div>
+			<div class='intro-container-image column-2-5'>
+				<img
+					id='intro-image'
+					src='src/assets/images/members/!default.png'
+					alt='communal picture of the it club during orientation'
+				/>
+			</div>
+		</div>
+	</section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+	<hr />
+
+	<!-- ACTIVITIES -->
+	<section id='section-activities'>
+		<h1 class='section-header'>Our Activities</h1>
+		<h2 id='activities-sub-header'>LEARN, SHARE, EARN</h2>
+
+		<div id='section-activities-workshops' class='image-text-container-left'>
+			<div class='column-2-7'>
+				<p class='text-header'>
+					Acquire New Skills on Industry Relevant Workshops
+				</p>
+				<p class='text-content'>
+					<i>"An investment in knowledge pays the best interest."</i>, the late
+					Sir Benjamin Franklin once said. As members of the IT community that
+					continues to grow, the SIM IT club could not agree with this statement
+					any more than we already do.
+				</p>
+				<p class='text-content'>
+					We believe that it is most appropriate to not bound ourselves, merely
+					to the standards that our courses has set for us. To continue
+					exploring the ever-growing landscape of IT, we believe will be the
+					essence for future innovation.
+				</p>
+				<p class='text-content'>
+					Our upcoming workshops and "mini-workshops" are freely available
+					resources of knowledge, for those seeking to enrich themselves with
+					all things IT. From a full hands-on tutorial session to a quick burst
+					of 5 minutes introduction to relevant IT topics, the SIM IT Club will
+					continue to provide learners with rich contents.
+				</p>
+			</div>
+			<div class='column-2-3 image-center'>
+				<img
+					id='workshop-image'
+					src='src/assets/images/members/!default.png'
+					alt='baraq explaining about unix'
+				/>
+			</div>
+		</div>
+
+		<!--
+		<div id="github-workshop">
+			<div>
+				<h1 id="github-workshop-header">2023 Github Workshop</h1>
+			</div>
+			<div id="github-workshop-img">
+				<img src="src/assets/images/members/!default.png" alt="" />
+			</div>
+		</div>
+		-->
+
+		<div id='section-activities-hackathon' class='image-text-container-right'>
+			<div class='column-2-3 image-center'>
+				<img
+					style='width:500px;'
+					src='src/assets/images/members/!default.png'
+					alt='hackathon image'
+				/>
+			</div>
+			<div class='column-2-7'>
+				<p class='text-header'>Compete for Prizes on Our Hackathons</p>
+				<p class='text-content'>
+					One of the best ways to garner confidence over your own abilities in
+					the tech industry is to compete against other like-minded individuals.
+					And we believe that as students, there is no better way to do so than
+					through hackathons.
+				</p>
+				<p class='text-content'>
+					The SIM IT club aims to create a hackathon environment that is backed
+					by experts on the field. This ensures that competitors can get useful
+					training prior to the start of the event.
+				</p>
+				<p class='text-content'>
+					In addition to that, experts will ensure that the standard of the
+					submissions will be kept high, and that the submissions themselves
+					will be judged fairly.
+				</p>
+			</div>
+		</div>
+
+		<div id='section-activities-subcom' class='image-text-container-left'>
+			<div class='column-2-7'>
+				<p class='text-header'>Become a Member of The Subcommitte</p>
+				<p class='text-content'>
+					For individuals looking to participate in a more service-centric
+					manner, keep a lookout for our recruitment drive initiative. In this
+					annually held event, we selectively search for students passionate
+					about helping others connect and excel in the field.
+				</p>
+				<p class='text-content'>
+					By becoming a member of our subcommittee, you will be able to
+					contribute to making the aforementioned events available for the
+					campus community. This contribution includes (but is not limited to)
+					<ul id='subcom-bullet-points'>
+						<li>📢 Becoming a speaker for one of our workshops</li>
+						<li>
+							📱 Promoting our club events on various social media alongside the
+							marketing team
+						</li>
+						<li>
+							✔️ Making sure the event runs smoothly as part of our events crew.
+						</li>
+					</ul>
+				</p>
+				<p class='text-content'>
+					As for those truly confident in their abilities, rest assured that the
+					recruitment drive initiative also looks for excommittees who can lead
+					the club and all its members.
+				</p>
+			</div>
+			<div class='column-2-3 image-center'>
+				<img
+					style='width:450px; height:auto;'
+					src='src/assets/images/members/!default.png'
+					alt='group picture of the subcommittee members'
+				/>
+			</div>
+		</div>
+	</section>
+
+	<hr />
+
+	<!-- EXCOS -->
+	<section id='section-excos'>
+		<h1 class='section-header'>Meet Our Excos</h1>
+		<div class='exco-gallery'>
+			{EXCOS.map((exco) => <ExcoBox {...exco} />)}
+		</div>
+	</section>
+
+	<!-- TypeIt LIBRARY SCRIPTS -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			new TypeIt('#club-slogan-text-header', {
+				speed: 100,
+				waitUntilVisible: true,
+				lifeLike: true,
+				keyboard: true,
+			}) //
+				.pause(1000)
+				.go();
+		});
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			new TypeIt('#activities-sub-header', {
+				speed: 100,
+				waitUntilVisible: true,
+				lifeLike: true,
+				keyboard: true,
+				loop: true,
+			})
+				.pause(1000)
+				.delete(4, { delay: 1000 })
+				.type('ACHIEVE🚀')
+				.pause(1000)
+				.delete(8, { delay: 1000 })
+				.type('GROW')
+				.pause(1000)
+				.go();
+		});
+	</script>
 </Layout>

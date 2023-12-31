@@ -1,0 +1,384 @@
+body {
+	font-family: "Arial", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f9fa; /* Light gray background color */
+	color: #333;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#club-slogan {
+	background-color: #343a40; /* Dark background color */
+	color: #ffffff; /* White text color */
+	text-align: center;
+	padding: 40px 0;
+}
+
+#club-slogan img {
+	max-width: 200px;
+	height: auto;
+	margin-top: 20px; /* Adjust as needed */
+}
+
+#section-intro,
+#section-activities,
+#section-excos {
+	padding: 40px 0;
+}
+
+.section-header {
+	color: #343a40;
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+
+#intro-container,
+#section-activities-workshops,
+#section-activities-hackathon,
+#section-activities-subcom,
+.exco-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.text-content {
+	margin-bottom: 15px;
+}
+
+#subcom-bullet-points {
+	list-style: none;
+	padding: 0;
+}
+
+#subcom-bullet-points li {
+	margin-bottom: 5px;
+}
+
+hr {
+	border: 1px solid #ccc;
+	margin: 40px 0;
+}
+
+#club-slogan-content-container,
+#intro-container,
+#section-activities-workshops,
+#section-activities-hackathon,
+#section-activities-subcom,
+.exco-gallery {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.image-text-container-left,
+.image-text-container-right {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.column-2-5,
+.column-2-7,
+.column-2-3 {
+	width: calc((100% - 20px) / 2);
+}
+
+.image-center img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#club-slogan-text-header,
+#activities-sub-header {
+	font-size: 24px;
+}
+
+#club-slogan-text-content {
+	font-size: 18px;
+}
+
+#section-excos {
+	padding: 40px 0;
+	background-color: #fff; /* Set a background color for the section */
+}
+
+.exco-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around; /* Adjust spacing between ExcoBoxes */
+	background-color: #f8f9fa; /* Light gray background color for the container */
+	border-radius: 10px; /* Add border-radius for a rounded look */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+.exco-box {
+	width: 200px;
+	text-align: center;
+	margin: 20px; /* Adjust spacing between ExcoBoxes */
+}
+
+.exco-box img {
+	width: 100%;
+	height: auto;
+	border-radius: 50%; /* Make the image round */
+	margin-bottom: 10px; /* Adjust spacing between image and text */
+}
+
+.exco-box h3 {
+	font-size: 18px;
+	abody {
+		font-family: "Arial", sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f8f9fa; /* Light gray background color */
+		color: #333;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	/* Club Slogan Section */
+	#club-slogan {
+		background-color: #343a40; /* Dark background color */
+		color: #ffffff; /* White text color */
+		text-align: center;
+		padding: 40px 0;
+	}
+
+	#club-slogan img {
+		max-width: 200px;
+		height: auto;
+		margin-top: 20px; /* Adjust as needed */
+	}
+
+	/* Sections */
+	.section {
+		padding: 40px 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		color: #343a40;
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+
+	/* Shared Styles for Sections */
+	.section-container,
+	.exco-gallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.text-content {
+		margin-bottom: 15px;
+	}
+
+	#subcom-bullet-points {
+		list-style: none;
+		padding: 0;
+	}
+
+	#subcom-bullet-points li {
+		margin-bottom: 5px;
+	}
+
+	hr {
+		border: 1px solid #ccc;
+		margin: 40px 0;
+	}
+
+	.image-text-container-left,
+	.image-text-container-right,
+	.column-2-5,
+	.column-2-7,
+	.column-2-3 {
+		width: calc((100% - 20px) / 2);
+	}
+
+	.image-center img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		height: auto;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Meet Our Excos Section */
+	#section-excos {
+		padding: 40px 0;
+		background-color: #fff; /* Set a background color for the section */
+	}
+
+	.exco-gallery {
+		background-color: #f8f9fa; /* Light gray background color for the container */
+		border-radius: 10px; /* Add border-radius for a rounded look */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+	}
+
+	.exco-box {
+		width: 200px;
+		text-align: center;
+		margin: 20px; /* Adjust spacing between ExcoBoxes */
+	}
+
+	.exco-box img {
+		width: 100%;
+		height: auto;
+		border-radius: 50%; /* Make the image round */
+		margin-bottom: 10px; /* Adjust spacing between image and text */
+	}
+	a/* General Styles */
+	body {
+		font-family: "Arial", sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f8f9fa; /* Light gray background color */
+		color: #333;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	/* Club Slogan Section */
+	#club-slogan {
+		background-color: #343a40; /* Dark background color */
+		color: #ffffff; /* White text color */
+		text-align: center;
+		padding: 40px 0;
+	}
+
+	#club-slogan img {
+		max-width: 200px;
+		height: auto;
+		margin-top: 20px; /* Adjust as needed */
+	}
+
+	/* Sections */
+	.section {
+		padding: 40px 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		color: #343a40;
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+
+	/* Shared Styles for Sections */
+	.section-container,
+	.exco-gallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.text-content {
+		margin-bottom: 15px;
+	}
+
+	#subcom-bullet-points {
+		list-style: none;
+		padding: 0;
+	}
+
+	#subcom-bullet-points li {
+		margin-bottom: 5px;
+	}
+
+	hr {
+		border: 1px solid #ccc;
+		margin: 40px 0;
+	}
+
+	.image-text-container-left,
+	.image-text-container-right,
+	.column-2-5,
+	.column-2-7,
+	.column-2-3 {
+		width: calc((100% - 20px) / 2);
+	}
+
+	.image-center img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		height: auto;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Meet Our Excos Section */
+	#section-excos {
+		padding: 40px 0;
+		background-color: #fff; /* Set a background color for the section */
+	}
+
+	.exco-gallery {
+		background-color: #f8f9fa; /* Light gray background color for the container */
+		border-radius: 10px; /* Add border-radius for a rounded look */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+	}
+
+	.exco-box {
+		width: 200px;
+		text-align: center;
+		margin: 20px; /* Adjust spacing between ExcoBoxes */
+	}
+
+	.exco-box img {
+		width: 100%;
+		height: auto;
+		border-radius: 50%; /* Make the image round */
+		margin-bottom: 10px; /* Adjust spacing between image and text */
+	}
+
+	.exco-box h3 {
+		font-size: 18px;
+		margin: 10px 0;
+	}
+
+	.exco-box p {
+		font-size: 14px;
+		margin: 10px 0;
+	}
+
+	.exco-box h3 {
+		font-size: 18px;
+		margin: 10px 0;
+	}
+
+	.exco-box p {
+		font-size: 14px;
+	}
+
+	margin: 10px 0;
+}
+
+.exco-box p {
+	font-size: 14px;
+}
