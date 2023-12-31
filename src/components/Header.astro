@@ -1,11 +1,14 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import { Icon } from 'astro-icon/components';
 ---
-
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/">
+			<h2 class="sr-only">{SITE_TITLE}</h2>
+			<Icon name="simitclub"/>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -43,6 +46,29 @@ import { SITE_TITLE } from '../consts';
 	</nav>
 </header>
 <style>
+	:global([data-icon]) {
+		width: 4em;
+		height: 4em;
+		.logo-simitclub-primary {fill: #cf2528;}
+		.logo-simitclub-secondary {fill: #e05d5b;}
+		--logo-simitclub-text: #fff;
+		--logo-simitclub-surface: #000;
+		--logo-simitclub-gradient: url(#linear-gradient-dark);
+		@media (prefers-color-scheme: light) {
+			.logo-simitclub-text {fill: #1b1b1b;}
+			.logo-simitclub-surface {fill: #fff;}
+			.logo-simitclub-gradient {fill: url(#linear-gradient-light);}
+		}
+		@media (prefers-color-scheme: dark) {
+			--logo-simitclub-text: #fff;
+			--logo-simitclub-surface: #000;
+			--logo-simitclub-gradient: url(#linear-gradient-dark);
+			.logo-simitclub-text {fill: #fff;}
+			.logo-simitclub-surface {fill: #000;}
+			.logo-simitclub-gradient {fill: url(#linear-gradient-dark);}
+		}
+	}
+
 	header {
 		margin: 0;
 		padding: 0 1em;
