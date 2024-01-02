@@ -20,6 +20,7 @@
     "@astrojs/mdx": "^2.0.3",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
+    "@iconify-json/bi": "^1.1.22",
     "astro": "^4.0.8",
     "astro-icon": "^1.0.1",
     "typescript": "^5.3.3"
@@ -27,8 +28,5 @@
   "engines": {
     "node": ">=18.14.1",
     "pnpm": ">=8.6.12"
-  },
-  "devDependencies": {
-    "@iconify-json/bi": "^1.1.22"
   }
 }
