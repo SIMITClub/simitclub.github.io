@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 import ExcoBox from '../components/ExcoBox.astro';
+import 'src/styles/about.css';
 const SITE_TITLE = 'SIM IT Club';
 const SITE_DESCRIPTION = 'Official website of SIM IT Club.';
 const EXCOS = [
@@ -40,23 +41,14 @@ const EXCOS = [
 		image: 'src/assets/images/members/!default.png',
 	},
 ];
-
-// Import the CSS file
-import 'src/styles/about.css';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} pubDate={new Date()}>
-	<!-- TypeIt Library -->
-	<!-- <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> -->
-
 	<!-- CLUB LOGO, SLOGAN, VISION  -->
 	<section id='club-slogan'>
+		<img src='src/assets/images/simitc/simitclub.png' alt='SIM IT Club logo' />
 		<div id='club-slogan-content-container'>
 			<span id='club-slogan-top'>FOR THE NEW DIGITAL WORLD</span>
-			<img
-				src='src/assets/images/simitc/simitclub.png'
-				alt='SIM IT Club logo'
-			/>
 			<h1 id='club-slogan-text-header'>OUR VISION IS BIG AND BOLD.</h1>
 			<span id='club-slogan-text-content'>COLLABORATE, NETWORK, CONNECT</span>
 		</div>
@@ -95,15 +87,14 @@ import 'src/styles/about.css';
 				</p>
 			</div>
 			<div class='intro-container-image column-2-5'>
-				<img
+				<!-- <img
 					id='intro-image'
 					src='src/assets/images/members/!default.png'
 					alt='communal picture of the it club during orientation'
-				/>
+				/> -->
 			</div>
 		</div>
 	</section>
-
 	<hr />
 
 	<!-- ACTIVITIES -->
@@ -114,7 +105,7 @@ import 'src/styles/about.css';
 		<div id='section-activities-workshops' class='image-text-container-left'>
 			<div class='column-2-7'>
 				<p class='text-header'>
-					Acquire New Skills on Industry Relevant Workshops
+					<em><u>Acquire New Skills on Industry Relevant Workshops</u></em>
 				</p>
 				<p class='text-content'>
 					<i>"An investment in knowledge pays the best interest."</i>, the late
@@ -137,11 +128,11 @@ import 'src/styles/about.css';
 				</p>
 			</div>
 			<div class='column-2-3 image-center'>
-				<img
+				<!-- <img
 					id='workshop-image'
 					src='src/assets/images/members/!default.png'
 					alt='baraq explaining about unix'
-				/>
+				/> -->
 			</div>
 		</div>
 
@@ -158,14 +149,16 @@ import 'src/styles/about.css';
 
 		<div id='section-activities-hackathon' class='image-text-container-right'>
 			<div class='column-2-3 image-center'>
-				<img
+				<!-- <img
 					style='width:500px;'
 					src='src/assets/images/members/!default.png'
 					alt='hackathon image'
-				/>
+				/> -->
 			</div>
 			<div class='column-2-7'>
-				<p class='text-header'>Compete for Prizes on Our Hackathons</p>
+				<p class='text-header'>
+					<em><u>Compete for Prizes on Our Hackathons</u></em>
+				</p>
 				<p class='text-content'>
 					One of the best ways to garner confidence over your own abilities in
 					the tech industry is to compete against other like-minded individuals.
@@ -187,7 +180,9 @@ import 'src/styles/about.css';
 
 		<div id='section-activities-subcom' class='image-text-container-left'>
 			<div class='column-2-7'>
-				<p class='text-header'>Become a Member of The Subcommitte</p>
+				<p class='text-header'>
+					<em><u>Become a Member of The Subcommitte</u></em>
+				</p>
 				<p class='text-content'>
 					For individuals looking to participate in a more service-centric
 					manner, keep a lookout for our recruitment drive initiative. In this
@@ -197,15 +192,15 @@ import 'src/styles/about.css';
 				<p class='text-content'>
 					By becoming a member of our subcommittee, you will be able to
 					contribute to making the aforementioned events available for the
-					campus community. This contribution includes (but is not limited to)
+					campus community. This contribution includes (but is not limited to):
 					<ul id='subcom-bullet-points'>
 						<li>📢 Becoming a speaker for one of our workshops</li>
 						<li>
-							📱 Promoting our club events on various social media alongside the
-							marketing team
+							✔️ Making sure the event runs smoothly as part of our events crew.
 						</li>
 						<li>
-							✔️ Making sure the event runs smoothly as part of our events crew.
+							📱 Promoting our club events on various social media alongside the
+							marketing team
 						</li>
 					</ul>
 				</p>
@@ -216,11 +211,11 @@ import 'src/styles/about.css';
 				</p>
 			</div>
 			<div class='column-2-3 image-center'>
-				<img
+				<!-- <img
 					style='width:450px; height:auto;'
 					src='src/assets/images/members/!default.png'
 					alt='group picture of the subcommittee members'
-				/>
+				/> -->
 			</div>
 		</div>
 	</section>
@@ -234,37 +229,4 @@ import 'src/styles/about.css';
 			{EXCOS.map((exco) => <ExcoBox {...exco} />)}
 		</div>
 	</section>
-
-	<!-- TypeIt LIBRARY SCRIPTS -->
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			new TypeIt('#club-slogan-text-header', {
-				speed: 100,
-				waitUntilVisible: true,
-				lifeLike: true,
-				keyboard: true,
-			}) //
-				.pause(1000)
-				.go();
-		});
-	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			new TypeIt('#activities-sub-header', {
-				speed: 100,
-				waitUntilVisible: true,
-				lifeLike: true,
-				keyboard: true,
-				loop: true,
-			})
-				.pause(1000)
-				.delete(4, { delay: 1000 })
-				.type('ACHIEVE🚀')
-				.pause(1000)
-				.delete(8, { delay: 1000 })
-				.type('GROW')
-				.pause(1000)
-				.go();
-		});
-	</script>
 </Layout>
