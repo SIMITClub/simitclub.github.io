@@ -11,6 +11,9 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		icon({
+			include: {
+				bi: ["*"]
+			},
 			iconDir: "src/assets/svg",
 			svgoOptions: {
 				multipass: false, plugins: [{
