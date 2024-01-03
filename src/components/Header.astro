@@ -9,8 +9,8 @@ import { Icon } from 'astro-icon/components';
 	<nav>
 		<a href='/'>
 			<h2 class='sr-only'>{SITE_TITLE}</h2>
-			<Icon class="light-only logo" name='simitclub-light' />
-			<Icon class="dark-only logo" name='simitclub-dark' />
+			<Icon class='light-only logo' name='simitclub-light' />
+			<Icon class='dark-only logo' name='simitclub-dark' />
 		</a>
 		<div class='internal-links'>
 			<HeaderLink href='/'>Home</HeaderLink>
@@ -35,14 +35,17 @@ import { Icon } from 'astro-icon/components';
 			align-items: center;
 			background-image: radial-gradient(
 				closest-side circle at 50% 50%,
-				color-mix(in oklab, var(--bg), oklch(.5 0 0) 15%)
-				33% 0%, transparent 100%);
+				color-mix(in oklab, var(--bg), oklch(0.5 0 0) 15%) 33% 0%,
+				transparent 100%
+			);
 		}
 	}
 
 	header {
 		margin: 0;
 		padding: 0 1em;
+		position: sticky;
+		top: 0px;
 	}
 
 	nav {
@@ -52,7 +55,7 @@ import { Icon } from 'astro-icon/components';
 	}
 	nav a {
 		font-weight: 700;
-		padding: .33em;
+		padding: 0.33em;
 		color: var(--fg);
 		text-decoration-color: transparent;
 	}
