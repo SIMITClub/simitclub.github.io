@@ -31,12 +31,12 @@ export default defineConfig({
 	],
 	markdown: {
 		shikiConfig: {
-			theme: 'github-dark',
-			experimentalThemes: {
-				light: 'github-light',
-				dark: 'github-dark',
-			},
 			wrap: false,
+			experimentalThemes: {
+				light: 'min-light', // Not used but needs to be defined.
+				"light-mode": 'github-light',
+				"dark-mode": 'github-dark',
+			},
 		},
-	},
+	}
 });
