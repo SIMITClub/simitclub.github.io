@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import ThemeRadio from './ThemeRadio.astro';
 import { SITE_TITLE } from '../consts';
 import { Icon } from 'astro-icon/components';
 ---
@@ -8,74 +9,40 @@ import { Icon } from 'astro-icon/components';
 	<nav>
 		<a href='/'>
 			<h2 class='sr-only'>{SITE_TITLE}</h2>
-			<Icon name='simitclub' />
+			<Icon class="light-only logo" name='simitclub-light' />
+			<Icon class="dark-only logo" name='simitclub-dark' />
 		</a>
 		<div class='internal-links'>
 			<HeaderLink href='/'>Home</HeaderLink>
 			<HeaderLink href='/blog'>Blog</HeaderLink>
 			<HeaderLink href='/about'>About</HeaderLink>
 		</div>
-		<div class='social-links'>
-			<a href='https://www.linkedin.com/in/sim-it-club/' target='_blank'>
-				<span class='sr-only'>Follow SIMITC on Linkedin</span>
-				<Icon name='bi:linkedin' />
-			</a>
-			<a href='https://www.instagram.com/simitclub/' target='_blank'>
-				<span class='sr-only'>Follow SIMITC on Instagram</span>
-				<Icon name='bi:instagram' />
-			</a>
-			<a href='https://github.com/simitclub' target='_blank'>
-				<span class='sr-only'>SIMITC on GitHub repo</span>
-				<Icon name='bi:github' />
-			</a>
-		</div>
+		<ThemeRadio />
 	</nav>
 </header>
 <style>
-	@layer graphics {
+	@layer logo {
 		:global([data-icon]) {
 			width: 1.75em;
 			height: 1.75em;
 		}
-		:global([data-icon="simitclub"]) {
-			width: 4em;
-			height: 4em;
-			.logo-simitclub-primary {
-				fill: #cf2528;
-			}
-			.logo-simitclub-secondary {
-				fill: #e05d5b;
-			}
-			@media (prefers-color-scheme: light) {
-				.logo-simitclub-text {
-					fill: #1b1b1b;
-				}
-				.logo-simitclub-surface {
-					fill: #fff;
-				}
-				.logo-simitclub-gradient {
-					fill: url(#linear-gradient-light);
-				}
-			}
-			@media (prefers-color-scheme: dark) {
-				.logo-simitclub-text {
-					fill: #fff;
-				}
-				.logo-simitclub-surface {
-					fill: #000;
-				}
-				.logo-simitclub-gradient {
-					fill: url(#linear-gradient-dark);
-				}
-			}
+		.logo {
+			width: 3.73em;
+			height: 3.73em;
+		}
+		nav > a:first-child {
+			display: flex;
+			align-items: center;
+			background-image: radial-gradient(
+				closest-side circle at 50% 50%,
+				color-mix(in oklab, var(--bg), oklch(.5 0 0) 15%)
+				33% 0%, transparent 100%);
 		}
 	}
 
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 
 	nav {
@@ -84,14 +51,13 @@ import { Icon } from 'astro-icon/components';
 		justify-content: space-between;
 	}
 	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
+		font-weight: 700;
+		padding: .33em;
+		color: var(--fg);
+		text-decoration-color: transparent;
 	}
 	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+		text-decoration-color: var(--link);
 	}
 	.social-links,
 	.social-links a {
