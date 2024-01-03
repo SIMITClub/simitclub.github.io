@@ -1,0 +1,237 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<ul class="theme-menu">
+	<li class="theme-menu-item">
+		<label>
+			{/* Always keep the names consistent for id, value, <span> and title. */}
+			<input type="radio" name="theme" id="Light" value="Light">
+			<span class="sr-only">Light</span>
+			<Icon name='bi:sun-fill' title="Light" />
+		</label>
+	</li>
+	<li class="theme-menu-item">
+		<label>
+			<input type="radio" name="theme" id="Dark" value="Dark">
+			<span class="sr-only">Dark</span>
+			<Icon name='bi:moon-fill' title="Dark" />
+		</label>
+	</li>
+	<li class="theme-menu-item">
+		<label>
+			<input type="radio" name="theme" id="Unset" value="Unset" checked>
+			<span class="sr-only">Unset</span>
+			<Icon name='bi:display' title="Unset" />
+		</label>
+	</li>
+</ul>
+
+{/* This <style> tag defines the CSS behavior of the radio toggle. */}
+<style>
+	@layer theme.behavior {
+		:global(:root) {
+			--light: initial;
+			--dark: ;
+			@media (prefers-color-scheme: dark) {
+				--light: ;
+				--dark: initial ;
+				&:has(#Light:checked) {
+					--light: initial ;
+					--dark: ;
+				}
+			}
+			&:has(#Dark:checked) {
+				--light: ;
+				--dark: initial ;
+			}
+		}
+	}
+
+	@layer theme.dynamic {
+		:root {
+			.light-only {
+				display:
+					var(--light, initial)
+					var(--dark, none);
+			}
+			.dark-only {
+				display:
+					var(--light, none)
+					var(--dark, initial);
+			}
+
+			--brandPrimary: oklch(55.29% 0.204 26.47);
+			--brandSecondary: oklch(64.48% 0.165 23.71);
+
+			--fg:
+			var(--light, #000)
+			var(--dark, oklch(90.33% 0 0));
+			--bg:
+			var(--light, oklch(100% 0 0))
+			var(--dark, oklch(17.33% 0 0));
+
+			/* TODO: use better colors */
+			--link:
+			var(--light, #2337ff)
+			var(--dark, #81d8ff);
+			--text:
+			var(--light, oklch(18.33% 0.015 266.74))
+			var(--dark, oklch(90.33% 0.015 266.74));
+			--text-1:
+			var(--light, oklch(28.17% 0.031 266.12))
+			var(--dark, oklch(85.17% 0.031 266.12));
+			--text-2:
+			var(--light, oklch(55.82% 0.072 266.12))
+			var(--dark, oklch(75.82% 0.072 266.12));
+			--surface-3:
+			var(--light, oklch(93.3% 0.01 261.79))
+			var(--dark, oklch(23.3% 0.01 261.79));
+
+			/* bgHeader match simitclub-light.svg or simitclub-dark.svg */
+			--bgHeader:
+			var(--light, oklch(100% 0 0))
+			var(--dark, oklch(18.33% 0 0));
+			--shadowHeader:
+			var(--light, oklch(0 0 0 / 15%))
+			var(--dark, oklch(15.33% 0 0));
+			--fgThemeIcon:
+			var(--light, var(--brandPrimary))
+			var(--dark, var(--brandSecondary));
+
+			--bgFooter:
+			var(--light, oklch(.93 .03 263))
+			var(--dark, oklch(.20 .03 263));
+
+			--boxShadowLight:
+			0 2px 6px oklch(55.82% .072 266.12 / .25),
+			0 8px 24px oklch(55.82% .072 266.12 / .33),
+			0 16px 32px oklch(55.82% .072 266.12 / .33);
+			--boxShadowDark:
+			0 2px 6px oklch(35.82% 0 0 / .25),
+			0 8px 24px oklch(35.82% 0 0 / .33),
+			0 16px 32px oklch(35.82% 0 0 / .33);
+			--boxShadow:
+			var(--light, var(--boxShadowLight))
+			var(--dark, var(--boxShadowDark));
+
+			--code-bg:
+			var(--light, var(--shiki-light-mode-bg))
+			var(--dark, var(--shiki-dark-mode-bg));
+			.astro-code {
+				background-color:
+				var(--light, var(--shiki-light-mode-bg))
+				var(--dark, var(--bgHeader)) !important;
+			}
+			.astro-code span {
+				color:
+				var(--light, var(--shiki-light-mode))
+				var(--dark, var(--shiki-dark-mode)) !important;
+			}
+		}
+	}
+
+	@layer theme.apply {
+		:global(body) {
+			color: var(--fg);
+			background-color: var(--bg);
+		}
+		:global(header) {
+			background: var(--bgHeader);
+			box-shadow: 0 2px 8px var(--shadowHeader);
+		}
+	}
+
+	/* Leave commented until everything else is working.
+	@layer visibility {
+		.theme-menu:has(#Light:checked) li:has(#Light) {
+			display: none;
+		}
+		.theme-menu:has(#Dark:checked) li:has(#Dark) {
+			display: none;
+		}
+	}
+	*/
+</style>
+
+{/* This <script> tag defines the JS behavior of the radio toggle. */}
+<script is:inline>
+	ThemeCookie = document.cookie
+		.split('; ')
+		.find(row => row.startsWith('theme='));
+	ThemeCookieExists = !!ThemeCookie;
+	if (ThemeCookieExists) {
+		// - Set the radio button to the value of the cookie.
+		let value = ThemeCookie.split('=')[1];
+		switch (value) {
+			case 'Light': case 'Dark': case 'Unset':
+				document.getElementById(value).checked = true;
+				break;
+			default:
+				console.error('ThemeCookie is not a valid value.')
+		}
+		console.log('ThemeCookie:\n', ThemeCookie)
+	}
+	console.log('document.cookie', document.cookie) // DEBUG
+
+	document.addEventListener('change', (event) => {
+		if (event.target.name === 'theme') {
+			// Store the current value in a variable.
+			const theme = event.target.value;
+			// Remove the cookie if the value is unset.
+			if (theme === 'Unset') {
+				document.cookie = 'theme=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+			} else {
+				// Set expiry 7 days from now.
+				const expiry = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+				// Set cookie to theme value.
+				document.cookie = `theme=${theme}; expires=${expiry.toUTCString()}; path=/;`;
+			}
+		}
+	});
+</script>
+
+{/* This <style> tag defines what the radio toggle looks like. */}
+<style>
+	@layer visual {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.theme-menu {
+			display: inline-flex;
+			padding: .25em;
+			gap: .75em;
+		}
+		.theme-menu-item label {
+			display: grid;
+			color: var(--fg);
+			background-color: transparent;
+			border: 2px solid transparent;
+			&:hover {
+				cursor: pointer;
+			}
+			&:has(input[type=radio]:focus-visible) {
+				outline: 2px solid slateblue;
+				outline-offset: 2px;
+			}
+		}
+		.theme-menu-item svg {
+			fill: currentColor;
+		}
+		.theme-menu-item input[type=radio] {
+			border: 0;
+			clip: rect(0, 0, 0, 0);
+			height: 1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			white-space: nowrap;
+			width: 1px;
+		}
+		label:has(input[type=radio]:checked) svg {
+			color: var(--fgThemeIcon);
+		}
+	}
+</style>
