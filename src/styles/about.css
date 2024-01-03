@@ -1,31 +1,20 @@
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #f8f9fa; /* Light gray background color */
-	color: #333;
-}
-
 .container {
-	max-width: 1200px;
+	max-width: 75rem;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 1.25rem;
 }
 
 #club-slogan {
-	background-color: #343a40; /* Dark background color */
-	color: #ffffff; /* White text color */
 	text-align: center;
-	padding: 40px 0;
 }
 
 #club-slogan img {
-	max-width: 200px;
+	max-width: 10rem;
 }
 
 .section-header {
-	color: #343a40;
-	font-size: 36px;
-	margin-bottom: 20px;
+	font-size: 2.25rem;
+	margin-bottom: 1.25rem;
 }
 
 #intro-container,
@@ -39,7 +28,7 @@ body {
 }
 
 .text-content {
-	margin-bottom: 15px;
+	margin-bottom: 1rem;
 }
 
 #subcom-bullet-points {
@@ -48,13 +37,12 @@ body {
 }
 
 #subcom-bullet-points li {
-	margin-bottom: 5px;
+	margin-bottom: 0.5rem;
 	font-weight: bold;
 }
 
 hr {
 	border: 1px solid #ccc;
-	margin: 40px 0;
 }
 
 #club-slogan-content-container,
@@ -64,7 +52,7 @@ hr {
 #section-activities-subcom,
 .exco-gallery {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 75rem;
 	margin: 0 auto;
 }
 
@@ -81,37 +69,49 @@ hr {
 	max-width: 100%;
 	height: auto;
 	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #club-slogan-text-header,
 #activities-sub-header {
-	font-size: 24px;
+	font-size: 1.5rem;
 }
 
 #club-slogan-text-content {
-	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 .exco-gallery {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around; /* Adjust spacing between ExcoBoxes */
-	background-color: #f8f9fa; /* Light gray background color for the container */
 	border-radius: 10px; /* Add border-radius for a rounded look */
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	padding: 20px;
+	margin: auto;
+	width: 90%;
+	border: 3px solid black;
+	padding: 10px;
 }
 
 .exco-box {
-	width: 200px;
+	width: 7rem;
 	text-align: center;
-	margin: 20px; /* Adjust spacing between ExcoBoxes */
+	margin: 1.25rem; /* Adjust spacing between ExcoBoxes */
 }
 
 .exco-box img {
 	width: 100%;
 	height: auto;
 	border-radius: 50%; /* Make the image round */
-	margin-bottom: 10px; /* Adjust spacing between image and text */
+	margin-bottom: 0.625rem; /* Adjust spacing between image and text */
+}
+
+h1,
+.prose p {
+	margin-block-end: 0;
+}
+
+.exco-name,
+.exco-title {
+	font-size: 1rem;
+	font-weight: bold;
+	padding-bottom: 0.625rem;
 }
