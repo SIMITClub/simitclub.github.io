@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import ScrollTopTop from '@components/ScrollToTop.astro';
 const today = new Date();
 ---
 
@@ -44,6 +45,7 @@ const today = new Date();
 		}
 	</div>
 	<span>&copy; 2009-{today.getFullYear()} SIM IT Club</span>
+	<ScrollTopTop />
 </footer>
 <style>
 	footer {

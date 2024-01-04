@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<button id="ScrollToTop">
+	<span class="sr-only">Scroll to top</span>
+	<Icon title="Scroll to top" name='bi:arrow-up-circle-fill' />
+</button>
+<script>
+	document.addEventListener('astro:page-load', () => {
+		function easeInOutQuad(t, b, c, d) {
+			t /= d / 2;
+			if (t < 1) return c / 2 * t * t + b;
+			t--;
+			return -c / 2 * (t * (t - 2) - 1) + b;
+		}
+
+		let ScrollToTop = document.getElementById('ScrollToTop');
+		// Hide the ScrollToTop button when the page is at the top
+		window.addEventListener('scroll', () => {
+			ScrollToTop.style.display = window.scrollY > 0 ? 'block' : 'none';
+		});
+
+		// Event listener for the button
+		ScrollToTop.addEventListener('click', () => {
+			const duration = 500; // milliseconds
+			const start = window.scrollY;
+			const change = -start;
+			let currentTime = 0;
+			const increment = 20;
+			function animateScroll() {
+				currentTime += increment;
+				const val = easeInOutQuad(currentTime, start, change, duration);
+				window.scrollTo(0, val);
+				if (currentTime < duration) {
+					requestAnimationFrame(animateScroll);
+				}
+			}
+			animateScroll();
+		});
+	});
+</script>
+<style>
+	#ScrollToTop {
+		border: none;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		bottom: 2em;
+		right: 2em;
+		color: var(--text-2);
+		background-color: transparent;
+		&:hover {
+			cursor: pointer;
+		}
+		& [data-icon='bi:arrow-up-circle-fill'] {
+			height: 1.125rem;
+			width: 1.125rem;
+		}
+	}
+</style>
