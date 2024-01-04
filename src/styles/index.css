@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "global.css" layer(template);
+@import "template.css" layer(template);
 
 @layer fonts {
 	@font-face {
