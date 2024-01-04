@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
@@ -45,3 +46,5 @@ const { title, description, image = '/placeholder-light.png' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<ViewTransitions />

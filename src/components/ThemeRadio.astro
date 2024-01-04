@@ -156,6 +156,7 @@ import { Icon } from 'astro-icon/components';
 
 {/* This <script> tag defines the JS behavior of the radio toggle. */}
 <script is:inline>
+document.addEventListener('astro:page-load', () => {
 	ThemeCookie = document.cookie
 		.split('; ')
 		.find(row => row.startsWith('theme='));
@@ -189,6 +190,7 @@ import { Icon } from 'astro-icon/components';
 			}
 		}
 	});
+});
 </script>
 
 {/* This <style> tag defines what the radio toggle looks like. */}
