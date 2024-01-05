@@ -5,11 +5,8 @@ description: 'About SIM IT Club'
 updatedDate: 'Jan 02 2024'
 ---
 
-
 <img width="720" height="360" src="/placeholder-light.png" class='light-only' alt=""></img>
 <img width="720" height="360" src="/placeholder-dark.png" class='dark-only' alt=""></img>
-
-
 
 ---
 
@@ -30,8 +27,6 @@ SIM IT Club welcomes you with a myriad of activities tailored to help you grow a
 
 ## Our Activities
 
-
-
 > An investment in knowledge pays the best interest.  
 > Sir Benjamin Franklin
 
@@ -40,9 +35,7 @@ for those seeking to enrich themselves with all things IT.
 From a full hands-on tutorial session to a quick burst of 5-minute introduction to relevant IT topics, 
 the SIM IT Club will continue to provide learners with rich contents.
 
-
 ### Join Us
-
 
 Subcommittee members 
 will be able to contribute to events for SIM students. 
