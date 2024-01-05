@@ -26,3 +26,7 @@ src/assets/fonts/*.eot
 src/assets/fonts/*.otf
 src/assets/fonts/*.ttf
 src/assets/fonts/*.woff
+
+# Image & Graphics Editors
+**/*.ai
+**/*.xcf
