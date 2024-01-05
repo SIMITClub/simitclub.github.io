@@ -5,14 +5,11 @@ description: 'About SIM IT Club'
 updatedDate: 'Jan 02 2024'
 ---
 
-#### FOR THE NEW DIGITAL WORLD
 
 <img width="720" height="360" src="/placeholder-light.png" class='light-only' alt=""></img>
 <img width="720" height="360" src="/placeholder-dark.png" class='dark-only' alt=""></img>
 
-#### OUR VISION IS BIG AND BOLD.
 
-#### COLLABORATE, NETWORK, CONNECT
 
 ---
 
@@ -34,7 +31,6 @@ SIM IT Club welcomes you with a myriad of activities tailored to help you grow a
 
 ## Our Activities
 
-#### LEARN, SHARE, EARN
 
 ### Acquire New Skills in Industry Relevant Workshops
 
