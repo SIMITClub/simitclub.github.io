@@ -5,16 +5,18 @@ description: 'About SIM IT Club'
 updatedDate: 'Jan 02 2024'
 ---
 
-FOR THE NEW DIGITAL WORLD
+#### FOR THE NEW DIGITAL WORLD
 
 <img width="720" height="360" src="/placeholder-light.png" class='light-only' alt=""></img>
 <img width="720" height="360" src="/placeholder-dark.png" class='dark-only' alt=""></img>
 
-OUR VISION IS BIG AND BOLD.
+#### OUR VISION IS BIG AND BOLD.
 
-COLLABORATE, NETWORK, CONNECT
+#### COLLABORATE, NETWORK, CONNECT
 
-Providing in-Campus Platform for IT Enthusiasts
+---
+
+## Providing in-Campus Platform for IT Enthusiasts
 
 We, as members of the SIM IT club,
 believe that the journey to understanding and exploring the landscape of modern informational technology,
@@ -28,14 +30,17 @@ Or even an advance player preparing to hone your leadership skills for the indus
 
 The IT Club welcomes you with a meriad of activities tailored to help you grow as an individual in the fields of IT.
 
-Our Activities
+---
 
-LEARN, SHARE, EARN
+## Our Activities
 
-Acquire New Skills on Industry Relevant Workshops
+#### LEARN, SHARE, EARN
 
-"An investment in knowledge pays the best interest.", 
-the late Sir Benjamin Franklin once said. 
+### Acquire New Skills on Industry Relevant Workshops
+
+> An investment in knowledge pays the best interest.  
+> Sir Benjamin Franklin
+
 As members of the IT community that continues to grow, 
 the SIM IT club could not agree with this statement any more than we already do.
 
@@ -49,7 +54,7 @@ for those seeking to enrich themselves with all things IT.
 From a full hands-on tutorial session to a quick burst of 5 minutes introduction to relevant IT topics, 
 the SIM IT Club will continue to provide learners with rich contents.
 
-Compete for Prizes on Our Hackathons
+### Compete for Prizes on Our Hackathons
 
 One of the best ways to garner confidence over your own abilities in the tech industry is to compete against other like-minded individuals. 
 And we believe that as students, 
@@ -61,7 +66,7 @@ This ensures that competitors can get useful training prior to the start of the 
 In addition to that, experts will ensure that the standard of the submissions will be kept high, 
 and that the submissions themselves will be judged fairly.
 
-Become a Member of The Subcommitte
+### Become a Member of The Subcommitte
 
 For individuals looking to participate in a more service-centric manner, 
 keep a lookout for our recruitment drive initiative. 
@@ -72,13 +77,13 @@ By becoming a member of our subcommittee,
 you will be able to contribute to making the aforementioned events available for the campus community. 
 This contribution includes (but is not limited to)
 
-📢 Becoming a speaker for one of our workshops
-
-📱 Promoting our club events on various social media alongside the marketing team
-
-✔️ Making sure the event runs smoothly as part of our events crew.
+- 📢 Becoming a speaker for one of our workshops
+- 📱 Promoting our club events on various social media alongside the marketing team
+- ✔️ Making sure the event runs smoothly as part of our events crew.
 
 As for those truly confident in their abilities, 
 rest assured that the recruitment drive initiative also looks for excommittees who can lead the club and all its members.
 
-Meet Our Excos
+---
+
+## Meet Our Excos
