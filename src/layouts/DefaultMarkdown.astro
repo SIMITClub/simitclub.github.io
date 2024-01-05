@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 				margin: 0;
 			}
 			.prose {
-				width: 720px;
+				width: 1080px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
@@ -23,6 +23,14 @@ const { frontmatter } = Astro.props;
 			}
 			.last-updated-on {
 				font-style: italic;
+			}
+			:global(.center) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			:global(.prose p) {
+				text-wrap: balance;
 			}
 		</style>
 	</head>

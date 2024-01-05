@@ -5,8 +5,10 @@ description: 'About SIM IT Club'
 updatedDate: 'Jan 02 2024'
 ---
 
-<img width="720" height="360" src="/placeholder-light.png" class='light-only' alt=""></img>
-<img width="720" height="360" src="/placeholder-dark.png" class='dark-only' alt=""></img>
+<div class="center">
+<img width="720" height="360" src="/placeholder-light.png" class='light-only' alt="" />
+<img width="720" height="360" src="/placeholder-dark.png" class='dark-only' alt="" />
+</div>
 
 ---
 
