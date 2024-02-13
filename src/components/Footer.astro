@@ -1,93 +1,73 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '@images/logo-dark.png';
-import { SITE_TITLE } from 'src/consts';
-import Link from '@components/Link.astro';
-const registerMember =
-	'https://forms.office.com/Pages/ResponsePage.aspx?id=T8GRqvmA60KWcB1aN1SmluQv1kaVgQFDsdSLM_zyDBBUMzcxUjc4RlhXWEMxWFoxM0M0U1REMUdESS4u';
+import { Icon } from 'astro-icon/components';
+import ScrollTopTop from '@components/ScrollToTop.astro';
+const today = new Date();
 ---
 
-<footer role="contentinfo" id="site-footer">
-	<div class="content-container">
-		<nav role="navigation" aria-labelledby="Footer Menu">
-			<!--<Image src={logo} alt="SIM IT Club Logo" />-->
-			<ul>
-				<li><h3>Blog</h3></li>
-				<Link li={true} href="/blog/author" text="Authors" />
-				<Link li={true} href="/blog/category" text="Categories" />
-				<Link li={true} href="/blog/posts" text="Posts" />
-			</ul>
-			<ul>
-				<li><h3>About</h3></li>
-				<Link li={true} href="/about" text="About" />
-				<Link li={true} href="mailto:it@mymail.sim.edu.sg" text="Email" />
-				<Link li={true} href={registerMember} text="Sign up for SIM IT Club" />
-				<Link
-					li={true}
-					href="https://project1095.simge.edu.sg/student-life/special-interest-clubs/sim-it-club/"
-					text="Student Development Page"
-				/>
-			</ul>
-			<ul>
-				<li><h3>Connect</h3></li>
-				<Link
-					li={true}
-					href="https://www.facebook.com/simitclub/"
-					text="Facebook"
-					icon="tabler:brand-meta"
-				/>
-				<Link
-					li={true}
-					href="https://github.com/simitclub"
-					text="GitHub"
-					icon="tabler:brand-github"
-				/>
-				<Link
-					li={true}
-					href="https://www.instagram.com/simitclub/"
-					text="Instagram"
-					icon="tabler:brand-instagram"
-				/>
-				<Link
-					li={true}
-					href="https://www.linkedin.com/in/sim-it-club/"
-					text="LinkedIn"
-					icon="tabler:brand-linkedin"
-				/>
-				<Link
-					li={true}
-					href="https://www.tiktok.com/@simitclub"
-					text="TikTok"
-					icon="tabler:brand-tiktok"
-				/>
-				<Link
-					li={true}
-					href="https://twitter.com/simitclub"
-					text="Twitter"
-					icon="tabler:brand-twitter"
-				/>
-			</ul>
-		</nav>
-		<hr />
-		<div>
-			<nav>
-				<ul>
-					<!--
-TODO
-  https://docs.astro.build/en/guides/rss/
-  <li><a href="/feed">RSS</a></li>
-  https://docs.astro.build/en/guides/integrations-guide/sitemap/#overview
-  <li><a href="/site-map">Site Map</a></li>
--->
-					<li><a href="/privacy-statement">Privacy Statement</a></li>
-					<li><a href="/terms-of-service">Terms of Service</a></li>
-					<li><a href="/accessiblity-statement">Accessibility Statement</a></li>
-				</ul>
-			</nav>
-			<p>
-				&copy; {new Date().getFullYear()}
-				{SITE_TITLE}
-			</p>
-		</div>
+<footer>
+	<div class="social-links">
+		{
+			<a href='https://www.linkedin.com/in/sim-it-club/' target='_blank'>
+				<span class='sr-only'>Follow SIM IT Club on LinkedIn</span>
+				<Icon title="LinkedIn" name='bi:linkedin' />
+			</a>
+			<a href='https://www.instagram.com/simitclub/' target='_blank'>
+				<span class='sr-only'>Follow SIM IT Club on Instagram</span>
+				<Icon title="Instagram" name='bi:instagram' />
+			</a>
+			<a href='mailto:it@mymail.sim.edu.sg' target='_blank'>
+				<span class='sr-only'>Email</span>
+				<Icon title="Email" name='bi:envelope' />
+			</a>
+			<a href='/rss.xml' target='_blank'>
+				<span class='sr-only'>RSS Feed</span>
+				<Icon title="RSS" name='bi:rss' />
+			</a>
+			<a href='https://github.com/simitclub' target='_blank'>
+				<span class='sr-only'>Follow SIM IT Club on GitHub</span>
+				<Icon title="GitHub" name='bi:github' />
+			</a>
+			/*
+			 * // Inactive social media accounts:
+			 * <a href='https://www.tiktok.com/@simitclub' target='_blank'>
+			 * <span class='sr-only'>Follow SIM IT Club on TikTok</span>
+			 * <Icon name='bi:tiktok' />
+			 * </a>
+			 * <a href='https://twitter.com/simitclub' target='_blank'>
+			 * <span class='sr-only'>Follow SIM IT Club on Twitter</span>
+			 * <Icon name='bi:twitter' />
+			 * </a>
+			 * <a href='https://www.facebook.com/simitclub/' target='_blank'>
+			 * <span class='sr-only'>Follow SIM IT Club on Facebook</span>
+			 * <Icon name='bi:facebook' />
+			 * </a>
+			 */
+		}
 	</div>
+	<span>&copy; 2009-{today.getFullYear()} SIM IT Club</span>
+	<ScrollTopTop />
 </footer>
+<style>
+	footer {
+		padding: 2em 1em 2em 1em;
+		background-color: var(--bgFooter);
+		color: var(--text-2);
+		text-align: center;
+	}
+	footer > *:not(:last-child) {
+		margin-bottom: 1em;
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: var(--text-2);
+	}
+	.social-links a:hover {
+		color: var(--text-1);
+	}
+</style>

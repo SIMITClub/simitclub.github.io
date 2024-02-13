@@ -15,17 +15,18 @@ pnpm-debug.log*
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/launch.json
-.idea/
+.idea/**/*
+!.idea/.gitignore
+!.idea/modules.xml
+!.idea/vcs.xml
 !.idea/codeStyles/codeStyleConfig.xml
-!.idea/codeStyles/Project.xml
-!.idea/inspectionProfiles/Project_Default.xml
-!.idea/jsLinters/eslint.xml
-!.idea/jsLibraryMappings.xml
-!.idea/prettier.xml
 
 # Build
 src/assets/fonts/*.eot
 src/assets/fonts/*.otf
 src/assets/fonts/*.ttf
 src/assets/fonts/*.woff
-src/assets/fonts/*.woff2
+
+# Image & Graphics Editors
+**/*.ai
+**/*.xcf

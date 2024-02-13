@@ -1,36 +1,67 @@
 ---
-import '@styles/scrolltotop.css';
-import IconScrollToTop from '../assets/images/icons/icon-back-to-top.svg?raw';
+import { Icon } from 'astro-icon/components';
 ---
-
-<button id="scrollToTopBtn">
-	<Fragment set:html={IconScrollToTop} id="scrollToTopBtn" />
+<button id="ScrollToTop">
+	<span class="sr-only">Scroll to top</span>
+	<Icon title="Scroll to top" name='bi:arrow-up-circle-fill' />
 </button>
-
 <script>
-	function scrollFunction() {
-		if (
-			document.body.scrollTop > headerHeight ||
-			document.documentElement.scrollTop > headerHeight
-		) {
-			scrollToTop.style.display = 'block';
-		} else {
-			scrollToTop.style.display = 'none';
+	document.addEventListener('astro:page-load', () => {
+		function easeInOutQuad(t: number, b: number, c: number, d: number): number {
+			t /= d / 2;
+			if (t < 1) return c / 2 * t * t + b;
+			t--;
+			return -c / 2 * (t * (t - 2) - 1) + b;
+		}
+
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry) ScrollToTop.style.display = entry.isIntersecting ? 'none' : 'block';
+		});
+		const header = document.querySelector('header') || document.createElement('header')
+		observer.observe(header);
+		let ScrollToTop =
+			document.getElementById('ScrollToTop') ||
+			document.createElement('button');
+		ScrollToTop.addEventListener('click', () => {
+			const duration = 500; // milliseconds
+			const start = window.scrollY;
+			const change = -start;
+			let currentTime = 0;
+			const increment = 20;
+			function animateScroll() {
+				currentTime += increment;
+				const val = easeInOutQuad(currentTime, start, change, duration);
+				window.scrollTo(0, val);
+				if (currentTime < duration) {
+					requestAnimationFrame(animateScroll);
+				}
+			}
+			animateScroll();
+		});
+	});
+</script>
+<style>
+	#ScrollToTop {
+		display: none;
+		border: none;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		bottom: 2em;
+		right: 2em;
+		color: var(--text-2);
+		background-color: transparent;
+		transition: transform 0.125s ease-in-out, color 0.25s ease-in-out;
+		&:hover {
+			cursor: pointer;
+			color: var(--text-1);
+			transform: scale(1.25);
+			transition: transform 0.125s ease-in-out, color 0.25s ease-in-out;
+		}
+		& [data-icon='bi:arrow-up-circle-fill'] {
+			height: 1.125rem;
+			width: 1.125rem;
 		}
 	}
-
-	function topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
-
-	const scrollToTop = document.getElementById('scrollToTopBtn');
-	const header = document.getElementById('site-header');
-	const headerHeight = header.offsetHeight;
-
-	window.onscroll = function () {
-		scrollFunction();
-	};
-
-	scrollToTop.addEventListener('click', topFunction);
-</script>
+</style>

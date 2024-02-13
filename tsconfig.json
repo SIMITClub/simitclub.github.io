@@ -3,14 +3,15 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "baseUrl": ".",
-    "allowJs": true,
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@content/*": ["src/content/*"],
+      "@fonts/*": ["src/assets/fonts/*"],
       "@images/*": ["src/assets/images/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@svg/*": ["src/assets/svg/*"]
     }
   }
 }

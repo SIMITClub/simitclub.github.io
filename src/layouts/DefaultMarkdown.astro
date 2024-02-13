@@ -1,0 +1,51 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={frontmatter.title} description={frontmatter.description} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.prose {
+				width: 1080px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: var(--text-1);
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+			:global(.center) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			:global(.prose p) {
+				text-wrap: balance;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article>
+				<div class="prose">
+					<slot />
+					<p class="last-updated-on">
+						Last updated on {frontmatter.updatedDate}
+					</p>
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,54 +1,40 @@
 ---
-import { Image } from "astro:assets";
-import "@styles/index.css";
-import logo from "@images/logo.jpg";
-import { SITE_TITLE, SITE_DESCRIPTION } from "src/consts";
-import { Members, Posts, Categories } from "@content/config";
-import Layout from "@layouts/Default.astro";
-import { getCollection, getEntryBySlug } from "astro:content";
-import DateLocale from "@components/DateLocale.astro";
-import BlogCard from "@components/BlogCard.astro";
-
-const posts = await getCollection("posts");
-
-const hasImageAttribution = (post: Posts) => {
-  return post.data.img.attribution !== undefined;
-};
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <p id="site-description">
-    Equipping SIM students with Informational Technology skills which are vital
-    in the working world.
-  </p>
-  <br />
-  <h2>Latest Posts</h2>
-  <div class="index-list-posts">
-    {
-      posts
-      // Exclude drafts.
-        .filter((post: Posts) => post.data.draft !== true)
-        // Sort posts by date.
-        .sort(
-          (a: Posts, b: Posts) => b.data.datePublished - a.data.datePublished
-        )
-        .map((post: Posts) => (
-          <BlogCard
-            title={post.data.title}
-            description={post.data.description}
-            date={post.data.datePublished}
-            image={post.data.img}
-            slug={post.slug}
-          />
-        ))
-    }
-    {
-      /*
-      posts.filter((post: Posts) => post.data.draft !== true).sort((a: Posts, b: Posts) => b.data.datePublished - a.data.datePublished).map((post: Posts) => (
-      <div>{
-        <Image src={post.data.img.src} alt={post.data.img.alt}/><h3>{post.data.title}</h3><p>{post.data.description}</p>
-        <DateLocale date={post.data.datePublished} omitYear={true}/>}</div>))
-  */
-    }
-  </div>
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>SIM IT Club</h1>
+			<p>
+				Hi! 👋 Welcome to our little corner of the web. 🌐
+			</p>
+			<p>
+				Here, our goal is to celebrate all things IT 💻,
+				and learn crucial IT-related skills needed for the professional world 🌍.
+				We frequently organize meetings, talks, workshops, and seminars
+				that are open to all students 🎓,
+				regardless of their major or level of expertise.
+			</p>
+			<p>
+				We're also a part of the student chapter under the
+				Singapore Computer Society (SCS) 🏢
+				and
+				Association of Information Security Professionals (AISP) 🔐,
+			</p>
+			<p>
+				We're always looking for new members to join us,
+				so if you're interested in IT, we'd <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=eF0ERJXMGE2FJ2YvtdVEB-AqdU67K4lKmefPkNg3TaZURVNPNEYyUjRHM0hXS0NBRVg4MVIyR0UzQS4u">love to have you on board!</a> 🚀
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
