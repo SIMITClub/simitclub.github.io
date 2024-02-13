@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <header>
-	<nav>
+	<nav class="columns">
 		<a href='/'>
 			<h2 class='sr-only'>{SITE_TITLE}</h2>
 			<Icon class='light-only logo' name='simitclub-light' />
@@ -41,12 +41,18 @@ import { Icon } from 'astro-icon/components';
 		padding: 0 1em;
 		/*position: sticky;
 		top: 0px;*/
+		display: grid;
+		container-type: inline-size;
 	}
 
-	nav {
-		display: flex;
+	nav.columns {
+		--min-column-size: 192px;
+		--column-count: 3;
+		--gap: 1cqi;
 		align-items: center;
-		justify-content: space-between;
+		justify-items: center;
+		margin-block-start: min(2cqi, 1ch);
+		margin-block-end: min(2cqi, 1ch);
 	}
 	nav a {
 		font-weight: 700;

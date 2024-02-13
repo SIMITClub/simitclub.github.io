@@ -57,4 +57,44 @@
 		/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 		white-space: nowrap;
 	}
+
+	/**
+	* https://www.youtube.com/watch?v=LEkFckg7sfw
+	* https://codepen.io/kevinpowell/pen/abMLmeO
+	*/
+	.columns {
+		/* User Setting */
+		--min-column-size: 160px;
+		--column-count: 4;
+		--gap: 2rem;
+
+		/* Calculations */
+		--breakpoint: calc(var(--min-column-size) * var(--column-count) + (var(--gap) * (var(--column-count) - 1)) );
+		--column-size: calc((100% / var(--column-count)) - var(--gap));
+
+		display: grid;
+		gap: var(--gap);
+
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(
+				min(max(var(--column-size), (100% - var(--breakpoint)) * -999 ), 100%),
+				1fr
+			)
+		);
+	}
+}
+
+@layer layout {
+	body {
+		min-height: 100svh;
+		display: flex;
+		flex-direction: column;
+	}
+	main {
+		margin-block: min(1ch, 16px);
+	}
+	footer {
+		margin-top: auto;
+	}
 }
