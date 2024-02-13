@@ -7,20 +7,22 @@ import { Icon } from 'astro-icon/components';
 </button>
 <script>
 	document.addEventListener('astro:page-load', () => {
-		function easeInOutQuad(t, b, c, d) {
+		function easeInOutQuad(t: number, b: number, c: number, d: number): number {
 			t /= d / 2;
 			if (t < 1) return c / 2 * t * t + b;
 			t--;
 			return -c / 2 * (t * (t - 2) - 1) + b;
 		}
 
-		let ScrollToTop = document.getElementById('ScrollToTop');
-		// Hide the ScrollToTop button when the page is at the top
-		window.addEventListener('scroll', () => {
-			ScrollToTop.style.display = window.scrollY > 0 ? 'block' : 'none';
+		const observer = new IntersectionObserver((entries) => {
+			const entry = entries[0];
+			if (entry) ScrollToTop.style.display = entry.isIntersecting ? 'none' : 'block';
 		});
-
-		// Event listener for the button
+		const header = document.querySelector('header') || document.createElement('header')
+		observer.observe(header);
+		let ScrollToTop =
+			document.getElementById('ScrollToTop') ||
+			document.createElement('button');
 		ScrollToTop.addEventListener('click', () => {
 			const duration = 500; // milliseconds
 			const start = window.scrollY;
