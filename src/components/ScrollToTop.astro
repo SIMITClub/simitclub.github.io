@@ -43,6 +43,7 @@ import { Icon } from 'astro-icon/components';
 </script>
 <style>
 	#ScrollToTop {
+		display: none;
 		border: none;
 		margin: 0;
 		padding: 0;
@@ -51,8 +52,12 @@ import { Icon } from 'astro-icon/components';
 		right: 2em;
 		color: var(--text-2);
 		background-color: transparent;
+		transition: transform 0.125s ease-in-out, color 0.25s ease-in-out;
 		&:hover {
 			cursor: pointer;
+			color: var(--text-1);
+			transform: scale(1.25);
+			transition: transform 0.125s ease-in-out, color 0.25s ease-in-out;
 		}
 		& [data-icon='bi:arrow-up-circle-fill'] {
 			height: 1.125rem;
