@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import icon from "astro-icon";
-import { SITE_URL } from "src/consts";
+import { SITE_URL } from "./src/consts.ts";
 
 // https://astro.build/config
 export default defineConfig({
