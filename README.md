@@ -1,68 +1,121 @@
-# Astro Starter Kit: Blog
+# SIM IT Club Website
+
+This is the official website for the SIM IT Club, built with [Astro](https://astro.build/).
+
+## Getting Started
+
+Follow these instructions to get a local copy of the project up and running for development and testing purposes.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) version `18.14.1` or higher.
+- [pnpm](https://pnpm.io/) version `8.6.12` or higher.
+
+It is recommended to use a Node.js version manager like [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/schniz/fnm) to manage your Node.js versions.
+
+### Installation
+
+1.  Clone the repository:
+    ```sh
+    git clone https://github.com/simitclub/simitclub.github.io.git
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd simitclub.github.io
+    ```
+3.  Install the dependencies using pnpm:
+    ```sh
+    pnpm install
+    ```
+
+### Running the Development Server
+
+To start the local development server, run the following command:
 
 ```sh
-npm create astro@latest -- --template blog
+pnpm dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+This will start the server at `http://localhost:4321`. You can now view the site in your browser.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+If you need to access the development server from other devices on the same network, use:
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+pnpm devh
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Workflow
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+This section explains how to manage the content of the website.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+### Adding a New Blog Post
 
-Any static assets, like images, can be placed in the `public/` directory.
+1.  Create a new Markdown file (`.md`) inside the `src/content/blog/` directory.
+2.  The name of the file will be used as the URL slug. For example, `my-awesome-post.md` will be accessible at `/blog/my-awesome-post`.
+3.  Add the required frontmatter at the top of the Markdown file. The frontmatter must include the following fields:
 
-## 🧞 Commands
+    ```yaml
+    ---
+    title: "My Awesome Post"
+    description: "A short description of the post."
+    pubDate: "YYYY-MM-DD"
+    heroImage: "../../assets/images/blog/my-awesome-post.jpg" # Optional
+    updatedDate: "YYYY-MM-DD" # Optional
+    draft: false # Optional, set to true to hide the post from the blog index
+    ---
 
-All commands are run from the root of the project, from a terminal:
+    ## 📰 Introduction
+    Write your opening here.  
+    Set the scene and give context to the event/post.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+    ---
 
-## 👀 Want to learn more?
+    ## 📌 Highlights
+    List out the main topics, sessions, or key takeaways. For example:
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+    1. First highlight ✨  
+    2. Second highlight 📊  
+    3. Third highlight 🛠️  
 
-## Credit
+    ---
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+    ## 🎉 Reflections
+    Write your recap, what you learned, and the vibes of the event.  
+    Add some emojis to keep it lively 🎶
+
+    ---
+
+    ## 📷 Gallery
+    _Add event photos or screenshots here._  
+    (You can link or embed once the media is ready.)
+
+    ---
+
+    ## 🔗 What’s Next?
+    Close with a teaser or CTA:
+    - Stay tuned for more events 🚀  
+    - Follow us on socials 👀  
+    - Join our next workshop 💡
+
+    ```
+
+    -   `title` (string, required): The title of the blog post.
+    -   `description` (string, required): A brief description of the post for SEO and previews.
+    -   `pubDate` (date, required): The publication date of the post.
+    -   `heroImage` (image, optional): The main image for the post. It must be at least 1280 pixels wide. The path should be relative to the `src/content/blog/` directory.
+    -   `updatedDate` (date, optional): If the post is updated, you can set the date here.
+    -   `draft` (boolean, optional): Set to `true` if the post is not ready to be published. It will not appear on the main blog listing.
+
+### Updating the "About" Page
+
+The content for the "About" page is located in `src/pages/about.md`. You can edit this file directly to update the page.
+
+### Building for Production
+
+To create a production-ready build of the website, run the following command:
+
+```sh
+pnpm build
+```
+
+This command will check the code for errors and then build the static files into the `dist/` directory. You can preview the production build locally with `pnpm preview`.
