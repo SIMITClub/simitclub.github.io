@@ -56,12 +56,10 @@ This section explains how to manage the content of the website.
 
     ```yaml
     ---
-    title: "My Awesome Post"
-    description: "A short description of the post."
-    pubDate: "YYYY-MM-DD"
-    heroImage: "../../assets/images/blog/my-awesome-post.jpg" # Optional
-    updatedDate: "YYYY-MM-DD" # Optional
-    draft: false # Optional, set to true to hide the post from the blog index
+    title: 'My Awesome Post'
+    description: 'A short description of the post.'
+    pubDate: 'DD MMM YYYY'
+    heroImage: '/src/assets/images/blog/2025/my-awesome-post.jpg'
     ---
 
     ## 📰 Introduction
