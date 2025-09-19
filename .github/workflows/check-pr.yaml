@@ -34,7 +34,7 @@ jobs:
       #   run: npm run build
 
       - name: Install, build, and upload your site output
-        uses: withastro/action@v0
+        uses: withastro/action@v4
         with:
           path: .
           node-version: '18.x'
