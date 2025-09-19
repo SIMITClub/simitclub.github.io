@@ -67,7 +67,7 @@ Stay updated with hackathon alerts, tech events in Singapore, and SIM IT Club’
 👉 **Step 2: Become a Subcommittee Member**  
 Help us organize events, create content, and run the club — while gaining exclusive access to ITCamp and leadership experience.  
 
-📌 Subcommittee recruitment is **open from 16 Sept to 13 Oct 2025**.  
+📌 Subcommittee recruitment is **open from 16 Sept to 29 Sept 2025**.  
 Apply here (it’s free!):  
 🔗 [Subcommittee Registration](https://forms.office.com/r/ehz8jAawTH)  
 
@@ -81,8 +81,17 @@ We’re proud to be part of the student chapter under:
 
 ---
 
+## 🤝 Past & Present Partners
+
+Over the years, SIM IT Club has had the privilege of working with amazing partners who help us bring impactful events, workshops, and opportunities to our members.  
+
+<div class="center">
+  <img width="720" height="360" src="/past-present-partners.jpg" alt="SIM IT Club Partners" />
+</div>
+
+---
+
 ## 👥 Meet Our Executive Committee
 <div class="center">
     <img width="854" height="480" src="/25-26-excos.jpg" alt="" />
 </div>
-<!-- You can add profile photos, names, and roles here later -->
