@@ -2,53 +2,96 @@
 layout: ../layouts/DefaultMarkdown.astro
 title: 'About'
 description: 'About SIM IT Club'
-updatedDate: 'Jan 02 2024'
+updatedDate: 'Sep 20 2025'
 ---
 
 <div class="center">
-<img width="720" height="360" src="/placeholder-light.png" class='light-only' alt="" />
-<img width="720" height="360" src="/placeholder-dark.png" class='dark-only' alt="" />
+  <img width="720" height="360" src="/simitc-banner.jpg" alt="SIM IT Club Banner" />
 </div>
 
 ---
 
-## Providing in-Campus Platform for IT Enthusiasts
+# 👋 Welcome to SIM IT Club
 
-The journey to understanding and exploring the landscape of modern informational technology 
-is best taken amongst a community of like-minded individuals.
+We’re the SIM Information Technology Club (ITC) — a student-run community where techies, curious minds, and “I’ll-learn-as-I-go” folks gather to build cool stuff, learn useful things, and just vibe together. ✨  
 
-Whether you are...
-
-- a beginner looking for an introduction workshop to core programming concepts.
-- an intermediate hoping to apply your course knowledge on a team-based technical project.
-- an advanced player honing your leadership skills.
-
-SIM IT Club welcomes you with a myriad of activities tailored to help you grow as an individual in the fields of IT.
+Our mission? **Make tech fun, relevant, and accessible for everyone.**  
+No gatekeeping. No stress. Just growth and community. 🚀  
 
 ---
 
-## Our Activities
+## 💡 Who We Are
 
-> An investment in knowledge pays the best interest.  
-> Sir Benjamin Franklin
+We’re simply a group of ambitious students who wanted to create a platform for SIM techies to **learn, grow, and make an impact**.  
 
-Our upcoming workshops are freely available resources of knowledge  
-for those seeking to enrich themselves with all things IT. 
-From a full hands-on tutorial session to a quick burst of 5-minute introduction to relevant IT topics, 
-the SIM IT Club will continue to provide learners with rich contents.
-
-### Join Us
-
-Subcommittee members 
-will be able to contribute to events for SIM students. 
-This contribution includes (but is not limited to):
-
-- Becoming a speaker for one of our workshops.
-- Promoting our club events on various social media alongside the marketing team.
-- Making sure the event runs smoothly as part of our events crew.
-
-The recruitment drive initiative also looks for executive committee members who can lead the club.
+Our community is all about curiosity, collaboration, and building cool things together — no matter your background or starting point. 🚀
 
 ---
 
-## Meet Our Executive Committee
+## 🎯 What We Do
+<div class="center">
+  <img width="720" height="360" src="/25-26-roadmap.jpg" alt="SIM IT Club Roadmap" />
+</div>
+
+We host a wide range of activities throughout the year, such as:  
+
+- 🧠 **Tech talks & seminars** with industry experts  
+- 🧪 **Hands-on workshops** in Web Dev, GitHub, AI, UI/UX & more  
+- 🎉 **Hackathons** (the fun kind)  
+- 🤝 **Networking & collaborations** with partners and other clubs  
+
+---
+
+## 📚 Programs & Initiatives
+
+### ITCamp: Frontendamentals  
+A **3-month interactive workshop** for subcommittee members, where you’ll learn to build sleek, interactive websites from scratch. 🌟  
+
+**What you’ll get:**  
+- ✅ Hands-on skills in HTML, CSS, JavaScript, React, Tailwind, and Vercel  
+- ✅ Guided sessions with experienced mentors  
+- ✅ A portfolio-ready mini project  
+- ✅ A supportive community of tech enthusiasts  
+
+No coding background? No problem — we’ll guide you step by step! 💡  
+
+---
+<div class="center">
+    <img width="720" height="360" src="/how-to-get-involved-banner.jpg" alt="" />
+</div>
+
+👉 **Step 1: Join our Telegram group**  
+Stay updated with hackathon alerts, tech events in Singapore, and SIM IT Club’s own activities.  
+🔗 [Join here](https://t.me/+o_3QtjEFmNFhYmFl)  
+
+👉 **Step 2: Become a Subcommittee Member**  
+Help us organize events, create content, and run the club — while gaining exclusive access to ITCamp and leadership experience.  
+
+📌 Subcommittee recruitment is **open from 16 Sept to 29 Sept 2025**.  
+Apply here (it’s free!):  
+🔗 [Subcommittee Registration](https://forms.office.com/r/ehz8jAawTH)  
+
+---
+
+## 🌍 Our Community
+
+We’re proud to be part of the student chapter under:  
+- Singapore Computer Society (SCS) 🏢  
+- Association of Information Security Professionals (AISP) 🔐  
+
+---
+
+## 🤝 Past & Present Partners
+
+Over the years, SIM IT Club has had the privilege of working with amazing partners who help us bring impactful events, workshops, and opportunities to our members.  
+
+<div class="center">
+  <img width="720" height="360" src="/past-present-partners.jpg" alt="SIM IT Club Partners" />
+</div>
+
+---
+
+## 👥 Meet Our Executive Committee
+<div class="center">
+    <img width="854" height="480" src="/25-26-excos.jpg" alt="" />
+</div>

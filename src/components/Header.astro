@@ -1,21 +1,20 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import ThemeRadio from './ThemeRadio.astro';
-import { SITE_TITLE } from '../consts';
-import { Icon } from 'astro-icon/components';
+import HeaderLink from "./HeaderLink.astro";
+import ThemeRadio from "./ThemeRadio.astro";
+import { SITE_TITLE } from "../consts";
+import itcLogo from "../assets/svg/itc-logo-profile-bg.svg";
 ---
 
 <header>
 	<nav class="columns">
-		<a href='/'>
-			<h2 class='sr-only'>{SITE_TITLE}</h2>
-			<Icon class='light-only logo' name='simitclub-light' />
-			<Icon class='dark-only logo' name='simitclub-dark' />
+		<a href="/">
+			<h2 class="sr-only">{SITE_TITLE}</h2>
+			<img src={itcLogo.src} alt="ITC Logo" class="logo" />
 		</a>
-		<div class='internal-links'>
-			<HeaderLink href='/'>Home</HeaderLink>
-			<HeaderLink href='/blog'>Blog</HeaderLink>
-			<HeaderLink href='/about'>About</HeaderLink>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<ThemeRadio />
 	</nav>
