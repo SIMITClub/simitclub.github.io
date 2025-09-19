@@ -64,7 +64,39 @@ This section explains how to manage the content of the website.
     draft: false # Optional, set to true to hide the post from the blog index
     ---
 
-    Your blog content in Markdown goes here.
+    ## 📰 Introduction
+    Write your opening here.  
+    Set the scene and give context to the event/post.
+
+    ---
+
+    ## 📌 Highlights
+    List out the main topics, sessions, or key takeaways. For example:
+
+    1. First highlight ✨  
+    2. Second highlight 📊  
+    3. Third highlight 🛠️  
+
+    ---
+
+    ## 🎉 Reflections
+    Write your recap, what you learned, and the vibes of the event.  
+    Add some emojis to keep it lively 🎶
+
+    ---
+
+    ## 📷 Gallery
+    _Add event photos or screenshots here._  
+    (You can link or embed once the media is ready.)
+
+    ---
+
+    ## 🔗 What’s Next?
+    Close with a teaser or CTA:
+    - Stay tuned for more events 🚀  
+    - Follow us on socials 👀  
+    - Join our next workshop 💡
+
     ```
 
     -   `title` (string, required): The title of the blog post.
