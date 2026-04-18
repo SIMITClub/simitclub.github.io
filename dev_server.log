@@ -1,17 +1,20 @@
-npm warn Unknown project config "shamefully-hoist". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
 
-> simitclub-github-io-rewrite-init@0.0.1 dev
+> simitclub-github-io-rewrite-init@0.0.1 dev /app
 > astro dev
 
-05:02:05 [vite] Port 4321 is in use, trying another one...
+03:29:31 [types] Generated 1ms
+03:29:31 [vite] Re-optimizing dependencies because vite config has changed
 
- astro  v4.0.9 ready in 714 ms
+ astro  v4.16.19 ready in 1176 ms
 
-┃ Local    http://localhost:4322/
+┃ Local    http://localhost:4321/
 ┃ Network  use --host to expose
 
-05:02:05 watching for file changes...
-05:03:20 [astro-icon] Loaded icons from bi
-05:03:22 [200] /blog/cybersecurity-workshop/ 689ms
-05:03:23 [200] /_image 917ms
-05:03:25 [200] /blog/ 9ms
+03:29:31 watching for file changes...
+Failed to import "itc-logo-profile-bg": Unexpected element: <image>
+03:29:58 [astro-icon] Loaded icons from src/assets/svg, bi
+03:29:59 [200] / 32ms
+03:30:01 [200] /about 7ms
+03:30:30 [200] / 13ms
+03:30:31 [200] /about 8ms
+03:33:29 [watch] src/pages/about.md
