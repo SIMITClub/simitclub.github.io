@@ -93,5 +93,5 @@ Over the years, SIM IT Club has had the privilege of working with amazing partne
 
 ## 👥 Meet Our Executive Committee
 <div class="center">
-    <img width="854" height="480" src="/25-26-excos.jpg" alt="" />
+    <img width="854" height="480" src="/25-26-excos.png" alt="" />
 </div>
