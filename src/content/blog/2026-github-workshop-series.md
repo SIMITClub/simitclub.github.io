@@ -1,5 +1,5 @@
 ---
-title: 'Github Workshop Series 2025'
+title: 'Github Workshop Series 2026'
 description: 'SIM IT Club hosted a 2-part GitHub workshop catering to both beginners and advanced students, empowering them with essential version control and collaboration skills.'
 pubDate: 'Jan 30 2026'
 heroImage: '../../assets/images/blog/2026/IMG_4629.JPG'
@@ -21,7 +21,7 @@ SIM IT Club was proud to host a 2-Part GitHub Workshop, catering to both beginne
 - **Time:** 07.00 PM - 10.00 PM
 - **Location:** A.4.08
 
-![Github Workshop Series 2025](../../assets/images/blog/2026/image.png)
+![Github Workshop Series 2026](../../assets/images/blog/2026/image.png)
 
 During the workshop, students learned essential Git commands, how to work with GitHub repositories, track code changes, and collaborate on team projects. These are fundamental skills for anyone stepping into the world of software development. 💻
 
