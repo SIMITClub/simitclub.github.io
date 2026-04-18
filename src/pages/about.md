@@ -64,15 +64,16 @@ No coding background? No problem — we’ll guide you step by step! 💡
 Stay updated with hackathon alerts, tech events in Singapore, and SIM IT Club’s own activities.
 🔗 [Join here](https://t.me/+o_3QtjEFmNFhYmFl)
 
-👉 **Step 2: Become a Subcommittee Member**
-Help us organize events, create content, and run the club — while gaining exclusive access to ITCamp and leadership experience.
-
-👉 **Step 3: Become an EXCO Member**
+👉 **Step 2: Become an EXCO Member**
 🚨 **SIM ITCLUB EXCO RECRUITMENT 26/27 IS NOW OPEN!**
 
 Want to build real leadership experience outside of the classroom? This is your chance to lead teams, manage projects, and grow alongside driven people - while creating a meaningful impact and helping build a thriving community. 💡
 
 If you've ever wanted to make a real difference, this is where it starts. SIM IT Club is looking for passionate students to join the 26/27 EXCO team and give back to the IT community!
+
+<div class="center">
+  <img width="720" height="900" src="/exco-recruitment-26-27.png" alt="SIM IT Club EXCO Recruitment 26/27 Poster" />
+</div>
 
 🕒 **Applications closes on 16 May 2026, 2359 SGT**
 🔗 [**Apply here**](https://forms.office.com/pages/responsepage.aspx?id=eF0ERJXMGE2FJ2YvtdVEB5U1GPMULWxBsRS9u5MtoPJUNTBKN0tCM0JPRVQxVzkyRUUwM1QzWUJVUi4u&route=shorturl)

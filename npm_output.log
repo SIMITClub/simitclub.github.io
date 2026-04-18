@@ -1,0 +1,18 @@
+
+> simitclub-github-io-rewrite-init@0.0.1 dev /app
+> astro dev
+
+03:34:55 [types] Generated 1ms
+03:34:55 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v4.16.19 ready in 867 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+03:34:55 watching for file changes...
+Failed to import "itc-logo-profile-bg": Unexpected element: <image>
+03:35:18 [astro-icon] Loaded icons from src/assets/svg, bi
+03:35:18 [200] / 27ms
+03:35:18 [200] / 8ms
+03:35:19 [200] /about 7ms
