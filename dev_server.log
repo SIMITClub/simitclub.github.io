@@ -1,0 +1,17 @@
+npm warn Unknown project config "shamefully-hoist". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> simitclub-github-io-rewrite-init@0.0.1 dev
+> astro dev
+
+05:02:05 [vite] Port 4321 is in use, trying another one...
+
+ astro  v4.0.9 ready in 714 ms
+
+┃ Local    http://localhost:4322/
+┃ Network  use --host to expose
+
+05:02:05 watching for file changes...
+05:03:20 [astro-icon] Loaded icons from bi
+05:03:22 [200] /blog/cybersecurity-workshop/ 689ms
+05:03:23 [200] /_image 917ms
+05:03:25 [200] /blog/ 9ms
