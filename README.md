@@ -2,6 +2,8 @@
 
 This is the official website for the SIM IT Club, built with [Astro](https://astro.build/).
 
+[Official website domain](https://simitclub.com/)
+
 ## Getting Started
 
 Follow these instructions to get a local copy of the project up and running for development and testing purposes.
